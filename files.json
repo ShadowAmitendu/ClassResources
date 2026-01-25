@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "lastUpdated": "January 25, 2026"
+  },
+  "syllabus": [
+    {
+      "type": "file",
+      "name": "BCA Sixth Semester Syllabus.pdf",
+      "path": "syllabus/BCA Sixth Semester Syllabus.pdf",
+      "url": "syllabus/BCA Sixth Semester Syllabus.pdf"
+    }
+  ],
+  "notes": [
+    {
+      "type": "dir",
+      "name": "Minor Subjects",
+      "path": "notes/Minor Subjects",
+      "children": [
+        {
+          "type": "dir",
+          "name": "Marketing",
+          "path": "notes/Minor Subjects/Marketing",
+          "children": [
+            {
+              "type": "file",
+              "name": "Career Planning and Management - Notes.pdf",
+              "path": "notes/Minor Subjects/Marketing/Career Planning and Management - Notes.pdf",
+              "url": "notes/Minor Subjects/Marketing/Career Planning and Management - Notes.pdf"
+            },
+            {
+              "type": "file",
+              "name": "CRM - Notes for Exams.pdf",
+              "path": "notes/Minor Subjects/Marketing/CRM - Notes for Exams.pdf",
+              "url": "notes/Minor Subjects/Marketing/CRM - Notes for Exams.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "type": "dir",
+      "name": "CA1",
+      "path": "assignments/CA1",
+      "children": [
+        {
+          "type": "file",
+          "name": "UNIX_and_Shell_Scripting_CA1.pdf",
+          "path": "assignments/CA1/UNIX_and_Shell_Scripting_CA1.pdf",
+          "url": "assignments/CA1/UNIX_and_Shell_Scripting_CA1.pdf"
+        }
+      ]
+    }
+  ]
+}

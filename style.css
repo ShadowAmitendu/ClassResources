@@ -1,108 +1,18 @@
 :root {
-    --bg-color: #f8f9fa;
-    --card-bg: #ffffff;
+    --bg-color: #F3F4F6;
     --text-primary: #111827;
-    --text-secondary: #6b7280;
-    --accent: #2563eb;
-    --border: #e5e7eb;
-}
+    --text-secondary: #6B7280;
+    --accent-color: #4F46E5;
+    --accent-light: #E0E7FF;
+    --card-bg: #FFFFFF;
+    --border-color: #E5E7EB;
+    --folder-bg: #F9FAFB;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-header {
-    padding: 60px 0 40px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 40px;
-}
-
-header h1 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    letter-spacing: -0.02em;
-}
-
-header p {
-    color: var(--text-secondary);
-    font-size: 1.1rem;
-    margin-top: 8px;
-}
-
-.category {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 24px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-}
-
-h2 {
-    font-size: 1.25rem;
-    margin-bottom: 16px;
-    font-weight: 600;
-}
-
-.file-list {
-    list-style: none;
-}
-
-.file-list li {
-    border-bottom: 1px solid var(--border);
-}
-
-.file-list li:last-child {
-    border-bottom: none;
-}
-
-.file-list a {
-    display: block;
-    text-decoration: none;
-    color: var(--text-primary);
-    padding: 12px 0;
-    transition: color 0.2s ease;
-    font-weight: 500;
-}
-
-.file-list a:hover {
-    color: var(--accent);
-}
-
-footer {
-    text-align: center;
-    padding: 40px 0;
-    color: var(--text-secondary);
-    font-size: 0.9rem;
-}
-
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 2rem;
-    }
-}
-:root {
-    --bg-color: #f9fafb;
-    --card-bg: #ffffff;
-    --text-primary: #111827;
-    --text-secondary: #6b7280;
-    --accent: #2563eb;
-    --border: #e5e7eb;
+    --icon-pdf: #EF4444;
+    --icon-word: #2563EB;
+    --icon-code: #10B981;
+    --icon-zip: #F59E0B;
+    --icon-default: #9CA3AF;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -111,197 +21,257 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--bg-color);
     color: var(--text-primary);
-    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+
+    /* Desktop Default Padding */
+    padding-top: 160px;
+    padding-bottom: 100px;
+
+    min-height: 100vh;
 }
 
-.container { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
+/* --- FIXED HEADER --- */
 header {
-    padding: 60px 0 40px;
-    margin-bottom: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.95); /* Slight transparency */
+    backdrop-filter: blur(10px); /* Blur effect like iOS */
+    border-bottom: 1px solid var(--border-color);
+    padding: 25px 0;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: all 0.3s ease; /* Smooth resizing on resize */
 }
 
-header h1 {
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: -0.025em;
-    color: var(--text-primary);
-}
+.header-content { display: flex; align-items: center; gap: 20px; }
 
-header p { color: var(--text-secondary); margin-top: 8px; }
-
-.category {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
+.icon-box {
+    width: 50px; height: 50px;
+    background: var(--accent-light);
+    color: var(--accent-color);
     border-radius: 12px;
-    padding: 0; /* Padding moved to list items for cleaner look */
-    margin-bottom: 32px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+header h1 { font-size: 1.5rem; font-weight: 700; transition: font-size 0.3s ease; }
+header p { color: var(--text-secondary); margin-top: 2px; font-size: 0.9rem; }
+
+/* --- Loading State --- */
+.loading-state { text-align: center; padding: 40px; color: var(--text-secondary); }
+
+/* --- Category Cards --- */
+.category-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
     overflow: hidden;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
-h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    background: #f3f4f6;
+/* Card Header */
+.card-header {
+    background: var(--card-bg);
     padding: 16px 24px;
-    border-bottom: 1px solid var(--border);
-    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.file-list { list-style: none; }
-
-.file-list li {
-    border-bottom: 1px solid var(--border);
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
-.file-list li:last-child { border-bottom: none; }
+.header-title i { color: var(--accent-color); }
+.header-title h2 { font-size: 1.1rem; font-weight: 600; }
 
-.file-list a {
-    display: block;
-    text-decoration: none;
-    color: var(--text-primary);
-    padding: 16px 24px;
-    transition: background 0.15s ease;
-    font-size: 0.95rem;
-}
-
-.file-list a:hover {
-    background-color: #f9fafb;
-    color: var(--accent);
-}
-
-/* State messages */
-.loading-text, .loading-item, .empty-msg, .error-msg {
-    padding: 16px 24px;
+/* --- Download Button --- */
+.download-btn {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
     color: var(--text-secondary);
-    font-style: italic;
-    font-size: 0.9rem;
-}
-
-.error-msg { color: #ef4444; }
-
-footer {
-    text-align: center;
-    padding: 40px 0;
-    color: var(--text-secondary);
+    padding: 8px 16px;
+    border-radius: 8px;
     font-size: 0.85rem;
-}
-
-:root {
-    --bg-color: #f9fafb;
-    --card-bg: #ffffff;
-    --text-primary: #111827;
-    --text-secondary: #6b7280;
-    --accent: #2563eb;
-    --border: #e5e7eb;
-    --folder-bg: #f3f4f6;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
     font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
-.container { max-width: 700px; margin: 0 auto; padding: 0 24px; }
-
-header {
-    padding: 60px 0 40px;
-    margin-bottom: 20px;
+.download-btn:hover {
+    background-color: var(--folder-bg);
+    color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
-header h1 {
-    font-weight: 700;
-    font-size: 2rem;
-    letter-spacing: -0.025em;
-}
+.download-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
-header p { color: var(--text-secondary); margin-top: 8px; }
-
-.category {
-    background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    margin-bottom: 32px;
-    overflow: hidden;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-
-h2 {
-    font-size: 1rem;
-    font-weight: 600;
-    background: #f3f4f6;
-    padding: 16px 24px;
-    border-bottom: 1px solid var(--border);
-}
-
+/* --- File List --- */
 .file-list { list-style: none; }
+.file-item { border-bottom: 1px solid var(--border-color); }
+.file-item:last-child { border-bottom: none; }
 
-/* Standard File Links */
-.file-list a {
-    display: block;
-    text-decoration: none;
-    color: var(--text-primary);
+.file-item a {
+    display: flex; justify-content: space-between; align-items: center;
+    text-decoration: none; padding: 16px 24px;
+    transition: background 0.2s ease; color: var(--text-primary);
+}
+.file-item a:hover { background-color: var(--folder-bg); }
+
+.file-info {
+    display: flex; align-items: center; gap: 12px;
+    overflow: hidden; /* Prevent text overflow */
+}
+.file-info span {
+    font-weight: 500; font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ... if text is too long */
+    max-width: 90%; /* Ensure icon stays visible */
+}
+
+/* Icons */
+.file-icon { font-size: 1.2rem; width: 24px; text-align: center; flex-shrink: 0; }
+.fa-file-pdf { color: var(--icon-pdf); }
+.fa-file-word { color: var(--icon-word); }
+.fa-file-code { color: var(--icon-code); }
+.fa-file-zipper { color: var(--icon-zip); }
+.fa-file { color: var(--icon-default); }
+
+.action-icon { color: var(--text-secondary); opacity: 0; transition: opacity 0.2s; flex-shrink: 0; }
+.file-item a:hover .action-icon { opacity: 1; }
+
+/* --- Collapsible Folders --- */
+.folder-group { border-bottom: 1px solid var(--border-color); }
+
+.folder-header {
+    background-color: #FAFAFA;
     padding: 14px 24px;
-    border-bottom: 1px solid var(--border);
-    transition: background 0.15s ease;
-    font-size: 0.95rem;
+    cursor: pointer;
+    user-select: none;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: background 0.2s;
+}
+.folder-header:hover { background-color: #F3F4F6; }
+
+.folder-name {
+    display: flex; align-items: center; gap: 10px;
+    font-weight: 600; color: var(--text-secondary); font-size: 0.9rem;
 }
 
-.file-list a:hover {
-    background-color: #f9fafb;
-    color: var(--accent);
+.chevron { font-size: 0.8rem; color: #9CA3AF; transition: transform 0.2s ease; }
+.folder-group.is-open .folder-header .chevron { transform: rotate(90deg); }
+.folder-group.is-open .folder-header { background-color: #F3F4F6; color: var(--text-primary); }
+
+.nested-list {
+    list-style: none; display: none; background: #ffffff;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
 }
+.folder-group.is-open > .nested-list { display: block; }
 
-.file-list li:last-child a { border-bottom: none; }
+/* Standard Indentation */
+.nested-list .file-item a, .nested-list .folder-header { padding-left: 48px; }
+.nested-list .nested-list .file-item a { padding-left: 72px; }
 
-/* --- Subfolder Styling --- */
-.folder-item {
-    border-bottom: 1px solid var(--border);
-}
+/* --- Status Messages --- */
+.status-msg { padding: 24px; text-align: center; color: var(--text-secondary); font-style: italic; font-size: 0.9rem; }
+.status-msg.error { color: var(--icon-pdf); }
 
-.folder-label {
-    background-color: #fafafa;
-    padding: 10px 24px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    border-bottom: 1px solid var(--border);
-}
-
-/* Indent the nested list */
-.sub-file-list {
-    list-style: none;
-    background-color: #ffffff;
-}
-
-.sub-file-list a {
-    padding-left: 48px; /* Extra indentation */
-    font-size: 0.9rem;
-    color: #4b5563;
-}
-
-.sub-file-list li:last-child a {
-    border-bottom: none;
-}
-
-/* Messages */
-.loading-item, .empty-msg, .error-msg {
-    padding: 16px 24px;
-    color: var(--text-secondary);
-    font-style: italic;
-    font-size: 0.9rem;
-}
-.error-msg { color: #ef4444; }
-
+/* --- FIXED FOOTER --- */
 footer {
-    text-align: center;
-    padding: 40px 0;
-    color: var(--text-secondary);
-    font-size: 0.85rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--border-color);
+    padding: 15px 0;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.02);
+    z-index: 1000;
+}
+
+.footer-content { display: flex; justify-content: space-between; align-items: center; }
+footer p { color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; }
+footer i { color: #f43f5e; margin: 0 2px; }
+
+.last-updated {
+    background-color: var(--bg-color);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+/* ========================================= */
+/* MOBILE OPTIMIZATIONS (Max 600px)    */
+/* ========================================= */
+@media (max-width: 600px) {
+    /* 1. Adjust Body Padding for Smaller Header */
+    body {
+        padding-top: 120px;  /* Header is smaller on mobile */
+        padding-bottom: 90px; /* Footer is compacted */
+    }
+
+    /* 2. Compact Header */
+    header { padding: 15px 0; }
+
+    .icon-box {
+        width: 40px; height: 40px; /* Smaller icon */
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    header h1 { font-size: 1.25rem; } /* Smaller Title */
+    header p { display: none; } /* Hide subtitle to save space, or use font-size: 0.8rem; */
+
+    /* 3. Compact Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 5px;
+    }
+    footer p { font-size: 0.75rem; }
+
+    /* 4. Card Adjustments */
+    .category-card { margin-bottom: 20px; }
+
+    .card-header {
+        flex-direction: column;
+        align-items: stretch; /* Stretch content width */
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .download-btn {
+        width: 100%; /* Full width button */
+        justify-content: center;
+        padding: 10px; /* Taller touch target */
+    }
+
+    /* 5. Compact Lists */
+    .file-item a { padding: 14px 15px; } /* Less side padding */
+    .folder-header { padding: 14px 15px; }
+
+    /* Reduce Indentation on Mobile to fit content */
+    .nested-list .file-item a, .nested-list .folder-header { padding-left: 30px; }
+    .nested-list .nested-list .file-item a { padding-left: 45px; }
+
+    /* Always show action icon on mobile (no hover state on phones) */
+    .action-icon { opacity: 1; color: var(--border-color); }
 }
