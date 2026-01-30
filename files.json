@@ -45,31 +45,6 @@
       "path": "assignments/CA1",
       "children": [
         {
-          "type": "dir",
-          "name": "Presentations",
-          "path": "assignments/CA1/Presentations",
-          "children": [
-            {
-              "type": "file",
-              "name": "Advanced Java - Presentation.pptx",
-              "path": "assignments/CA1/Presentations/Advanced Java - Presentation.pptx",
-              "url": "assignments/CA1/Presentations/Advanced Java - Presentation.pptx"
-            },
-            {
-              "type": "file",
-              "name": "Computer Networking - Presentation.pptx",
-              "path": "assignments/CA1/Presentations/Computer Networking - Presentation.pptx",
-              "url": "assignments/CA1/Presentations/Computer Networking - Presentation.pptx"
-            },
-            {
-              "type": "file",
-              "name": "CRM - Presentation.pptx",
-              "path": "assignments/CA1/Presentations/CRM - Presentation.pptx",
-              "url": "assignments/CA1/Presentations/CRM - Presentation.pptx"
-            }
-          ]
-        },
-        {
           "type": "file",
           "name": "Advanced Java - Assignment.pdf",
           "path": "assignments/CA1/Advanced Java - Assignment.pdf",
@@ -92,6 +67,31 @@
           "name": "UNIX and Shell Scripting - Assignment.pdf",
           "path": "assignments/CA1/UNIX and Shell Scripting - Assignment.pdf",
           "url": "assignments/CA1/UNIX and Shell Scripting - Assignment.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "Presentations",
+      "path": "assignments/Presentations",
+      "children": [
+        {
+          "type": "file",
+          "name": "Advanced Java - Presentation.pptx",
+          "path": "assignments/Presentations/Advanced Java - Presentation.pptx",
+          "url": "assignments/Presentations/Advanced Java - Presentation.pptx"
+        },
+        {
+          "type": "file",
+          "name": "Computer Networking - Presentation.pptx",
+          "path": "assignments/Presentations/Computer Networking - Presentation.pptx",
+          "url": "assignments/Presentations/Computer Networking - Presentation.pptx"
+        },
+        {
+          "type": "file",
+          "name": "CRM - Presentation.pptx",
+          "path": "assignments/Presentations/CRM - Presentation.pptx",
+          "url": "assignments/Presentations/CRM - Presentation.pptx"
         }
       ]
     }

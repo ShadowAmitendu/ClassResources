@@ -47,8 +47,8 @@ def get_files_recursive(folder_path):
             - A file: {"type": "file", "name": str, "path": str, "url": str}
             - A directory: {"type": "dir", "name": str, "path": str, "children": list}
 
-    Example:
-        >>> get_files_recursive("notes")
+    Example output format::
+
         [
             {"type": "dir", "name": "Chapter1", "path": "notes/Chapter1", "children": [...]},
             {"type": "file", "name": "intro.pdf", "path": "notes/intro.pdf", "url": "notes/intro.pdf"}
