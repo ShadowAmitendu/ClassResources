@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "January 25, 2026"
+    "lastUpdated": "January 30, 2026"
   },
   "syllabus": [
     {
@@ -45,10 +45,53 @@
       "path": "assignments/CA1",
       "children": [
         {
+          "type": "dir",
+          "name": "PPT(in.pptx format)",
+          "path": "assignments/CA1/PPT(in.pptx format)",
+          "children": [
+            {
+              "type": "file",
+              "name": "Advance Java 1 - 35.pptx",
+              "path": "assignments/CA1/PPT(in.pptx format)/Advance Java 1 - 35.pptx",
+              "url": "assignments/CA1/PPT(in.pptx format)/Advance Java 1 - 35.pptx"
+            },
+            {
+              "type": "file",
+              "name": "Customer Relationship Management.pptx",
+              "path": "assignments/CA1/PPT(in.pptx format)/Customer Relationship Management.pptx",
+              "url": "assignments/CA1/PPT(in.pptx format)/Customer Relationship Management.pptx"
+            },
+            {
+              "type": "file",
+              "name": "Networking.pptx",
+              "path": "assignments/CA1/PPT(in.pptx format)/Networking.pptx",
+              "url": "assignments/CA1/PPT(in.pptx format)/Networking.pptx"
+            }
+          ]
+        },
+        {
           "type": "file",
-          "name": "UNIX_and_Shell_Scripting_CA1.pdf",
-          "path": "assignments/CA1/UNIX_and_Shell_Scripting_CA1.pdf",
-          "url": "assignments/CA1/UNIX_and_Shell_Scripting_CA1.pdf"
+          "name": "15242723010_CRM_Amitendu_Bikash_Dhusiya - Copy.pdf",
+          "path": "assignments/CA1/15242723010_CRM_Amitendu_Bikash_Dhusiya - Copy.pdf",
+          "url": "assignments/CA1/15242723010_CRM_Amitendu_Bikash_Dhusiya - Copy.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Advanced Java.pdf",
+          "path": "assignments/CA1/Advanced Java.pdf",
+          "url": "assignments/CA1/Advanced Java.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Networking.pdf",
+          "path": "assignments/CA1/Networking.pdf",
+          "url": "assignments/CA1/Networking.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX and Shell Scripting.pdf",
+          "path": "assignments/CA1/UNIX and Shell Scripting.pdf",
+          "url": "assignments/CA1/UNIX and Shell Scripting.pdf"
         }
       ]
     }
