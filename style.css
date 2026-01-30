@@ -1,20 +1,58 @@
+/**
+ * ============================================================================
+ * CLASS RESOURCES - STYLESHEET
+ * ============================================================================
+ *
+ * A modern, responsive stylesheet for the Class Resources web application.
+ * Features a clean design with collapsible folders, fixed header/footer,
+ * and mobile-optimized layouts.
+ *
+ * Author: Amitendu Bikash Dhusiya
+ * Project: Class Resources - BCA 6th Semester
+ *
+ * Table of Contents:
+ * 1. CSS Variables (Theme Colors)
+ * 2. Base Styles & Reset
+ * 3. Layout Components (Header, Footer, Container)
+ * 4. Category Cards
+ * 5. File List & Items
+ * 6. Collapsible Folders
+ * 7. Status Messages
+ * 8. Mobile Responsive Styles
+ * ============================================================================
+ */
+
+/* ==========================================================================
+   1. CSS VARIABLES - Theme Colors & Design Tokens
+   ========================================================================== */
 :root {
+    /* Background Colors */
     --bg-color: #F3F4F6;
-    --text-primary: #111827;
-    --text-secondary: #6B7280;
-    --accent-color: #4F46E5;
-    --accent-light: #E0E7FF;
     --card-bg: #FFFFFF;
-    --border-color: #E5E7EB;
     --folder-bg: #F9FAFB;
 
-    --icon-pdf: #EF4444;
-    --icon-word: #2563EB;
-    --icon-code: #10B981;
-    --icon-zip: #F59E0B;
-    --icon-default: #9CA3AF;
+    /* Text Colors */
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+
+    /* Accent Colors */
+    --accent-color: #4F46E5;
+    --accent-light: #E0E7FF;
+
+    /* Border & Dividers */
+    --border-color: #E5E7EB;
+
+    /* File Type Icon Colors */
+    --icon-pdf: #EF4444;      /* Red - PDF files */
+    --icon-word: #2563EB;     /* Blue - Word documents */
+    --icon-code: #10B981;     /* Green - Code files */
+    --icon-zip: #F59E0B;      /* Orange - Archive files */
+    --icon-default: #9CA3AF;  /* Gray - Unknown types */
 }
 
+/* ==========================================================================
+   2. BASE STYLES & CSS RESET
+   ========================================================================== */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -23,16 +61,21 @@ body {
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
 
-    /* Desktop Default Padding */
-    padding-top: 160px;
-    padding-bottom: 100px;
+    /* Padding accounts for fixed header and footer */
+    padding-top: 160px;     /* Space for fixed header */
+    padding-bottom: 100px;  /* Space for fixed footer */
 
     min-height: 100vh;
 }
 
+/* ==========================================================================
+   3. LAYOUT COMPONENTS
+   ========================================================================== */
+
+/* Container - Centered content wrapper */
 .container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
 
-/* --- FIXED HEADER --- */
+/* ---------- Fixed Header ---------- */
 header {
     position: fixed;
     top: 0;
@@ -40,16 +83,20 @@ header {
     width: 100%;
     z-index: 1000;
 
-    background: rgba(255, 255, 255, 0.95); /* Slight transparency */
-    backdrop-filter: blur(10px); /* Blur effect like iOS */
+    /* Frosted glass effect */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+
     border-bottom: 1px solid var(--border-color);
     padding: 25px 0;
     box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    transition: all 0.3s ease; /* Smooth resizing on resize */
+    transition: all 0.3s ease;
 }
 
+/* Header Content - Flex layout for icon and title */
 .header-content { display: flex; align-items: center; gap: 20px; }
 
+/* Icon Box - Styled container for graduation cap icon */
 .icon-box {
     width: 50px; height: 50px;
     background: var(--accent-light);
@@ -60,13 +107,17 @@ header {
     transition: all 0.3s ease;
 }
 
+/* Header Typography */
 header h1 { font-size: 1.5rem; font-weight: 700; transition: font-size 0.3s ease; }
 header p { color: var(--text-secondary); margin-top: 2px; font-size: 0.9rem; }
 
-/* --- Loading State --- */
+/* ---------- Loading State ---------- */
 .loading-state { text-align: center; padding: 40px; color: var(--text-secondary); }
 
-/* --- Category Cards --- */
+/* ==========================================================================
+   4. CATEGORY CARDS
+   ========================================================================== */
+/* Category Card - Main container for each section */
 .category-card {
     background: var(--card-bg);
     border-radius: 16px;
@@ -76,7 +127,7 @@ header p { color: var(--text-secondary); margin-top: 2px; font-size: 0.9rem; }
     overflow: hidden;
 }
 
-/* Card Header */
+/* Card Header - Contains section title and download button */
 .card-header {
     background: var(--card-bg);
     padding: 16px 24px;
@@ -86,6 +137,7 @@ header p { color: var(--text-secondary); margin-top: 2px; font-size: 0.9rem; }
     align-items: center;
 }
 
+/* Header Title - Icon + section name */
 .header-title {
     display: flex;
     align-items: center;
@@ -95,7 +147,7 @@ header p { color: var(--text-secondary); margin-top: 2px; font-size: 0.9rem; }
 .header-title i { color: var(--accent-color); }
 .header-title h2 { font-size: 1.1rem; font-weight: 600; }
 
-/* --- Download Button --- */
+/* ---------- Download All Button ---------- */
 .download-btn {
     background-color: #fff;
     border: 1px solid var(--border-color);
@@ -110,22 +162,29 @@ header p { color: var(--text-secondary); margin-top: 2px; font-size: 0.9rem; }
     display: flex;
     align-items: center;
     gap: 8px;
-    white-space: nowrap; /* Prevent text wrapping */
+    white-space: nowrap;  /* Prevent text wrapping */
 }
 
+/* Download Button Hover State */
 .download-btn:hover {
     background-color: var(--folder-bg);
     color: var(--accent-color);
     border-color: var(--accent-color);
 }
 
+/* Download Button Disabled State (during zipping) */
 .download-btn:disabled { opacity: 0.7; cursor: not-allowed; }
 
-/* --- File List --- */
+/* ==========================================================================
+   5. FILE LIST & ITEMS
+   ========================================================================== */
 .file-list { list-style: none; }
+
+/* Individual File Item */
 .file-item { border-bottom: 1px solid var(--border-color); }
 .file-item:last-child { border-bottom: none; }
 
+/* File Item Link - Clickable area */
 .file-item a {
     display: flex; justify-content: space-between; align-items: center;
     text-decoration: none; padding: 16px 24px;
@@ -133,32 +192,40 @@ header p { color: var(--text-secondary); margin-top: 2px; font-size: 0.9rem; }
 }
 .file-item a:hover { background-color: var(--folder-bg); }
 
+/* File Info - Icon and name container */
 .file-info {
     display: flex; align-items: center; gap: 12px;
-    overflow: hidden; /* Prevent text overflow */
+    overflow: hidden;  /* Prevent overflow on long names */
 }
 .file-info span {
     font-weight: 500; font-size: 0.95rem;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis; /* Add ... if text is too long */
-    max-width: 90%; /* Ensure icon stays visible */
+    text-overflow: ellipsis;  /* Truncate long file names with ... */
+    max-width: 90%;
 }
 
-/* Icons */
+/* ---------- File Type Icons ---------- */
 .file-icon { font-size: 1.2rem; width: 24px; text-align: center; flex-shrink: 0; }
+
+/* Icon Colors by File Type */
 .fa-file-pdf { color: var(--icon-pdf); }
 .fa-file-word { color: var(--icon-word); }
 .fa-file-code { color: var(--icon-code); }
 .fa-file-zipper { color: var(--icon-zip); }
 .fa-file { color: var(--icon-default); }
 
+/* Download Action Icon - Shows on hover */
 .action-icon { color: var(--text-secondary); opacity: 0; transition: opacity 0.2s; flex-shrink: 0; }
 .file-item a:hover .action-icon { opacity: 1; }
 
-/* --- Collapsible Folders --- */
+/* ==========================================================================
+   6. COLLAPSIBLE FOLDERS
+   ========================================================================== */
+/* Folder Group Container */
 .folder-group { border-bottom: 1px solid var(--border-color); }
 
+/* Folder Header - Clickable area to toggle folder */
 .folder-header {
     background-color: #FAFAFA;
     padding: 14px 24px;
@@ -169,47 +236,87 @@ header p { color: var(--text-secondary); margin-top: 2px; font-size: 0.9rem; }
 }
 .folder-header:hover { background-color: #F3F4F6; }
 
+/* Folder Name - Icon and label */
 .folder-name {
     display: flex; align-items: center; gap: 10px;
     font-weight: 600; color: var(--text-secondary); font-size: 0.9rem;
 }
 
-.chevron { font-size: 0.8rem; color: #9CA3AF; transition: transform 0.2s ease; }
-.folder-group.is-open .folder-header .chevron { transform: rotate(90deg); }
-.folder-group.is-open .folder-header { background-color: #F3F4F6; color: var(--text-primary); }
+/* Folder Icon - Transition for color change */
+.folder-icon { transition: color 0.2s ease; }
 
+/* ---------- Chevron Toggle Animation ---------- */
+/* Arrow points down when closed, rotates up (-180deg) when open */
+.chevron {
+    font-size: 0.8rem;
+    color: #9CA3AF;
+    transition: transform 0.3s ease, color 0.2s ease;
+}
+
+/* Rotate chevron when folder is open (down → up) */
+/* Using direct child combinator (>) to only affect the folder's own header, not nested folders */
+.folder-group.is-open > .folder-header .chevron {
+    transform: rotate(-180deg);
+    color: var(--accent-color);
+}
+
+/* Folder header styling when open */
+/* Using direct child combinator (>) to only affect the folder's own header */
+.folder-group.is-open > .folder-header {
+    background-color: #F3F4F6;
+    color: var(--text-primary);
+}
+
+/* Folder icon color change when open */
+.folder-group.is-open > .folder-header .folder-icon {
+    color: var(--accent-color);
+}
+
+/* ---------- Nested File List ---------- */
 .nested-list {
-    list-style: none; display: none; background: #ffffff;
+    list-style: none;
+    display: none;  /* Hidden by default */
+    background: #ffffff;
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
 }
+
+/* Show nested list when folder is open */
 .folder-group.is-open > .nested-list { display: block; }
 
-/* Standard Indentation */
+/* Indentation for nested items (visual hierarchy) */
 .nested-list .file-item a, .nested-list .folder-header { padding-left: 48px; }
 .nested-list .nested-list .file-item a { padding-left: 72px; }
 
-/* --- Status Messages --- */
+/* ==========================================================================
+   7. STATUS MESSAGES
+   ========================================================================== */
+/* Status Message - Empty state or error messages */
 .status-msg { padding: 24px; text-align: center; color: var(--text-secondary); font-style: italic; font-size: 0.9rem; }
 .status-msg.error { color: var(--icon-pdf); }
 
-/* --- FIXED FOOTER --- */
+/* ---------- Fixed Footer ---------- */
 footer {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
+
+    /* Frosted glass effect (matches header) */
     background-color: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+
     border-top: 1px solid var(--border-color);
     padding: 15px 0;
     box-shadow: 0 -4px 10px rgba(0,0,0,0.02);
     z-index: 1000;
 }
 
+/* Footer Content Layout */
 .footer-content { display: flex; justify-content: space-between; align-items: center; }
 footer p { color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; }
-footer i { color: #f43f5e; margin: 0 2px; }
+footer i { color: #f43f5e; margin: 0 2px; }  /* Heart icon color */
 
+/* Last Updated Badge */
 .last-updated {
     background-color: var(--bg-color);
     padding: 6px 12px;
@@ -219,59 +326,62 @@ footer i { color: #f43f5e; margin: 0 2px; }
     border: 1px solid var(--border-color);
 }
 
-/* ========================================= */
-/* MOBILE OPTIMIZATIONS (Max 600px)    */
-/* ========================================= */
+/* ==========================================================================
+   8. MOBILE RESPONSIVE STYLES
+   ========================================================================== */
 @media (max-width: 600px) {
-    /* 1. Adjust Body Padding for Smaller Header */
+
+    /* ---------- Body Adjustments ---------- */
+    /* Reduced padding for smaller fixed header/footer on mobile */
     body {
-        padding-top: 120px;  /* Header is smaller on mobile */
-        padding-bottom: 90px; /* Footer is compacted */
+        padding-top: 120px;
+        padding-bottom: 90px;
     }
 
-    /* 2. Compact Header */
+    /* ---------- Compact Header ---------- */
     header { padding: 15px 0; }
 
     .icon-box {
-        width: 40px; height: 40px; /* Smaller icon */
+        width: 40px; height: 40px;
         font-size: 1rem;
         border-radius: 10px;
     }
 
-    header h1 { font-size: 1.25rem; } /* Smaller Title */
-    header p { display: none; } /* Hide subtitle to save space, or use font-size: 0.8rem; */
+    header h1 { font-size: 1.25rem; }
+    header p { display: none; }  /* Hide subtitle to save space */
 
-    /* 3. Compact Footer */
+    /* ---------- Compact Footer ---------- */
     .footer-content {
         flex-direction: column;
         gap: 5px;
     }
     footer p { font-size: 0.75rem; }
 
-    /* 4. Card Adjustments */
+    /* ---------- Card Adjustments ---------- */
     .category-card { margin-bottom: 20px; }
 
     .card-header {
         flex-direction: column;
-        align-items: stretch; /* Stretch content width */
+        align-items: stretch;
         gap: 12px;
         padding: 15px;
     }
 
+    /* Full-width download button on mobile */
     .download-btn {
-        width: 100%; /* Full width button */
+        width: 100%;
         justify-content: center;
-        padding: 10px; /* Taller touch target */
+        padding: 10px;  /* Larger touch target */
     }
 
-    /* 5. Compact Lists */
-    .file-item a { padding: 14px 15px; } /* Less side padding */
+    /* ---------- Compact File Lists ---------- */
+    .file-item a { padding: 14px 15px; }
     .folder-header { padding: 14px 15px; }
 
-    /* Reduce Indentation on Mobile to fit content */
+    /* Reduced indentation for nested items on mobile */
     .nested-list .file-item a, .nested-list .folder-header { padding-left: 30px; }
     .nested-list .nested-list .file-item a { padding-left: 45px; }
 
-    /* Always show action icon on mobile (no hover state on phones) */
+    /* Always show download icon on mobile (no hover on touch devices) */
     .action-icon { opacity: 1; color: var(--border-color); }
 }

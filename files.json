@@ -23,15 +23,15 @@
           "children": [
             {
               "type": "file",
-              "name": "Career Planning and Management - Notes.pdf",
-              "path": "notes/Minor Subjects/Marketing/Career Planning and Management - Notes.pdf",
-              "url": "notes/Minor Subjects/Marketing/Career Planning and Management - Notes.pdf"
+              "name": "Career Planning and Management.pdf",
+              "path": "notes/Minor Subjects/Marketing/Career Planning and Management.pdf",
+              "url": "notes/Minor Subjects/Marketing/Career Planning and Management.pdf"
             },
             {
               "type": "file",
-              "name": "CRM - Notes for Exams.pdf",
-              "path": "notes/Minor Subjects/Marketing/CRM - Notes for Exams.pdf",
-              "url": "notes/Minor Subjects/Marketing/CRM - Notes for Exams.pdf"
+              "name": "Customer Relationship Management.pdf",
+              "path": "notes/Minor Subjects/Marketing/Customer Relationship Management.pdf",
+              "url": "notes/Minor Subjects/Marketing/Customer Relationship Management.pdf"
             }
           ]
         }
@@ -46,52 +46,52 @@
       "children": [
         {
           "type": "dir",
-          "name": "PPT(in.pptx format)",
-          "path": "assignments/CA1/PPT(in.pptx format)",
+          "name": "Presentations",
+          "path": "assignments/CA1/Presentations",
           "children": [
             {
               "type": "file",
-              "name": "Advance Java 1 - 35.pptx",
-              "path": "assignments/CA1/PPT(in.pptx format)/Advance Java 1 - 35.pptx",
-              "url": "assignments/CA1/PPT(in.pptx format)/Advance Java 1 - 35.pptx"
+              "name": "Advanced Java - Presentation.pptx",
+              "path": "assignments/CA1/Presentations/Advanced Java - Presentation.pptx",
+              "url": "assignments/CA1/Presentations/Advanced Java - Presentation.pptx"
             },
             {
               "type": "file",
-              "name": "Customer Relationship Management.pptx",
-              "path": "assignments/CA1/PPT(in.pptx format)/Customer Relationship Management.pptx",
-              "url": "assignments/CA1/PPT(in.pptx format)/Customer Relationship Management.pptx"
+              "name": "Computer Networking - Presentation.pptx",
+              "path": "assignments/CA1/Presentations/Computer Networking - Presentation.pptx",
+              "url": "assignments/CA1/Presentations/Computer Networking - Presentation.pptx"
             },
             {
               "type": "file",
-              "name": "Networking.pptx",
-              "path": "assignments/CA1/PPT(in.pptx format)/Networking.pptx",
-              "url": "assignments/CA1/PPT(in.pptx format)/Networking.pptx"
+              "name": "CRM - Presentation.pptx",
+              "path": "assignments/CA1/Presentations/CRM - Presentation.pptx",
+              "url": "assignments/CA1/Presentations/CRM - Presentation.pptx"
             }
           ]
         },
         {
           "type": "file",
-          "name": "15242723010_CRM_Amitendu_Bikash_Dhusiya - Copy.pdf",
-          "path": "assignments/CA1/15242723010_CRM_Amitendu_Bikash_Dhusiya - Copy.pdf",
-          "url": "assignments/CA1/15242723010_CRM_Amitendu_Bikash_Dhusiya - Copy.pdf"
+          "name": "Advanced Java - Assignment.pdf",
+          "path": "assignments/CA1/Advanced Java - Assignment.pdf",
+          "url": "assignments/CA1/Advanced Java - Assignment.pdf"
         },
         {
           "type": "file",
-          "name": "Advanced Java.pdf",
-          "path": "assignments/CA1/Advanced Java.pdf",
-          "url": "assignments/CA1/Advanced Java.pdf"
+          "name": "Computer Networking - Assignment.pdf",
+          "path": "assignments/CA1/Computer Networking - Assignment.pdf",
+          "url": "assignments/CA1/Computer Networking - Assignment.pdf"
         },
         {
           "type": "file",
-          "name": "Networking.pdf",
-          "path": "assignments/CA1/Networking.pdf",
-          "url": "assignments/CA1/Networking.pdf"
+          "name": "Customer Relationship Management - Assignment.pdf",
+          "path": "assignments/CA1/Customer Relationship Management - Assignment.pdf",
+          "url": "assignments/CA1/Customer Relationship Management - Assignment.pdf"
         },
         {
           "type": "file",
-          "name": "UNIX and Shell Scripting.pdf",
-          "path": "assignments/CA1/UNIX and Shell Scripting.pdf",
-          "url": "assignments/CA1/UNIX and Shell Scripting.pdf"
+          "name": "UNIX and Shell Scripting - Assignment.pdf",
+          "path": "assignments/CA1/UNIX and Shell Scripting - Assignment.pdf",
+          "url": "assignments/CA1/UNIX and Shell Scripting - Assignment.pdf"
         }
       ]
     }
