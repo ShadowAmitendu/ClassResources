@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "January 30, 2026"
+    "lastUpdated": "February 02, 2026"
   },
   "syllabus": [
     {
@@ -46,27 +46,33 @@
       "children": [
         {
           "type": "file",
-          "name": "Advanced Java - Assignment.pdf",
-          "path": "assignments/CA1/Advanced Java - Assignment.pdf",
-          "url": "assignments/CA1/Advanced Java - Assignment.pdf"
+          "name": "Advanced-Java.pdf",
+          "path": "assignments/CA1/Advanced-Java.pdf",
+          "url": "assignments/CA1/Advanced-Java.pdf"
         },
         {
           "type": "file",
-          "name": "Computer Networking - Assignment.pdf",
-          "path": "assignments/CA1/Computer Networking - Assignment.pdf",
-          "url": "assignments/CA1/Computer Networking - Assignment.pdf"
+          "name": "Career-Planning-and-Management.pdf",
+          "path": "assignments/CA1/Career-Planning-and-Management.pdf",
+          "url": "assignments/CA1/Career-Planning-and-Management.pdf"
         },
         {
           "type": "file",
-          "name": "Customer Relationship Management - Assignment.pdf",
-          "path": "assignments/CA1/Customer Relationship Management - Assignment.pdf",
-          "url": "assignments/CA1/Customer Relationship Management - Assignment.pdf"
+          "name": "Computer-Networking.pdf",
+          "path": "assignments/CA1/Computer-Networking.pdf",
+          "url": "assignments/CA1/Computer-Networking.pdf"
         },
         {
           "type": "file",
-          "name": "UNIX and Shell Scripting - Assignment.pdf",
-          "path": "assignments/CA1/UNIX and Shell Scripting - Assignment.pdf",
-          "url": "assignments/CA1/UNIX and Shell Scripting - Assignment.pdf"
+          "name": "Customer-Relationship-Management.pdf",
+          "path": "assignments/CA1/Customer-Relationship-Management.pdf",
+          "url": "assignments/CA1/Customer-Relationship-Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX-and-Shell-Scripting.pdf",
+          "path": "assignments/CA1/UNIX-and-Shell-Scripting.pdf",
+          "url": "assignments/CA1/UNIX-and-Shell-Scripting.pdf"
         }
       ]
     },
@@ -77,21 +83,27 @@
       "children": [
         {
           "type": "file",
-          "name": "Advanced Java - Presentation.pptx",
-          "path": "assignments/Presentations/Advanced Java - Presentation.pptx",
-          "url": "assignments/Presentations/Advanced Java - Presentation.pptx"
+          "name": "Advanced-Java.pptx",
+          "path": "assignments/Presentations/Advanced-Java.pptx",
+          "url": "assignments/Presentations/Advanced-Java.pptx"
         },
         {
           "type": "file",
-          "name": "Computer Networking - Presentation.pptx",
-          "path": "assignments/Presentations/Computer Networking - Presentation.pptx",
-          "url": "assignments/Presentations/Computer Networking - Presentation.pptx"
+          "name": "Career-Planning-and-Management.pptx",
+          "path": "assignments/Presentations/Career-Planning-and-Management.pptx",
+          "url": "assignments/Presentations/Career-Planning-and-Management.pptx"
         },
         {
           "type": "file",
-          "name": "CRM - Presentation.pptx",
-          "path": "assignments/Presentations/CRM - Presentation.pptx",
-          "url": "assignments/Presentations/CRM - Presentation.pptx"
+          "name": "Computer-Networking.pptx",
+          "path": "assignments/Presentations/Computer-Networking.pptx",
+          "url": "assignments/Presentations/Computer-Networking.pptx"
+        },
+        {
+          "type": "file",
+          "name": "Customer-Relationship-Management.pptx",
+          "path": "assignments/Presentations/Customer-Relationship-Management.pptx",
+          "url": "assignments/Presentations/Customer-Relationship-Management.pptx"
         }
       ]
     }
