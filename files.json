@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "February 02, 2026"
+    "lastUpdated": "February 15, 2026"
   },
   "syllabus": [
     {
@@ -73,6 +73,31 @@
           "name": "UNIX-and-Shell-Scripting.pdf",
           "path": "assignments/CA1/UNIX-and-Shell-Scripting.pdf",
           "url": "assignments/CA1/UNIX-and-Shell-Scripting.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "CA2",
+      "path": "assignments/CA2",
+      "children": [
+        {
+          "type": "file",
+          "name": "Carrier Planning and Management.pdf",
+          "path": "assignments/CA2/Carrier Planning and Management.pdf",
+          "url": "assignments/CA2/Carrier Planning and Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Networking.pdf",
+          "path": "assignments/CA2/Networking.pdf",
+          "url": "assignments/CA2/Networking.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX and Shell Programming.pdf",
+          "path": "assignments/CA2/UNIX and Shell Programming.pdf",
+          "url": "assignments/CA2/UNIX and Shell Programming.pdf"
         }
       ]
     },
