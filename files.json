@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "February 15, 2026"
+    "lastUpdated": "February 20, 2026"
   },
   "syllabus": [
     {
@@ -83,9 +83,21 @@
       "children": [
         {
           "type": "file",
+          "name": "Advanced Java with Web Application.pdf",
+          "path": "assignments/CA2/Advanced Java with Web Application.pdf",
+          "url": "assignments/CA2/Advanced Java with Web Application.pdf"
+        },
+        {
+          "type": "file",
           "name": "Carrier Planning and Management.pdf",
           "path": "assignments/CA2/Carrier Planning and Management.pdf",
           "url": "assignments/CA2/Carrier Planning and Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Customer Relationship Management.pdf",
+          "path": "assignments/CA2/Customer Relationship Management.pdf",
+          "url": "assignments/CA2/Customer Relationship Management.pdf"
         },
         {
           "type": "file",
@@ -98,6 +110,19 @@
           "name": "UNIX and Shell Programming.pdf",
           "path": "assignments/CA2/UNIX and Shell Programming.pdf",
           "url": "assignments/CA2/UNIX and Shell Programming.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "PCA1",
+      "path": "assignments/PCA1",
+      "children": [
+        {
+          "type": "file",
+          "name": "Comming Soon!",
+          "path": "assignments/PCA1/Comming Soon!",
+          "url": "assignments/PCA1/Comming Soon!"
         }
       ]
     },
