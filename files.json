@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "February 21, 2026"
+    "lastUpdated": "March 25, 2026"
   },
   "syllabus": [
     {
@@ -11,6 +11,25 @@
     }
   ],
   "notes": [
+    {
+      "type": "dir",
+      "name": "Major Subjects",
+      "path": "notes/Major Subjects",
+      "children": [
+        {
+          "type": "file",
+          "name": "Java EE.pdf",
+          "path": "notes/Major Subjects/Java EE.pdf",
+          "url": "notes/Major Subjects/Java EE.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX AND SHELL PROGRAMMING.pdf",
+          "path": "notes/Major Subjects/UNIX AND SHELL PROGRAMMING.pdf",
+          "url": "notes/Major Subjects/UNIX AND SHELL PROGRAMMING.pdf"
+        }
+      ]
+    },
     {
       "type": "dir",
       "name": "Minor Subjects",
