@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "March 25, 2026"
+    "lastUpdated": "June 05, 2026"
   },
   "syllabus": [
     {
@@ -35,6 +35,81 @@
       "name": "Minor Subjects",
       "path": "notes/Minor Subjects",
       "children": [
+        {
+          "type": "dir",
+          "name": "Exam Notes",
+          "path": "notes/Minor Subjects/Exam Notes",
+          "children": [
+            {
+              "type": "dir",
+              "name": "CPM",
+              "path": "notes/Minor Subjects/Exam Notes/CPM",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "Module 1.pdf",
+                  "path": "notes/Minor Subjects/Exam Notes/CPM/Module 1.pdf",
+                  "url": "notes/Minor Subjects/Exam Notes/CPM/Module 1.pdf"
+                },
+                {
+                  "type": "file",
+                  "name": "Module 2.pdf",
+                  "path": "notes/Minor Subjects/Exam Notes/CPM/Module 2.pdf",
+                  "url": "notes/Minor Subjects/Exam Notes/CPM/Module 2.pdf"
+                },
+                {
+                  "type": "file",
+                  "name": "Module 3.pdf",
+                  "path": "notes/Minor Subjects/Exam Notes/CPM/Module 3.pdf",
+                  "url": "notes/Minor Subjects/Exam Notes/CPM/Module 3.pdf"
+                },
+                {
+                  "type": "file",
+                  "name": "Module 4.pdf",
+                  "path": "notes/Minor Subjects/Exam Notes/CPM/Module 4.pdf",
+                  "url": "notes/Minor Subjects/Exam Notes/CPM/Module 4.pdf"
+                }
+              ]
+            },
+            {
+              "type": "dir",
+              "name": "CRM",
+              "path": "notes/Minor Subjects/Exam Notes/CRM",
+              "children": [
+                {
+                  "type": "file",
+                  "name": "1 Module.pdf",
+                  "path": "notes/Minor Subjects/Exam Notes/CRM/1 Module.pdf",
+                  "url": "notes/Minor Subjects/Exam Notes/CRM/1 Module.pdf"
+                },
+                {
+                  "type": "file",
+                  "name": "2 Module.pdf",
+                  "path": "notes/Minor Subjects/Exam Notes/CRM/2 Module.pdf",
+                  "url": "notes/Minor Subjects/Exam Notes/CRM/2 Module.pdf"
+                },
+                {
+                  "type": "file",
+                  "name": "3 Module.pdf",
+                  "path": "notes/Minor Subjects/Exam Notes/CRM/3 Module.pdf",
+                  "url": "notes/Minor Subjects/Exam Notes/CRM/3 Module.pdf"
+                },
+                {
+                  "type": "file",
+                  "name": "4 Module.pdf",
+                  "path": "notes/Minor Subjects/Exam Notes/CRM/4 Module.pdf",
+                  "url": "notes/Minor Subjects/Exam Notes/CRM/4 Module.pdf"
+                },
+                {
+                  "type": "file",
+                  "name": "5 Module.pdf",
+                  "path": "notes/Minor Subjects/Exam Notes/CRM/5 Module.pdf",
+                  "url": "notes/Minor Subjects/Exam Notes/CRM/5 Module.pdf"
+                }
+              ]
+            }
+          ]
+        },
         {
           "type": "dir",
           "name": "Marketing",
