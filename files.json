@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "June 05, 2026"
+    "lastUpdated": "June 07, 2026"
   },
   "syllabus": [
     {
@@ -81,6 +81,110 @@
               "name": "5 Module.pdf",
               "path": "notes/Exam Notes/CRM/5 Module.pdf",
               "url": "notes/Exam Notes/CRM/5 Module.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "Java EE",
+          "path": "notes/Exam Notes/Java EE",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "notes/Exam Notes/Java EE/Module 1.pdf",
+              "url": "notes/Exam Notes/Java EE/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "notes/Exam Notes/Java EE/Module 2.pdf",
+              "url": "notes/Exam Notes/Java EE/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "notes/Exam Notes/Java EE/Module 3.pdf",
+              "url": "notes/Exam Notes/Java EE/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "notes/Exam Notes/Java EE/Module 4.pdf",
+              "url": "notes/Exam Notes/Java EE/Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 5.pdf",
+              "path": "notes/Exam Notes/Java EE/Module 5.pdf",
+              "url": "notes/Exam Notes/Java EE/Module 5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 6.pdf",
+              "path": "notes/Exam Notes/Java EE/Module 6.pdf",
+              "url": "notes/Exam Notes/Java EE/Module 6.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "Networking - Uploading Soon!",
+          "path": "notes/Exam Notes/Networking - Uploading Soon!",
+          "children": []
+        },
+        {
+          "type": "dir",
+          "name": "UNIX",
+          "path": "notes/Exam Notes/UNIX",
+          "children": [
+            {
+              "type": "file",
+              "name": "M1.pdf",
+              "path": "notes/Exam Notes/UNIX/M1.pdf",
+              "url": "notes/Exam Notes/UNIX/M1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "M2.pdf",
+              "path": "notes/Exam Notes/UNIX/M2.pdf",
+              "url": "notes/Exam Notes/UNIX/M2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "M3.pdf",
+              "path": "notes/Exam Notes/UNIX/M3.pdf",
+              "url": "notes/Exam Notes/UNIX/M3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "M4.pdf",
+              "path": "notes/Exam Notes/UNIX/M4.pdf",
+              "url": "notes/Exam Notes/UNIX/M4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "M5.pdf",
+              "path": "notes/Exam Notes/UNIX/M5.pdf",
+              "url": "notes/Exam Notes/UNIX/M5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "M6.pdf",
+              "path": "notes/Exam Notes/UNIX/M6.pdf",
+              "url": "notes/Exam Notes/UNIX/M6.pdf"
+            },
+            {
+              "type": "file",
+              "name": "M7.pdf",
+              "path": "notes/Exam Notes/UNIX/M7.pdf",
+              "url": "notes/Exam Notes/UNIX/M7.pdf"
+            },
+            {
+              "type": "file",
+              "name": "M8.pdf",
+              "path": "notes/Exam Notes/UNIX/M8.pdf",
+              "url": "notes/Exam Notes/UNIX/M8.pdf"
             }
           ]
         }
