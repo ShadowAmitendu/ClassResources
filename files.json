@@ -191,21 +191,21 @@
       "children": [
         {
           "type": "file",
-          "name": "Complete Notes.pdf",
-          "path": "notes/Major Subjects/Complete Notes.pdf",
-          "url": "notes/Major Subjects/Complete Notes.pdf"
+          "name": "Advance Java with Web Application.pdf",
+          "path": "notes/Major Subjects/Advance Java with Web Application.pdf",
+          "url": "notes/Major Subjects/Advance Java with Web Application.pdf"
         },
         {
           "type": "file",
-          "name": "Java EE.pdf",
-          "path": "notes/Major Subjects/Java EE.pdf",
-          "url": "notes/Major Subjects/Java EE.pdf"
+          "name": "Networking.pdf",
+          "path": "notes/Major Subjects/Networking.pdf",
+          "url": "notes/Major Subjects/Networking.pdf"
         },
         {
           "type": "file",
-          "name": "UNIX AND SHELL PROGRAMMING.pdf",
-          "path": "notes/Major Subjects/UNIX AND SHELL PROGRAMMING.pdf",
-          "url": "notes/Major Subjects/UNIX AND SHELL PROGRAMMING.pdf"
+          "name": "UNIX and Shell Programming.pdf",
+          "path": "notes/Major Subjects/UNIX and Shell Programming.pdf",
+          "url": "notes/Major Subjects/UNIX and Shell Programming.pdf"
         }
       ]
     },
