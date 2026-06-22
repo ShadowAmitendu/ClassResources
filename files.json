@@ -235,6 +235,19 @@
     },
     {
       "type": "dir",
+      "name": "Extras",
+      "path": "notes/Extras",
+      "children": [
+        {
+          "type": "file",
+          "name": "Networking_Acronyms_Short_Notes.pdf",
+          "path": "notes/Extras/Networking_Acronyms_Short_Notes.pdf",
+          "url": "notes/Extras/Networking_Acronyms_Short_Notes.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
       "name": "Major Subjects",
       "path": "notes/Major Subjects",
       "children": [
