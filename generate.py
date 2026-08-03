@@ -27,8 +27,10 @@ from datetime import datetime
 # Define the folders to scan. These must match the SECTIONS array in index.html
 TARGET_FOLDERS = ["syllabus", "notes", "assignments"]
 
-# Output filename for the generated JSON
-OUTPUT_FILE = "files.json"
+# Output filenames for generated JSON
+OUTPUT_FILE_7TH = "files.json"
+SEM6_FOLDER = "6th_sem"
+OUTPUT_FILE_6TH = "files_6th_sem.json"
 
 
 def get_files_recursive(folder_path):
@@ -46,13 +48,6 @@ def get_files_recursive(folder_path):
         list: A list of dictionaries, where each dictionary represents either:
             - A file: {"type": "file", "name": str, "path": str, "url": str}
             - A directory: {"type": "dir", "name": str, "path": str, "children": list}
-
-    Example output format::
-
-        [
-            {"type": "dir", "name": "Chapter1", "path": "notes/Chapter1", "children": [...]},
-            {"type": "file", "name": "intro.pdf", "path": "notes/intro.pdf", "url": "notes/intro.pdf"}
-        ]
     """
     structure = []
     try:
@@ -79,7 +74,6 @@ def get_files_recursive(folder_path):
                 })
             else:
                 # Add file entry with relative path for cross-platform compatibility
-                # Using relative paths ensures it works on both localhost and GitHub Pages
                 relative_path = full_path.replace("\\", "/")
                 structure.append({
                     "type": "file",
@@ -93,39 +87,46 @@ def get_files_recursive(folder_path):
 
     return structure
 
+
+def generate_json_for(base_dir, output_file, is_subfolder=False):
+    """
+    Scans target folders in base_dir and writes the metadata dictionary to output_file.
+    """
+    data = {}
+    now = datetime.now().strftime("%B %d, %Y")
+    data["metadata"] = {
+        "lastUpdated": now
+    }
+
+    for folder in TARGET_FOLDERS:
+        folder_path = os.path.join(base_dir, folder) if is_subfolder else folder
+        if os.path.exists(folder_path):
+            print(f"📂 Scanning '{folder_path}' folder...")
+            data[folder] = get_files_recursive(folder_path)
+        else:
+            print(f"❌ Missing folder: '{folder_path}' - Creating empty entry")
+            data[folder] = []
+
+    with open(output_file, "w", encoding='utf-8') as f:
+        json.dump(data, f, indent=2)
+
+    print(f"✅ Successfully generated '{output_file}'")
+
+
 # ==============================================================================
 # MAIN EXECUTION
 # ==============================================================================
 if __name__ == "__main__":
     print("🚀 Starting File Index Generator...")
 
-    # Initialize the data dictionary that will be written to JSON
-    data = {}
+    print("\n--- 7th Semester (Current) ---")
+    generate_json_for(".", OUTPUT_FILE_7TH, is_subfolder=False)
 
-    # Step 1: Add metadata with current timestamp
-    # Using local date format (e.g., "January 25, 2026") for display in the UI
-    # This solves the "2 Push" problem by setting the date locally before commit
-    now = datetime.now().strftime("%B %d, %Y")
-    data["metadata"] = {
-        "lastUpdated": now
-    }
-    print(f"📅 Date set to: {now}")
+    print("\n--- 6th Semester (Completed) ---")
+    if os.path.exists(SEM6_FOLDER):
+        generate_json_for(SEM6_FOLDER, OUTPUT_FILE_6TH, is_subfolder=True)
+    else:
+        print(f"⚠️ Warning: '{SEM6_FOLDER}' directory not found. Skipping 6th Sem index.")
 
-    # Step 2: Scan each configured folder and build file structure
-    for folder in TARGET_FOLDERS:
-        if os.path.exists(folder):
-            print(f"📂 Scanning '{folder}' folder...")
-            data[folder] = get_files_recursive(folder)
-        else:
-            print(f"❌ Missing folder: '{folder}' - Creating empty entry")
-            data[folder] = []
+    print("\n👉 Next steps: git add . → git commit -m 'Update files' → git push")
 
-    # Step 3: Write the collected data to JSON file
-    # Using UTF-8 encoding for proper character support
-    # indent=2 makes the JSON human-readable for debugging
-    with open(OUTPUT_FILE, "w", encoding='utf-8') as f:
-        json.dump(data, f, indent=2)
-
-    # Success message with next steps
-    print(f"✅ Successfully generated '{OUTPUT_FILE}'")
-    print("👉 Next steps: git add . → git commit -m 'Update files' → git push")

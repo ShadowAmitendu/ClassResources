@@ -1,0 +1,421 @@
+{
+  "metadata": {
+    "lastUpdated": "August 03, 2026"
+  },
+  "syllabus": [
+    {
+      "type": "file",
+      "name": "BCA Sixth Semester Syllabus.pdf",
+      "path": "6th_sem/syllabus/BCA Sixth Semester Syllabus.pdf",
+      "url": "6th_sem/syllabus/BCA Sixth Semester Syllabus.pdf"
+    }
+  ],
+  "notes": [
+    {
+      "type": "dir",
+      "name": "Exam Notes",
+      "path": "6th_sem/notes/Exam Notes",
+      "children": [
+        {
+          "type": "dir",
+          "name": "CPM",
+          "path": "6th_sem/notes/Exam Notes/CPM",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "6th_sem/notes/Exam Notes/CPM/Module 1.pdf",
+              "url": "6th_sem/notes/Exam Notes/CPM/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "6th_sem/notes/Exam Notes/CPM/Module 2.pdf",
+              "url": "6th_sem/notes/Exam Notes/CPM/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "6th_sem/notes/Exam Notes/CPM/Module 3.pdf",
+              "url": "6th_sem/notes/Exam Notes/CPM/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "6th_sem/notes/Exam Notes/CPM/Module 4.pdf",
+              "url": "6th_sem/notes/Exam Notes/CPM/Module 4.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "CRM",
+          "path": "6th_sem/notes/Exam Notes/CRM",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "6th_sem/notes/Exam Notes/CRM/Module 1.pdf",
+              "url": "6th_sem/notes/Exam Notes/CRM/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "6th_sem/notes/Exam Notes/CRM/Module 2.pdf",
+              "url": "6th_sem/notes/Exam Notes/CRM/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "6th_sem/notes/Exam Notes/CRM/Module 3.pdf",
+              "url": "6th_sem/notes/Exam Notes/CRM/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "6th_sem/notes/Exam Notes/CRM/Module 4.pdf",
+              "url": "6th_sem/notes/Exam Notes/CRM/Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 5.pdf",
+              "path": "6th_sem/notes/Exam Notes/CRM/Module 5.pdf",
+              "url": "6th_sem/notes/Exam Notes/CRM/Module 5.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "Java EE",
+          "path": "6th_sem/notes/Exam Notes/Java EE",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "6th_sem/notes/Exam Notes/Java EE/Module 1.pdf",
+              "url": "6th_sem/notes/Exam Notes/Java EE/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "6th_sem/notes/Exam Notes/Java EE/Module 2.pdf",
+              "url": "6th_sem/notes/Exam Notes/Java EE/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "6th_sem/notes/Exam Notes/Java EE/Module 3.pdf",
+              "url": "6th_sem/notes/Exam Notes/Java EE/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "6th_sem/notes/Exam Notes/Java EE/Module 4.pdf",
+              "url": "6th_sem/notes/Exam Notes/Java EE/Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 5.pdf",
+              "path": "6th_sem/notes/Exam Notes/Java EE/Module 5.pdf",
+              "url": "6th_sem/notes/Exam Notes/Java EE/Module 5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 6.pdf",
+              "path": "6th_sem/notes/Exam Notes/Java EE/Module 6.pdf",
+              "url": "6th_sem/notes/Exam Notes/Java EE/Module 6.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "Networking",
+          "path": "6th_sem/notes/Exam Notes/Networking",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "6th_sem/notes/Exam Notes/Networking/Module 1.pdf",
+              "url": "6th_sem/notes/Exam Notes/Networking/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "6th_sem/notes/Exam Notes/Networking/Module 2.pdf",
+              "url": "6th_sem/notes/Exam Notes/Networking/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "6th_sem/notes/Exam Notes/Networking/Module 3.pdf",
+              "url": "6th_sem/notes/Exam Notes/Networking/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "6th_sem/notes/Exam Notes/Networking/Module 4.pdf",
+              "url": "6th_sem/notes/Exam Notes/Networking/Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 5.pdf",
+              "path": "6th_sem/notes/Exam Notes/Networking/Module 5.pdf",
+              "url": "6th_sem/notes/Exam Notes/Networking/Module 5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 6.pdf",
+              "path": "6th_sem/notes/Exam Notes/Networking/Module 6.pdf",
+              "url": "6th_sem/notes/Exam Notes/Networking/Module 6.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 7.pdf",
+              "path": "6th_sem/notes/Exam Notes/Networking/Module 7.pdf",
+              "url": "6th_sem/notes/Exam Notes/Networking/Module 7.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "UNIX",
+          "path": "6th_sem/notes/Exam Notes/UNIX",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "6th_sem/notes/Exam Notes/UNIX/Module 1.pdf",
+              "url": "6th_sem/notes/Exam Notes/UNIX/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "6th_sem/notes/Exam Notes/UNIX/Module 2.pdf",
+              "url": "6th_sem/notes/Exam Notes/UNIX/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "6th_sem/notes/Exam Notes/UNIX/Module 3.pdf",
+              "url": "6th_sem/notes/Exam Notes/UNIX/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "6th_sem/notes/Exam Notes/UNIX/Module 4.pdf",
+              "url": "6th_sem/notes/Exam Notes/UNIX/Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 5.pdf",
+              "path": "6th_sem/notes/Exam Notes/UNIX/Module 5.pdf",
+              "url": "6th_sem/notes/Exam Notes/UNIX/Module 5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 6.pdf",
+              "path": "6th_sem/notes/Exam Notes/UNIX/Module 6.pdf",
+              "url": "6th_sem/notes/Exam Notes/UNIX/Module 6.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 7.pdf",
+              "path": "6th_sem/notes/Exam Notes/UNIX/Module 7.pdf",
+              "url": "6th_sem/notes/Exam Notes/UNIX/Module 7.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 8.pdf",
+              "path": "6th_sem/notes/Exam Notes/UNIX/Module 8.pdf",
+              "url": "6th_sem/notes/Exam Notes/UNIX/Module 8.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "Extras",
+      "path": "6th_sem/notes/Extras",
+      "children": [
+        {
+          "type": "file",
+          "name": "Networking_Acronyms_Short_Notes.pdf",
+          "path": "6th_sem/notes/Extras/Networking_Acronyms_Short_Notes.pdf",
+          "url": "6th_sem/notes/Extras/Networking_Acronyms_Short_Notes.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "Major Subjects",
+      "path": "6th_sem/notes/Major Subjects",
+      "children": [
+        {
+          "type": "file",
+          "name": "Advance Java with Web Application.pdf",
+          "path": "6th_sem/notes/Major Subjects/Advance Java with Web Application.pdf",
+          "url": "6th_sem/notes/Major Subjects/Advance Java with Web Application.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Networking.pdf",
+          "path": "6th_sem/notes/Major Subjects/Networking.pdf",
+          "url": "6th_sem/notes/Major Subjects/Networking.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX and Shell Programming.pdf",
+          "path": "6th_sem/notes/Major Subjects/UNIX and Shell Programming.pdf",
+          "url": "6th_sem/notes/Major Subjects/UNIX and Shell Programming.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "Minor Subjects",
+      "path": "6th_sem/notes/Minor Subjects",
+      "children": [
+        {
+          "type": "dir",
+          "name": "Marketing",
+          "path": "6th_sem/notes/Minor Subjects/Marketing",
+          "children": [
+            {
+              "type": "file",
+              "name": "Career Planning and Management.pdf",
+              "path": "6th_sem/notes/Minor Subjects/Marketing/Career Planning and Management.pdf",
+              "url": "6th_sem/notes/Minor Subjects/Marketing/Career Planning and Management.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Customer Relationship Management.pdf",
+              "path": "6th_sem/notes/Minor Subjects/Marketing/Customer Relationship Management.pdf",
+              "url": "6th_sem/notes/Minor Subjects/Marketing/Customer Relationship Management.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "type": "dir",
+      "name": "CA1",
+      "path": "6th_sem/assignments/CA1",
+      "children": [
+        {
+          "type": "file",
+          "name": "Advanced Java.pdf",
+          "path": "6th_sem/assignments/CA1/Advanced Java.pdf",
+          "url": "6th_sem/assignments/CA1/Advanced Java.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Career Planning and Management.pdf",
+          "path": "6th_sem/assignments/CA1/Career Planning and Management.pdf",
+          "url": "6th_sem/assignments/CA1/Career Planning and Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Computer Networking.pdf",
+          "path": "6th_sem/assignments/CA1/Computer Networking.pdf",
+          "url": "6th_sem/assignments/CA1/Computer Networking.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Customer Relationship Management.pdf",
+          "path": "6th_sem/assignments/CA1/Customer Relationship Management.pdf",
+          "url": "6th_sem/assignments/CA1/Customer Relationship Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX and Shell Scripting.pdf",
+          "path": "6th_sem/assignments/CA1/UNIX and Shell Scripting.pdf",
+          "url": "6th_sem/assignments/CA1/UNIX and Shell Scripting.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "CA2",
+      "path": "6th_sem/assignments/CA2",
+      "children": [
+        {
+          "type": "file",
+          "name": "Advanced Java with Web Application.pdf",
+          "path": "6th_sem/assignments/CA2/Advanced Java with Web Application.pdf",
+          "url": "6th_sem/assignments/CA2/Advanced Java with Web Application.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Career Planning and Management.pdf",
+          "path": "6th_sem/assignments/CA2/Career Planning and Management.pdf",
+          "url": "6th_sem/assignments/CA2/Career Planning and Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Customer Relationship Management.pdf",
+          "path": "6th_sem/assignments/CA2/Customer Relationship Management.pdf",
+          "url": "6th_sem/assignments/CA2/Customer Relationship Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Networking.pdf",
+          "path": "6th_sem/assignments/CA2/Networking.pdf",
+          "url": "6th_sem/assignments/CA2/Networking.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX and Shell Programming.pdf",
+          "path": "6th_sem/assignments/CA2/UNIX and Shell Programming.pdf",
+          "url": "6th_sem/assignments/CA2/UNIX and Shell Programming.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "PCA1",
+      "path": "6th_sem/assignments/PCA1",
+      "children": [
+        {
+          "type": "file",
+          "name": "PCA 1 with Answers (Please refer sir's questions).pdf",
+          "path": "6th_sem/assignments/PCA1/PCA 1 with Answers (Please refer sir's questions).pdf",
+          "url": "6th_sem/assignments/PCA1/PCA 1 with Answers (Please refer sir's questions).pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "Presentations",
+      "path": "6th_sem/assignments/Presentations",
+      "children": [
+        {
+          "type": "file",
+          "name": "Advance Java with Web Application.pptx",
+          "path": "6th_sem/assignments/Presentations/Advance Java with Web Application.pptx",
+          "url": "6th_sem/assignments/Presentations/Advance Java with Web Application.pptx"
+        },
+        {
+          "type": "file",
+          "name": "Career Planning and Management.pptx",
+          "path": "6th_sem/assignments/Presentations/Career Planning and Management.pptx",
+          "url": "6th_sem/assignments/Presentations/Career Planning and Management.pptx"
+        },
+        {
+          "type": "file",
+          "name": "Computer Networking.pptx",
+          "path": "6th_sem/assignments/Presentations/Computer Networking.pptx",
+          "url": "6th_sem/assignments/Presentations/Computer Networking.pptx"
+        },
+        {
+          "type": "file",
+          "name": "Customer Relationship Management.pptx",
+          "path": "6th_sem/assignments/Presentations/Customer Relationship Management.pptx",
+          "url": "6th_sem/assignments/Presentations/Customer Relationship Management.pptx"
+        }
+      ]
+    }
+  ]
+}
