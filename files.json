@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "August 03, 2026"
+    "lastUpdated": "August 04, 2026"
   },
   "syllabus": [
     {
@@ -10,6 +10,68 @@
       "url": "syllabus/BCA(H) Seventh Semester Syllabus.pdf"
     }
   ],
-  "notes": [],
-  "assignments": []
+  "notes": [
+    {
+      "type": "dir",
+      "name": "1. Machine Learning",
+      "path": "notes/1. Machine Learning",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "2. Research",
+      "path": "notes/2. Research",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "3. CyberSecurity",
+      "path": "notes/3. CyberSecurity",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "4. Consumer Behaviour",
+      "path": "notes/4. Consumer Behaviour",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "5. Strategic Management",
+      "path": "notes/5. Strategic Management",
+      "children": []
+    }
+  ],
+  "assignments": [
+    {
+      "type": "dir",
+      "name": "1. Machine Learning",
+      "path": "assignments/1. Machine Learning",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "2. Research",
+      "path": "assignments/2. Research",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "3. CyberSecurity",
+      "path": "assignments/3. CyberSecurity",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "4. Consumer Behaviour",
+      "path": "assignments/4. Consumer Behaviour",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "5. Strategic Management",
+      "path": "assignments/5. Strategic Management",
+      "children": []
+    }
+  ]
 }
