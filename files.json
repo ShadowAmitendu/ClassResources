@@ -39,7 +39,14 @@
       "type": "dir",
       "name": "5. Strategic Management",
       "path": "notes/5. Strategic Management",
-      "children": []
+      "children": [
+        {
+          "type": "file",
+          "name": "strategic_management.pdf",
+          "path": "notes/5. Strategic Management/strategic_management.pdf",
+          "url": "notes/5. Strategic Management/strategic_management.pdf"
+        }
+      ]
     }
   ],
   "assignments": [
