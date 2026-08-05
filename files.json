@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "August 04, 2026"
+    "lastUpdated": "August 05, 2026"
   },
   "syllabus": [
     {
@@ -15,13 +15,33 @@
       "type": "dir",
       "name": "1. Machine Learning",
       "path": "notes/1. Machine Learning",
-      "children": []
+      "children": [
+        {
+          "type": "file",
+          "name": "Machine_Learning_Notes_04_08_2026.pdf",
+          "path": "notes/1. Machine Learning/Machine_Learning_Notes_04_08_2026.pdf",
+          "url": "notes/1. Machine Learning/Machine_Learning_Notes_04_08_2026.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Machine_Learning_Notes_05_08_2026.pdf",
+          "path": "notes/1. Machine Learning/Machine_Learning_Notes_05_08_2026.pdf",
+          "url": "notes/1. Machine Learning/Machine_Learning_Notes_05_08_2026.pdf"
+        }
+      ]
     },
     {
       "type": "dir",
       "name": "2. Research",
       "path": "notes/2. Research",
-      "children": []
+      "children": [
+        {
+          "type": "file",
+          "name": "Research_Methodology_Notes_05_08_2026.pdf",
+          "path": "notes/2. Research/Research_Methodology_Notes_05_08_2026.pdf",
+          "url": "notes/2. Research/Research_Methodology_Notes_05_08_2026.pdf"
+        }
+      ]
     },
     {
       "type": "dir",
@@ -45,6 +65,12 @@
           "name": "strategic_management.pdf",
           "path": "notes/5. Strategic Management/strategic_management.pdf",
           "url": "notes/5. Strategic Management/strategic_management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Strategic_Management_Notes_04_08_2026.pdf",
+          "path": "notes/5. Strategic Management/Strategic_Management_Notes_04_08_2026.pdf",
+          "url": "notes/5. Strategic Management/Strategic_Management_Notes_04_08_2026.pdf"
         }
       ]
     }
