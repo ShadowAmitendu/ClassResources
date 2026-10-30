@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "August 05, 2026"
+    "lastUpdated": "October 30, 2026"
   },
   "syllabus": [
     {
@@ -32,28 +32,65 @@
     },
     {
       "type": "dir",
-      "name": "2. Research",
-      "path": "notes/2. Research",
+      "name": "2. Research Methedology",
+      "path": "notes/2. Research Methedology",
       "children": [
+        {
+          "type": "dir",
+          "name": "Mixed notes",
+          "path": "notes/2. Research Methedology/Mixed notes",
+          "children": []
+        },
+        {
+          "type": "dir",
+          "name": "Module wise Compiled Notes",
+          "path": "notes/2. Research Methedology/Module wise Compiled Notes",
+          "children": [
+            {
+              "type": "file",
+              "name": "RM Module 1.pdf",
+              "path": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 1.pdf",
+              "url": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 2.pdf",
+              "path": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 2.pdf",
+              "url": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 3.pdf",
+              "path": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 3.pdf",
+              "url": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 4.pdf",
+              "path": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 4.pdf",
+              "url": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 5.pdf",
+              "path": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 5.pdf",
+              "url": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 6.pdf",
+              "path": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 6.pdf",
+              "url": "notes/2. Research Methedology/Module wise Compiled Notes/RM Module 6.pdf"
+            }
+          ]
+        },
         {
           "type": "file",
           "name": "Research_Methodology_Notes_05_08_2026.pdf",
-          "path": "notes/2. Research/Research_Methodology_Notes_05_08_2026.pdf",
-          "url": "notes/2. Research/Research_Methodology_Notes_05_08_2026.pdf"
+          "path": "notes/2. Research Methedology/Research_Methodology_Notes_05_08_2026.pdf",
+          "url": "notes/2. Research Methedology/Research_Methodology_Notes_05_08_2026.pdf"
         }
       ]
-    },
-    {
-      "type": "dir",
-      "name": "3. CyberSecurity",
-      "path": "notes/3. CyberSecurity",
-      "children": []
-    },
-    {
-      "type": "dir",
-      "name": "4. Consumer Behaviour",
-      "path": "notes/4. Consumer Behaviour",
-      "children": []
     },
     {
       "type": "dir",
@@ -73,38 +110,38 @@
           "url": "notes/5. Strategic Management/Strategic_Management_Notes_04_08_2026.pdf"
         }
       ]
+    },
+    {
+      "type": "dir",
+      "name": "6. CyberSecurity",
+      "path": "notes/6. CyberSecurity",
+      "children": [
+        {
+          "type": "file",
+          "name": "Module 1.pdf",
+          "path": "notes/6. CyberSecurity/Module 1.pdf",
+          "url": "notes/6. CyberSecurity/Module 1.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 2.pdf",
+          "path": "notes/6. CyberSecurity/Module 2.pdf",
+          "url": "notes/6. CyberSecurity/Module 2.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 3.pdf",
+          "path": "notes/6. CyberSecurity/Module 3.pdf",
+          "url": "notes/6. CyberSecurity/Module 3.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 4.pdf",
+          "path": "notes/6. CyberSecurity/Module 4.pdf",
+          "url": "notes/6. CyberSecurity/Module 4.pdf"
+        }
+      ]
     }
   ],
-  "assignments": [
-    {
-      "type": "dir",
-      "name": "1. Machine Learning",
-      "path": "assignments/1. Machine Learning",
-      "children": []
-    },
-    {
-      "type": "dir",
-      "name": "2. Research",
-      "path": "assignments/2. Research",
-      "children": []
-    },
-    {
-      "type": "dir",
-      "name": "3. CyberSecurity",
-      "path": "assignments/3. CyberSecurity",
-      "children": []
-    },
-    {
-      "type": "dir",
-      "name": "4. Consumer Behaviour",
-      "path": "assignments/4. Consumer Behaviour",
-      "children": []
-    },
-    {
-      "type": "dir",
-      "name": "5. Strategic Management",
-      "path": "assignments/5. Strategic Management",
-      "children": []
-    }
-  ]
+  "assignments": []
 }
