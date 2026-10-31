@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "lastUpdated": "October 30, 2026"
+    "lastUpdated": "October 31, 2026"
   },
   "syllabus": [
     {
@@ -16,6 +16,43 @@
       "name": "1. Machine Learning",
       "path": "notes/1. Machine Learning",
       "children": [
+        {
+          "type": "dir",
+          "name": "Module wise Notes",
+          "path": "notes/1. Machine Learning/Module wise Notes",
+          "children": [
+            {
+              "type": "file",
+              "name": "ML Module 1.pdf",
+              "path": "notes/1. Machine Learning/Module wise Notes/ML Module 1.pdf",
+              "url": "notes/1. Machine Learning/Module wise Notes/ML Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "ML Module 2.pdf",
+              "path": "notes/1. Machine Learning/Module wise Notes/ML Module 2.pdf",
+              "url": "notes/1. Machine Learning/Module wise Notes/ML Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "ML Module 3.pdf",
+              "path": "notes/1. Machine Learning/Module wise Notes/ML Module 3.pdf",
+              "url": "notes/1. Machine Learning/Module wise Notes/ML Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "ML Module 4.pdf",
+              "path": "notes/1. Machine Learning/Module wise Notes/ML Module 4.pdf",
+              "url": "notes/1. Machine Learning/Module wise Notes/ML Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "ML Module 5.pdf",
+              "path": "notes/1. Machine Learning/Module wise Notes/ML Module 5.pdf",
+              "url": "notes/1. Machine Learning/Module wise Notes/ML Module 5.pdf"
+            }
+          ]
+        },
         {
           "type": "file",
           "name": "Machine_Learning_Notes_04_08_2026.pdf",
@@ -94,9 +131,95 @@
     },
     {
       "type": "dir",
+      "name": "3. CyberSecurity",
+      "path": "notes/3. CyberSecurity",
+      "children": [
+        {
+          "type": "file",
+          "name": "Module 1.pdf",
+          "path": "notes/3. CyberSecurity/Module 1.pdf",
+          "url": "notes/3. CyberSecurity/Module 1.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 2.pdf",
+          "path": "notes/3. CyberSecurity/Module 2.pdf",
+          "url": "notes/3. CyberSecurity/Module 2.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 3.pdf",
+          "path": "notes/3. CyberSecurity/Module 3.pdf",
+          "url": "notes/3. CyberSecurity/Module 3.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 4.pdf",
+          "path": "notes/3. CyberSecurity/Module 4.pdf",
+          "url": "notes/3. CyberSecurity/Module 4.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 5.pdf",
+          "path": "notes/3. CyberSecurity/Module 5.pdf",
+          "url": "notes/3. CyberSecurity/Module 5.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "4. Consumer Behaviour",
+      "path": "notes/4. Consumer Behaviour",
+      "children": [
+        {
+          "type": "file",
+          "name": "CB Module 1.pdf",
+          "path": "notes/4. Consumer Behaviour/CB Module 1.pdf",
+          "url": "notes/4. Consumer Behaviour/CB Module 1.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 2.pdf",
+          "path": "notes/4. Consumer Behaviour/CB Module 2.pdf",
+          "url": "notes/4. Consumer Behaviour/CB Module 2.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 3.pdf",
+          "path": "notes/4. Consumer Behaviour/CB Module 3.pdf",
+          "url": "notes/4. Consumer Behaviour/CB Module 3.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 4.pdf",
+          "path": "notes/4. Consumer Behaviour/CB Module 4.pdf",
+          "url": "notes/4. Consumer Behaviour/CB Module 4.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 5.pdf",
+          "path": "notes/4. Consumer Behaviour/CB Module 5.pdf",
+          "url": "notes/4. Consumer Behaviour/CB Module 5.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 6.pdf",
+          "path": "notes/4. Consumer Behaviour/CB Module 6.pdf",
+          "url": "notes/4. Consumer Behaviour/CB Module 6.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
       "name": "5. Strategic Management",
       "path": "notes/5. Strategic Management",
       "children": [
+        {
+          "type": "file",
+          "name": "SM Module 1.pdf",
+          "path": "notes/5. Strategic Management/SM Module 1.pdf",
+          "url": "notes/5. Strategic Management/SM Module 1.pdf"
+        },
         {
           "type": "file",
           "name": "strategic_management.pdf",
@@ -108,37 +231,6 @@
           "name": "Strategic_Management_Notes_04_08_2026.pdf",
           "path": "notes/5. Strategic Management/Strategic_Management_Notes_04_08_2026.pdf",
           "url": "notes/5. Strategic Management/Strategic_Management_Notes_04_08_2026.pdf"
-        }
-      ]
-    },
-    {
-      "type": "dir",
-      "name": "6. CyberSecurity",
-      "path": "notes/6. CyberSecurity",
-      "children": [
-        {
-          "type": "file",
-          "name": "Module 1.pdf",
-          "path": "notes/6. CyberSecurity/Module 1.pdf",
-          "url": "notes/6. CyberSecurity/Module 1.pdf"
-        },
-        {
-          "type": "file",
-          "name": "Module 2.pdf",
-          "path": "notes/6. CyberSecurity/Module 2.pdf",
-          "url": "notes/6. CyberSecurity/Module 2.pdf"
-        },
-        {
-          "type": "file",
-          "name": "Module 3.pdf",
-          "path": "notes/6. CyberSecurity/Module 3.pdf",
-          "url": "notes/6. CyberSecurity/Module 3.pdf"
-        },
-        {
-          "type": "file",
-          "name": "Module 4.pdf",
-          "path": "notes/6. CyberSecurity/Module 4.pdf",
-          "url": "notes/6. CyberSecurity/Module 4.pdf"
         }
       ]
     }
