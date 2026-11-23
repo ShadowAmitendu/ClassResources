@@ -60,95 +60,199 @@
 
 		<main class="container changelog-main">
 			<div class="changelog-header">
-				<h1>Website updates</h1>
+				<h1>Project Timeline & Updates</h1>
 				<p>
-					Recent improvements to resources, navigation, and the site experience.
+					Detailed history of resource additions, syllabus updates, exam materials, and website enhancements.
 				</p>
 			</div>
 
 			<div class="changelog-list">
 				<article class="changelog-entry">
 					<div class="changelog-entry-head">
-						<h2>Organized semester content</h2>
-						<time class="changelog-date" datetime="2026-11-23"
-							>November 23, 2026</time
-						>
+						<h2>Material 2 Refresh & Semester Reorganization</h2>
+						<time class="changelog-date" datetime="2026-11-23">November 23, 2026</time>
 					</div>
 					<ul>
 						<li>
-							Moved resources under the BCA semester and category folder
-							structure.
+							<strong>Full UI Modernization:</strong> Rebuilt the user interface with Material Design 2 principles, fixed app bar, mobile semester dropdown selector, and circular view-transition dark mode toggle.
 						</li>
 						<li>
-							Added question-papers support and automatic semester JSON
-							generation.
+							<strong>Standardized Directory Hierarchy:</strong> Reorganized repository folders into clean <code>bca/semesters/[1st-8th]/[syllabus|notes|assignments|question-papers]</code> layout.
 						</li>
-						<li>Added 1st through 8th semester navigation.</li>
-					</ul>
-				</article>
-
-				<article class="changelog-entry">
-					<div class="changelog-entry-head">
-						<h2>Material 2 interface refresh</h2>
-						<time class="changelog-date" datetime="2026-11-23"
-							>November 23, 2026</time
-						>
-					</div>
-					<ul>
-						<li>Updated cards, buttons, icons, theme colors, and motion.</li>
-						<li>Added a fixed app bar and footer for consistent navigation.</li>
 						<li>
-							Added a mobile semester dropdown and circular theme transition.
+							<strong>Dynamic Semester Generator:</strong> Overhauled <code>generate.py</code> to automatically scan folder trees and produce individual per-semester JSON indices (<code>1st.json</code> through <code>8th.json</code>).
+						</li>
+						<li>
+							<strong>Semester Status Notices:</strong> Added intelligent status banners notifying users about semesters under preparation (without availability guarantee) and specifically noting that 8th-semester resources cannot be added yet until the university announces the official syllabus.
+						</li>
+						<li>
+							<strong>Terms of Use & Attribution:</strong> Added <a href="terms.html">Terms & Conditions</a> detailing non-commercial educational permissions and mandatory author attribution ("must tag me").
+						</li>
+						<li>
+							<strong>SEO & Discoverability:</strong> Added <code>sitemap.xml</code> and <code>robots.txt</code>.
+						</li>
+						<li>
+							<strong>Contribution Tooling:</strong> Added GitHub issue forms for resource submissions and pull request templates for student contributors.
 						</li>
 					</ul>
 				</article>
 
 				<article class="changelog-entry">
 					<div class="changelog-entry-head">
-						<h2>Submission tools</h2>
-						<time class="changelog-date" datetime="2026-11-23"
-							>November 23, 2026</time
-						>
+						<h2>7th Semester Major Notes Expansion</h2>
+						<time class="changelog-date" datetime="2026-10-31">October 31, 2026</time>
 					</div>
 					<ul>
-						<li>Added a pull request template for resource submissions.</li>
 						<li>
-							Added a GitHub issue form for question papers and class resources.
+							<strong>Strategic Management:</strong> Added <code>SM All Modules.pdf</code> and <code>SM Module 1.pdf</code> under 7th Semester notes.
 						</li>
 						<li>
-							Added direct links to the GitHub repository and author website.
+							<strong>Machine Learning:</strong> Added comprehensive module-wise lecture notes:
+							<ul>
+								<li><code>ML Module 1.pdf</code></li>
+								<li><code>ML Module 2.pdf</code></li>
+								<li><code>ML Module 3.pdf</code></li>
+								<li><code>ML Module 4.pdf</code></li>
+								<li><code>ML Module 5.pdf</code></li>
+							</ul>
+						</li>
+						<li>
+							<strong>CyberSecurity:</strong> Added <code>Module 5.pdf</code>.
+						</li>
+						<li>
+							<strong>Consumer Behaviour:</strong> Added complete module-wise notes:
+							<ul>
+								<li><code>CB Module 1.pdf</code> through <code>CB Module 6.pdf</code></li>
+							</ul>
 						</li>
 					</ul>
 				</article>
 
 				<article class="changelog-entry">
 					<div class="changelog-entry-head">
-						<h2>Resource updates</h2>
-						<time class="changelog-date" datetime="2026-10-31"
-							>October 31, 2026</time
-						>
+						<h2>Research Methodology & CyberSecurity Notes</h2>
+						<time class="changelog-date" datetime="2026-10-30">October 30, 2026</time>
 					</div>
 					<ul>
 						<li>
-							Added Strategic Management, Consumer Behaviour, CyberSecurity, and
-							machine learning resources.
+							<strong>Research Methodology:</strong> Added complete module-wise compiled notes:
+							<ul>
+								<li><code>RM Module 1.pdf</code> through <code>RM Module 6.pdf</code></li>
+							</ul>
 						</li>
-						<li>Updated file indexes and 6th/7th semester metadata.</li>
+						<li>
+							<strong>CyberSecurity:</strong> Added core semester notes:
+							<ul>
+								<li><code>Module 1.pdf</code> through <code>Module 4.pdf</code></li>
+							</ul>
+						</li>
 					</ul>
 				</article>
 
 				<article class="changelog-entry">
 					<div class="changelog-entry-head">
-						<h2>Earlier semester additions</h2>
-						<time class="changelog-date" datetime="2026-08-04"
-							>August 4, 2026</time
-						>
+						<h2>7th Semester Launch & Syllabus</h2>
+						<time class="changelog-date" datetime="2026-08-04">August 4 – 5, 2026</time>
 					</div>
 					<ul>
 						<li>
-							Added Strategic Management and the seventh-semester syllabus.
+							<strong>7th Semester Syllabus:</strong> Uploaded official <code>BCA(H) Seventh Semester Syllabus.pdf</code>.
 						</li>
-						<li>Updated semester directory structures and resource indexes.</li>
+						<li>
+							<strong>Introductory Notes:</strong> Added initial lecture materials:
+							<ul>
+								<li><code>Machine_Learning_Notes_04_08_2026.pdf</code> &amp; <code>Machine_Learning_Notes_05_08_2026.pdf</code></li>
+								<li><code>Research_Methodology_Notes_05_08_2026.pdf</code></li>
+								<li><code>Strategic_Management_Notes_04_08_2026.pdf</code> &amp; <code>strategic_management.pdf</code></li>
+							</ul>
+						</li>
+						<li>
+							<strong>Multi-Semester Navigation:</strong> Added navigation tabs allowing students to switch between 6th Semester (archive) and 7th Semester (current).
+						</li>
+					</ul>
+				</article>
+
+				<article class="changelog-entry">
+					<div class="changelog-entry-head">
+						<h2>6th Semester Exam Prep Notes & Dark Mode</h2>
+						<time class="changelog-date" datetime="2026-06-05">June 5 – 22, 2026</time>
+					</div>
+					<ul>
+						<li>
+							<strong>Computer Networking:</strong> Full exam prep bundle with <code>Module 1.pdf</code> through <code>Module 7.pdf</code>, plus <code>Networking_Acronyms_Short_Notes.pdf</code>.
+						</li>
+						<li>
+							<strong>Java EE / Advanced Java:</strong> Added exam notes covering <code>Module 1.pdf</code> through <code>Module 6.pdf</code>.
+						</li>
+						<li>
+							<strong>UNIX and Shell Programming:</strong> Complete module notes covering <code>Module 1.pdf</code> through <code>Module 8.pdf</code> (M1–M8).
+						</li>
+						<li>
+							<strong>Minor Subjects Exam Notes:</strong>
+							<ul>
+								<li>Career Planning &amp; Management (CPM): <code>Module 1.pdf</code> through <code>Module 4.pdf</code></li>
+								<li>Customer Relationship Management (CRM): <code>Module 1.pdf</code> through <code>Module 5.pdf</code></li>
+							</ul>
+						</li>
+						<li>
+							<strong>Major Subjects Compilation:</strong> Added <code>Complete Notes.pdf</code>.
+						</li>
+						<li>
+							<strong>Dark Mode:</strong> Integrated dark mode theme switcher with local storage persistence and system preference detection.
+						</li>
+					</ul>
+				</article>
+
+				<article class="changelog-entry">
+					<div class="changelog-entry-head">
+						<h2>Major Subjects Core Notes</h2>
+						<time class="changelog-date" datetime="2026-03-25">March 25, 2026</time>
+					</div>
+					<ul>
+						<li>
+							Added extensive compiled subject guides: <code>Java EE.pdf</code> and <code>UNIX AND SHELL PROGRAMMING.pdf</code>.
+						</li>
+					</ul>
+				</article>
+
+				<article class="changelog-entry">
+					<div class="changelog-entry-head">
+						<h2>Project Genesis, CA1/CA2 Assignments &amp; Syllabus</h2>
+						<time class="changelog-date" datetime="2026-01-25">January 25 – February 21, 2026</time>
+					</div>
+					<ul>
+						<li>
+							<strong>Repository Creation:</strong> Initial project commit containing responsive web viewer, initial CSS, and <code>BCA Sixth Semester Syllabus.pdf</code>.
+						</li>
+						<li>
+							<strong>Continuous Assessments (CA1):</strong> Added submissions and answer guides:
+							<ul>
+								<li><code>Advanced Java.pdf</code></li>
+								<li><code>Computer Networking.pdf</code></li>
+								<li><code>UNIX and Shell Scripting.pdf</code></li>
+								<li><code>Career Planning and Management.pdf</code></li>
+								<li><code>Customer Relationship Management.pdf</code></li>
+							</ul>
+						</li>
+						<li>
+							<strong>Continuous Assessments (CA2):</strong> Added submissions:
+							<ul>
+								<li><code>Advanced Java with Web Application.pdf</code></li>
+								<li><code>Networking.pdf</code></li>
+								<li><code>UNIX and Shell Programming.pdf</code></li>
+								<li><code>Career Planning and Management.pdf</code></li>
+								<li><code>Customer Relationship Management.pdf</code></li>
+							</ul>
+						</li>
+						<li>
+							<strong>Pre-Continuous Assessment (PCA1):</strong> Added <code>PCA 1 with Answers (Please refer sir's questions).pdf</code>.
+						</li>
+						<li>
+							<strong>Seminar Presentations (.pptx):</strong> Added presentation decks for Advance Java, Career Planning, Networking, and CRM.
+						</li>
+						<li>
+							<strong>Automation:</strong> Introduced initial <code>generate.py</code> script to parse directory files into JSON for automated client-side rendering.
+						</li>
 					</ul>
 				</article>
 			</div>
@@ -156,7 +260,13 @@
 
 		<footer>
 			<div class="container">
-				<span class="footer-hosted">Hosted with ❤️ on GitHub Pages</span>
+				<div class="footer-meta">
+					<span class="footer-hosted">Hosted with ❤️ on GitHub Pages</span>
+					<span class="footer-sep">•</span>
+					<a class="footer-link" href="terms.html">Terms</a>
+					<span class="footer-sep">•</span>
+					<a class="footer-link" href="changelog.html">Changelog</a>
+				</div>
 				<a
 					class="footer-author"
 					href="https://amitendu.me"

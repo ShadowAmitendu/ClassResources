@@ -180,7 +180,13 @@
 
 		<footer>
 			<div class="container">
-				<span class="footer-hosted">Hosted with ❤️ on GitHub Pages</span>
+				<div class="footer-meta">
+					<span class="footer-hosted">Hosted with ❤️ on GitHub Pages</span>
+					<span class="footer-sep">•</span>
+					<a class="footer-link" href="terms.html">Terms</a>
+					<span class="footer-sep">•</span>
+					<a class="footer-link" href="changelog.html">Changelog</a>
+				</div>
 				<a
 					class="footer-author"
 					href="https://amitendu.me"
@@ -294,6 +300,38 @@
 			</section>`;
 			}
 
+			function renderNoticeBanner(sem, totalFiles) {
+				if (sem === "8th") {
+					return `<div class="card notice-banner notice-warning">
+					<span class="notice-icon">${icon("event_busy")}</span>
+					<div class="notice-body">
+						<h3>8th Semester Syllabus Not Available</h3>
+						<p>No syllabus has been given or announced by the university yet, so there is no way to curate or add 8th-semester resources at this time. Study materials will be added as soon as the official syllabus is published.</p>
+						<div class="notice-actions">
+							<a href="https://github.com/ShadowAmitendu/ClassResources/issues/new?template=resource-submission.yml" target="_blank" rel="noopener noreferrer" class="btn btn-outlined">
+								${icon("notifications")} Got syllabus updates? Let us know
+							</a>
+						</div>
+					</div>
+				</div>`;
+				}
+				if (totalFiles === 0) {
+					return `<div class="card notice-banner notice-info">
+					<span class="notice-icon">${icon("construction")}</span>
+					<div class="notice-body">
+						<h3>Resources in Preparation</h3>
+						<p>Content for ${sem} semester is going to be added later as files are collected, but without any guarantee of availability or specific timeline. Student contributions are always welcome!</p>
+						<div class="notice-actions">
+							<a href="https://github.com/ShadowAmitendu/ClassResources/issues/new?template=resource-submission.yml" target="_blank" rel="noopener noreferrer" class="btn btn-outlined">
+								${icon("upload_file")} Contribute resources
+							</a>
+						</div>
+					</div>
+				</div>`;
+				}
+				return "";
+			}
+
 			async function load(sem) {
 				main.innerHTML = SECTIONS.map(
 					() => `<div class="card skeleton"></div>`,
@@ -301,21 +339,22 @@
 				try {
 					const res = await fetch(`${FILES[sem]}?t=${Date.now()}`);
 					if (!res.ok) {
-						main.innerHTML =
-							sem === "8th"
-								? `<div class="card semester-placeholder">${icon("event_busy", "placeholder-icon")}<div><h3>Syllabus not announced yet</h3><p>8th-semester resources are not available. Please check back when the syllabus is published.</p></div></div>`
-								: `<div class="card semester-placeholder">${icon("construction", "placeholder-icon")}<div><h3>Resources in preparation</h3><p>${sem} semester resources are being added. Availability is not guaranteed while the collection is incomplete.</p></div></div>`;
+						main.innerHTML = renderNoticeBanner(sem, 0);
 						$("updated").textContent = "";
 						return;
 					}
 					const data = await res.json();
+					const totalFiles = SECTIONS.reduce(
+						(acc, s) => acc + flatten(data[s.id] || []).length,
+						0,
+					);
 
 					$("updated").textContent = data.metadata?.lastUpdated
 						? `Updated ${data.metadata.lastUpdated}`
 						: "";
-					main.innerHTML = SECTIONS.map((s) =>
-						renderSection(s, data[s.id] || []),
-					).join("");
+					main.innerHTML =
+						SECTIONS.map((s) => renderSection(s, data[s.id] || [])).join("") +
+						renderNoticeBanner(sem, totalFiles);
 					main._data = data;
 				} catch (e) {
 					console.error(e);

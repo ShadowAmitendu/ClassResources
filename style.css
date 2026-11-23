@@ -682,6 +682,103 @@ main {
 	}
 }
 
+/* ---------- Notice Banners ---------- */
+.notice-banner {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+	padding: 20px 24px;
+	margin-top: 16px;
+	border-left: 4px solid var(--primary);
+	background: var(--surface);
+}
+
+.notice-banner.notice-warning {
+	border-left-color: #f57c00;
+}
+
+.notice-banner.notice-info {
+	border-left-color: var(--primary);
+}
+
+.notice-icon {
+	flex: 0 0 auto;
+	font-size: 32px;
+	line-height: 1;
+	color: var(--primary);
+}
+
+.notice-warning .notice-icon {
+	color: #f57c00;
+}
+
+.notice-body h3 {
+	margin-bottom: 6px;
+	font-size: 1.0625rem;
+	font-weight: 500;
+	color: var(--text);
+}
+
+.notice-body p {
+	color: var(--text-2);
+	font-size: 0.875rem;
+	line-height: 1.6;
+}
+
+.notice-actions {
+	margin-top: 14px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.btn-outlined {
+	border: 1px solid var(--divider);
+	background: transparent;
+	color: var(--primary);
+	text-decoration: none;
+	font-weight: 500;
+	padding: 0 16px;
+	border-radius: var(--radius);
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 36px;
+	font-size: 0.8125rem;
+	transition: background-color var(--md2-duration-icon) var(--md2-easing-standard),
+		border-color var(--md2-duration-icon) var(--md2-easing-standard);
+}
+
+.btn-outlined:hover,
+.btn-outlined:focus-visible {
+	background: var(--primary-tint);
+	border-color: var(--primary);
+}
+
+.footer-meta {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	flex: 1;
+}
+
+.footer-sep {
+	color: var(--divider);
+	user-select: none;
+}
+
+.footer-link {
+	color: var(--text-2);
+	text-decoration: none;
+	transition: color var(--md2-duration-icon) var(--md2-easing-standard);
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+	color: var(--primary);
+	text-decoration: underline;
+}
+
 /* ---------- Footer ---------- */
 footer {
 	position: fixed;
@@ -892,18 +989,23 @@ footer .container {
 		padding: 6px 8px;
 	}
 
-	.footer-hosted {
-		display: block;
+	.footer-meta {
+		display: flex;
+		align-items: center;
+		gap: 6px;
 		overflow: hidden;
-		text-overflow: ellipsis;
 		white-space: nowrap;
+	}
+
+	.footer-hosted {
+		display: none;
 	}
 
 	.footer-author {
 		display: block;
 		min-width: 0;
 		overflow: hidden;
-		text-align: left;
+		text-align: center;
 		text-overflow: ellipsis;
 		white-space: nowrap;
 	}
