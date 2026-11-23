@@ -21,7 +21,7 @@
 			href="./favicon_io/favicon-16x16.png" />
 		<link rel="manifest" href="favicon_io/site.webmanifest" />
 
-		<link rel="stylesheet" href="style.css?v=2.0" />
+		<link rel="stylesheet" href="style.css?v=2.1" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -55,7 +55,7 @@
 					<div class="titles">
 						<h1>Class Resources</h1>
 					</div>
-					<p class="semester-count" id="subtitle">7th semester</p>
+					<p class="semester-count" id="subtitle">7TH SEMESTER</p>
 					<div class="toolbar-actions">
 						<a
 							class="icon-btn"
@@ -159,14 +159,14 @@
 				<div class="mobile-semester">
 					<label for="semester-select">Semester</label>
 					<select id="semester-select" aria-label="Select semester">
-						<option value="1st">1st Semester</option>
-						<option value="2nd">2nd Semester</option>
-						<option value="3rd">3rd Semester</option>
-						<option value="4th">4th Semester</option>
-						<option value="5th">5th Semester</option>
-						<option value="6th">6th Semester</option>
-						<option value="7th" selected>7th Semester</option>
-						<option value="8th">8th Semester</option>
+						<option value="1st">1ST SEMESTER</option>
+						<option value="2nd">2ND SEMESTER</option>
+						<option value="3rd">3RD SEMESTER</option>
+						<option value="4th">4TH SEMESTER</option>
+						<option value="5th">5TH SEMESTER</option>
+						<option value="6th">6TH SEMESTER</option>
+						<option value="7th" selected>7TH SEMESTER</option>
+						<option value="8th">8TH SEMESTER</option>
 					</select>
 				</div>
 			</div>
@@ -181,7 +181,7 @@
 		<footer>
 			<div class="container">
 				<div class="footer-meta">
-					<span class="footer-hosted">Hosted with ❤️ on GitHub Pages</span>
+					<span class="footer-hosted">GitHub Pages</span>
 					<span class="footer-sep">•</span>
 					<a class="footer-link" href="terms.html">Terms</a>
 					<span class="footer-sep">•</span>
@@ -320,7 +320,7 @@
 					<span class="notice-icon">${icon("construction")}</span>
 					<div class="notice-body">
 						<h3>Resources in Preparation</h3>
-						<p>Content for ${sem} semester is going to be added later as files are collected, but without any guarantee of availability or specific timeline. Student contributions are always welcome!</p>
+						<p>Content for ${sem.toUpperCase()} SEMESTER is going to be added later as files are collected, but without any guarantee of availability or specific timeline. Student contributions are always welcome!</p>
 						<div class="notice-actions">
 							<a href="https://github.com/ShadowAmitendu/ClassResources/issues/new?template=resource-submission.yml" target="_blank" rel="noopener noreferrer" class="btn btn-outlined">
 								${icon("upload_file")} Contribute resources
@@ -388,7 +388,7 @@
 					t.classList.toggle("active", on);
 					t.setAttribute("aria-selected", on);
 				});
-				$("subtitle").textContent = `${currentSem} semester`;
+				$("subtitle").textContent = `${currentSem} SEMESTER`.toUpperCase();
 				load(currentSem);
 			});
 
@@ -401,7 +401,7 @@
 						tab.classList.toggle("active", active);
 						tab.setAttribute("aria-selected", active);
 					});
-					$("subtitle").textContent = `${currentSem} semester`;
+					$("subtitle").textContent = `${currentSem} SEMESTER`.toUpperCase();
 					load(currentSem);
 				});
 
@@ -457,38 +457,49 @@
 				localStorage.setItem("theme", next);
 				syncThemeIcon();
 			}
-			themeBtn.addEventListener("click", () => {
+			themeBtn.addEventListener("click", (event) => {
 				const next =
 					document.documentElement.dataset.theme === "dark" ? "light" : "dark";
 				const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 				if (!document.startViewTransition || reduce) return setTheme(next);
 
-				// Circle expands from the toggle button
+				// Compute ripple origin at click coordinate or center of toggle button
 				const r = themeBtn.getBoundingClientRect();
-				const x = r.left + r.width / 2,
-					y = r.top + r.height / 2;
-				const radius = Math.hypot(
-					Math.max(x, innerWidth - x),
-					Math.max(y, innerHeight - y),
+				const x = event.clientX || r.left + r.width / 2;
+				const y = event.clientY || r.top + r.height / 2;
+				const maxRadius = Math.hypot(
+					Math.max(x, window.innerWidth - x),
+					Math.max(y, window.innerHeight - y),
 				);
 
-				document
-					.startViewTransition(() => setTheme(next))
-					.ready.then(() =>
-						document.documentElement.animate(
+				themeBtn.classList.add("theme-switching");
+
+				const transition = document.startViewTransition(() => {
+					setTheme(next);
+				});
+
+				transition.ready
+					.then(() => {
+						const anim = document.documentElement.animate(
 							{
 								clipPath: [
-									`circle(0 at ${x}px ${y}px)`,
-									`circle(${radius}px at ${x}px ${y}px)`,
+									`circle(0px at ${x}px ${y}px)`,
+									`circle(${maxRadius}px at ${x}px ${y}px)`,
 								],
 							},
 							{
-								duration: 300,
-								easing: "cubic-bezier(.4, 0, .2, 1)",
+								duration: 650,
+								easing: "cubic-bezier(0.16, 1, 0.3, 1)",
+								fill: "forwards",
 								pseudoElement: "::view-transition-new(root)",
 							},
-						),
-					);
+						);
+						return anim.finished;
+					})
+					.catch(() => {})
+					.finally(() => {
+						themeBtn.classList.remove("theme-switching");
+					});
 			});
 			syncThemeIcon();
 			load(currentSem);
