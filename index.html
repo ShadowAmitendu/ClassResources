@@ -1,461 +1,418 @@
 <!doctype html>
-<!--
-  ============================================================================
-  Class Resources - BCA 6th Semester
-  ============================================================================
-
-  A responsive web application for sharing and downloading class resources
-  including syllabus, lecture notes, and assignments.
-
-  Author: Amitendu Bikash Dhusiya
-  Features:
-    - Dynamic file listing from JSON
-    - Collapsible folder navigation
-    - Bulk download as ZIP
-    - Mobile-responsive design
-
-  Dependencies:
-    - JSZip (for creating ZIP archives)
-    - FileSaver.js (for triggering downloads)
-    - Font Awesome (icons)
-    - Google Fonts (Inter)
-  ============================================================================
--->
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Class Resources</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Class Resources</title>
 
-    <!-- Favicon Configuration - Various sizes for different devices -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="./favicon_io/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="./favicon_io/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="./favicon_io/favicon-16x16.png"
-    />
-    <link rel="manifest" href="favicon_io/site.webmanifest" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="./favicon_io/apple-touch-icon.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="./favicon_io/favicon-32x32.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="./favicon_io/favicon-16x16.png" />
+		<link rel="manifest" href="favicon_io/site.webmanifest" />
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap"
+			rel="stylesheet" />
 
-    <!-- Google Fonts - Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+		<script src="vendor/jszip.min.js"></script>
+		<script src="vendor/file-saver.min.js"></script>
 
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
+		<script>
+			document.documentElement.classList.add("app-loading");
+			// Set theme before paint to avoid a flash
+			(function () {
+				const saved = localStorage.getItem("theme");
+				const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+				document.documentElement.dataset.theme =
+					saved === "light" || saved === "dark"
+						? saved
+						: dark
+							? "dark"
+							: "light";
+			})();
+		</script>
+	</head>
+	<body>
+		<header class="app-bar">
+			<div class="container">
+				<div class="toolbar">
+					<div class="titles">
+						<h1>Class Resources</h1>
+					</div>
+					<p class="semester-count" id="subtitle">7th semester</p>
+					<div class="toolbar-actions">
+						<a
+							class="icon-btn"
+							href="changelog.html"
+							aria-label="Open changelog"
+							title="Changelog">
+							<span class="icon" aria-hidden="true">history</span>
+						</a>
+						<a
+							class="icon-btn"
+							href="https://github.com/ShadowAmitendu/ClassResources"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Open GitHub repository">
+							<span class="github-mark" aria-hidden="true">
+								<svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+									<path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.091-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.272.098-2.65 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0 1 12 6.344c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.338-.012 2.419-.012 2.747 0 .268.18.579.688.481A10.001 10.001 0 0 0 22 12c0-5.523-4.477-10-10-10Z"/>
+								</svg>
+							</span>
+						</a>
+						<button id="theme-toggle" class="icon-btn" aria-label="Toggle theme">
+							<span class="icon">dark_mode</span>
+						</button>
+					</div>
+				</div>
 
-    <!-- ZIP Download Dependencies -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+				<div class="tabs" role="tablist" aria-label="Semester">
+					<button
+						class="tab"
+						data-sem="1st"
+						role="tab"
+						aria-selected="false"
+						aria-controls="main-content">
+						<span class="icon">looks_one</span><span>1st</span>
+					</button>
+					<button
+						class="tab"
+						data-sem="2nd"
+						role="tab"
+						aria-selected="false"
+						aria-controls="main-content">
+						<span class="icon">looks_two</span><span>2nd</span>
+					</button>
+					<button class="tab" data-sem="3rd" role="tab" aria-selected="false" aria-controls="main-content"><span class="icon">looks_3</span><span>3rd</span></button>
+					<button class="tab" data-sem="4th" role="tab" aria-selected="false" aria-controls="main-content"><span class="icon">looks_4</span><span>4th</span></button>
+					<button class="tab" data-sem="5th" role="tab" aria-selected="false" aria-controls="main-content"><span class="icon">looks_5</span><span>5th</span></button>
+					<button class="tab" data-sem="6th" role="tab" aria-selected="false" aria-controls="main-content"><span class="icon">inventory_2</span><span>6th</span></button>
+					<button
+						class="tab active"
+						data-sem="7th"
+						role="tab"
+						aria-selected="true"
+						aria-controls="main-content">
+						<span class="icon">school</span><span>7th</span>
+					</button>
+					<button class="tab" data-sem="8th" role="tab" aria-selected="false" aria-controls="main-content"><span class="icon">event_busy</span><span>8th</span></button>
+				</div>
+				<div class="mobile-semester">
+					<label for="semester-select">Semester</label>
+					<select id="semester-select" aria-label="Select semester">
+						<option value="1st">1st Semester</option>
+						<option value="2nd">2nd Semester</option>
+						<option value="3rd">3rd Semester</option>
+						<option value="4th">4th Semester</option>
+						<option value="5th">5th Semester</option>
+						<option value="6th">6th Semester</option>
+						<option value="7th" selected>7th Semester</option>
+						<option value="8th">8th Semester</option>
+					</select>
+				</div>
+			</div>
+		</header>
 
-    <!-- Theme initialization script to prevent FOUC -->
-    <script>
-      (function () {
-        const savedTheme = localStorage.getItem("theme");
-        const prefersDark = window.matchMedia(
-          "(prefers-color-scheme: dark)",
-        ).matches;
-        if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-          document.documentElement.setAttribute("data-theme", "dark");
-        } else {
-          document.documentElement.setAttribute("data-theme", "light");
-        }
-      })();
-    </script>
-  </head>
-  <body>
-    <!-- ==================== HEADER SECTION ==================== -->
-    <!-- Fixed header with title and subtitle, stays visible on scroll -->
-    <header>
-      <div class="container">
-        <div class="header-content">
-          <div class="icon-box"><i class="fa-solid fa-graduation-cap"></i></div>
-          <div>
-            <h1>Class Resources</h1>
-            <p id="header-subtitle">
-              BCA - 7th Semester Notes, Assignments and syllabus
-            </p>
-          </div>
-          <button
-            id="theme-toggle"
-            class="theme-toggle"
-            aria-label="Toggle Dark Mode"
-          >
-            <i class="fa-solid fa-moon"></i>
-          </button>
-        </div>
+		<main
+			class="container"
+			id="main-content"
+			role="tabpanel"
+			aria-live="polite"></main>
 
-        <!-- Semester Navigation Tabs (Combined & Centered) -->
-        <div class="semester-tabs-wrapper">
-          <div class="semester-tabs">
-            <button
-              class="tab-btn active"
-              data-sem="7th"
-              onclick="switchSemester('7th')"
-            >
-              <i class="fa-solid fa-graduation-cap"></i> 7th Semester (Current)
-            </button>
-            <button
-              class="tab-btn"
-              data-sem="6th"
-              onclick="switchSemester('6th')"
-            >
-              <i class="fa-solid fa-box-archive"></i> 6th Semester (Completed)
-            </button>
-          </div>
-        </div>
-      </div>
-    </header>
-    
-    <!-- ==================== MAIN CONTENT ==================== -->
-    <!-- Dynamically populated with file sections via JavaScript -->
-    <main class="container" id="main-content"></main>
+		<footer>
+			<div class="container">
+				<span class="footer-hosted">Hosted with ❤️ on GitHub Pages</span>
+				<a class="footer-author" href="https://amitendu.me" target="_blank" rel="noopener noreferrer">
+					Amitendu Bikash Dhusiya
+				</a>
+				<span class="footer-updated" id="updated"></span>
+			</div>
+		</footer>
 
-    <!-- ==================== FOOTER SECTION ==================== -->
-    <!-- Fixed footer with hosting info and last updated timestamp -->
-    <footer>
-      <div class="container footer-content">
-        <p>Hosted with <i class="fa-solid fa-heart"></i> on GitHub Pages</p>
-        <p class="last-updated" id="last-updated-text">
-          <i class="fa-solid fa-circle-notch fa-spin"></i> Loading...
-        </p>
-      </div>
-    </footer>
+		<div class="snackbar" id="snackbar" role="status"></div>
 
-    <script>
-      /**
-       * ============================================================================
-       * CONFIGURATION
-       * ============================================================================
-       * Define the sections to display on the page.
-       * Each section corresponds to a folder in the project root.
-       *
-       * @property {string} id    - Folder name (must match actual folder name)
-       * @property {string} title - Display title shown in the UI
-       * @property {string} icon  - Font Awesome icon class (without 'fa-solid' prefix)
-       */
-      const SECTIONS = [
-        { id: "syllabus", title: "Syllabus", icon: "fa-book-open" },
-        { id: "notes", title: "Lecture Notes", icon: "fa-note-sticky" },
-        { id: "assignments", title: "Assignments", icon: "fa-folder-open" },
-      ];
+		<script>
+			const SECTIONS = [
+				{ id: "syllabus", title: "Syllabus", icon: "book_2" },
+				{ id: "notes", title: "Lecture notes", icon: "article" },
+				{ id: "assignments", title: "Assignments", icon: "assignment" },
+				{ id: "question-papers", title: "Question papers", icon: "quiz" },
+			];
+			const FILES = Object.fromEntries(
+				["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th"].map(
+					(semester) => [semester, `bca/data/${semester}.json`],
+				),
+			);
+			const EXT_ICONS = {
+				pdf: "picture_as_pdf",
+				doc: "description",
+				docx: "description",
+				xls: "table_view",
+				xlsx: "table_view",
+				ppt: "slideshow",
+				pptx: "slideshow",
+				zip: "archive",
+				rar: "archive",
+				"7z": "archive",
+				jpg: "image",
+				jpeg: "image",
+				png: "image",
+				gif: "image",
+				html: "code",
+				css: "code",
+				js: "code",
+				py: "code",
+				java: "code",
+				c: "code",
+				cpp: "code",
+			};
 
-      let currentSem = "7th";
+			let currentSem = "7th";
+			const $ = (id) => document.getElementById(id);
+			const main = $("main-content");
 
-      /**
-       * Returns the appropriate Font Awesome icon class based on file extension.
-       * Used to display visual indicators for different file types.
-       *
-       * @param {string} filename - The name of the file including extension
-       * @returns {string} Font Awesome icon class (e.g., 'fa-file-pdf')
-       */
-      function getFileIcon(filename) {
-        const ext = filename.split(".").pop().toLowerCase();
-        if (["pdf"].includes(ext)) return "fa-file-pdf";
-        if (["doc", "docx"].includes(ext)) return "fa-file-word";
-        if (["xls", "xlsx"].includes(ext)) return "fa-file-excel";
-        if (["ppt", "pptx"].includes(ext)) return "fa-file-powerpoint";
-        if (["zip", "rar", "7z"].includes(ext)) return "fa-file-zipper";
-        if (["jpg", "jpeg", "png", "gif"].includes(ext)) return "fa-file-image";
-        if (["html", "css", "js", "py", "java", "c", "cpp"].includes(ext))
-          return "fa-file-code";
-        return "fa-file";
-      }
+			const icon = (name, cls = "") =>
+				`<span class="icon ${cls}" aria-hidden="true">${name}</span>`;
+			const esc = (s) =>
+				String(s).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+			const iconFor = (name) =>
+				EXT_ICONS[name.split(".").pop().toLowerCase()] || "draft";
+			const flatten = (items) =>
+				items.flatMap((i) =>
+					i.type === "file" ? [i] : i.type === "dir" ? flatten(i.children) : [],
+				);
 
-      /**
-       * Switch active semester tab and reload files
-       * @param {string} sem - "7th" or "6th"
-       */
-      async function switchSemester(sem) {
-        if (currentSem === sem) return;
-        currentSem = sem;
+			function toast(msg) {
+				const el = $("snackbar");
+				el.textContent = msg;
+				el.classList.add("show");
+				clearTimeout(toast.t);
+				toast.t = setTimeout(() => el.classList.remove("show"), 3000);
+			}
 
-        // Update tab buttons state
-        document.querySelectorAll(".tab-btn").forEach((btn) => {
-          if (btn.dataset.sem === sem) {
-            btn.classList.add("active");
-          } else {
-            btn.classList.remove("active");
-          }
-        });
+			/* ---------- Rendering ---------- */
+			function renderItems(items) {
+				return items
+					.map((item) => {
+						if (item.type === "file") {
+							const ext = iconFor(item.name);
+							const safeUrl = esc(item.url);
+							return `<li><a class="row" href="${safeUrl}" target="_blank" rel="noopener noreferrer">
+						${icon(ext, "file-icon " + ext)}<span class="name">${esc(item.name)}</span>${icon("download", "muted")}
+					</a></li>`;
+						}
+						if (item.type === "dir") {
+							return `<li class="folder">
+						<button class="row folder-btn" aria-expanded="false">
+							${icon("folder", "muted folder-icon")}<span class="name">${esc(item.name)}</span>
+							<span class="badge">${flatten(item.children).length}</span>${icon("expand_more", "muted chevron")}
+						</button>
+						<div class="collapse"><ul>${renderItems(item.children)}</ul></div>
+					</li>`;
+						}
+						return "";
+					})
+					.join("");
+			}
 
-        // Update header subtitle
-        const subtitleEl = document.getElementById("header-subtitle");
-        if (subtitleEl) {
-          if (sem === "7th") {
-            subtitleEl.textContent =
-              "BCA - 7th Semester Notes, Assignments and syllabus";
-          } else {
-            subtitleEl.textContent =
-              "BCA - 6th Semester Notes, Assignments and syllabus";
-          }
-        }
+			function renderSection(s, items) {
+				const count = flatten(items).length;
+				return `<section class="card${count ? "" : " empty-card"}" data-section="${s.id}">
+				<div class="card-head">
+					<span class="avatar">${icon(s.icon)}</span>
+					<div class="grow"><h2>${s.title}</h2><span class="muted-text">${count} file${count === 1 ? "" : "s"}</span></div>
+					${count
+						? `<button class="btn download" data-id="${s.id}">${icon("download")}<span class="hide-sm">Download all</span></button>`
+						: `<span class="empty-status">${icon("inbox", "empty-status-icon")}<span>Nothing here yet</span></span>`
+					}
+				</div>
+				${
+					count || items.length
+						? `<ul class="list">${renderItems(items)}</ul>`
+						: ""
+				}
+			</section>`;
+			}
 
-        // Fetch & load semester data
-        await loadSemesterData(sem);
-      }
+			async function load(sem) {
+				main.innerHTML = SECTIONS.map(
+					() => `<div class="card skeleton"></div>`,
+				).join("");
+				try {
+					const res = await fetch(`${FILES[sem]}?t=${Date.now()}`);
+					if (!res.ok) {
+						main.innerHTML = sem === "8th"
+							? `<div class="card semester-placeholder">${icon("event_busy", "placeholder-icon")}<div><h3>Syllabus not announced yet</h3><p>8th-semester resources are not available. Please check back when the syllabus is published.</p></div></div>`
+							: `<div class="card semester-placeholder">${icon("construction", "placeholder-icon")}<div><h3>Resources in preparation</h3><p>${sem} semester resources are being added. Availability is not guaranteed while the collection is incomplete.</p></div></div>`;
+						$("updated").textContent = "";
+						return;
+					}
+					const data = await res.json();
 
-      /**
-       * ============================================================================
-       * INITIALIZATION & DATA LOADING
-       * ============================================================================
-       * Fetches file data for the active semester and builds the UI.
-       *
-       * @async
-       * @param {string} sem - Semester identifier ("7th" or "6th")
-       */
-      async function loadSemesterData(sem) {
-        const main = document.getElementById("main-content");
-        const dateEl = document.getElementById("last-updated-text");
+					$("updated").textContent = data.metadata?.lastUpdated
+						? `Updated ${data.metadata.lastUpdated}`
+						: "";
+					main.innerHTML = SECTIONS.map((s) =>
+						renderSection(s, data[s.id] || []),
+					).join("");
+					main._data = data;
+				} catch (e) {
+					console.error(e);
+					main.innerHTML = `<div class="card error">${icon("warning")}<h3>Error loading files</h3>
+					<p>Make sure you ran <b>generate.py</b> before uploading.</p></div>`;
+				}
+			}
 
-        /**
-         * Displays an error message in the main content area.
-         * @param {string} message - Error message to display
-         */
-        function showError(message) {
-          console.error(message);
-          main.innerHTML = `<div class="loading-state" style="color:#ef4444">
-        <i class="fa-solid fa-triangle-exclamation"></i>
-        <h3>Error loading files</h3>
-        <p>Make sure you ran <b>generate.py</b> before uploading.</p>
-      </div>`;
-        }
+			/* ---------- Events (delegated) ---------- */
+			main.addEventListener("click", (e) => {
+				const folder = e.target.closest(".folder-btn");
+				if (folder) {
+					const li = folder.parentElement;
+					const open = li.classList.toggle("open");
+					folder.setAttribute("aria-expanded", open);
+					folder.querySelector(".folder-icon").textContent = open
+						? "folder_open"
+						: "folder";
+					return;
+				}
+				const dl = e.target.closest(".download");
+				if (dl) downloadAll(dl);
+			});
 
-        const jsonFile = sem === "6th" ? "files_6th_sem.json" : "files.json";
+			document.querySelector(".tabs").addEventListener("click", (e) => {
+				const tab = e.target.closest(".tab");
+				if (!tab || tab.dataset.sem === currentSem) return;
+				currentSem = tab.dataset.sem;
+				document.querySelectorAll(".tab").forEach((t) => {
+					const on = t === tab;
+					t.classList.toggle("active", on);
+					t.setAttribute("aria-selected", on);
+				});
+				$("subtitle").textContent = `${currentSem} semester`;
+				load(currentSem);
+			});
 
-        try {
-          // Fetch the locally generated JSON for current semester
-          const response = await fetch(`${jsonFile}?t=` + new Date().getTime());
+			document.querySelector("#semester-select").addEventListener("change", (e) => {
+				currentSem = e.target.value;
+				document.querySelectorAll(".tab").forEach((tab) => {
+					const active = tab.dataset.sem === currentSem;
+					tab.classList.toggle("active", active);
+					tab.setAttribute("aria-selected", active);
+				});
+				$("subtitle").textContent = `${currentSem} semester`;
+				load(currentSem);
+			});
 
-          // Handle fetch failure
-          if (!response.ok) {
-            showError(`Could not find ${jsonFile}`);
-            return;
-          }
+			/* ---------- Bulk download ---------- */
+			async function downloadAll(btn) {
+				const id = btn.dataset.id;
+				const files = flatten(main._data[id] || []);
+				if (!files.length) return toast("Nothing to download");
 
-          const data = await response.json();
+				const original = btn.innerHTML;
+				btn.disabled = true;
+				btn.innerHTML = `${icon("sync", "spin")}<span class="hide-sm">Zipping…</span>`;
+				try {
+					const zip = new JSZip();
+					await Promise.all(
+						files.map(async (f) => {
+							try {
+								const blob = await (await fetch(f.path)).blob();
+								const parts = f.path.split("/");
+								const semesterIndex = parts.indexOf("semesters");
+								if (semesterIndex < 0) throw new Error("Invalid resource path");
+								const archivePath = parts.slice(semesterIndex + 2).join("/");
+								if (!archivePath) throw new Error("Invalid archive path");
+								zip.file(archivePath, blob);
+							} catch {
+								console.error("Skipped:", f.name);
+							}
+						}),
+					);
+					saveAs(
+						await zip.generateAsync({ type: "blob" }),
+						`${id}_${currentSem}_sem.zip`,
+					);
+					toast("Download ready");
+				} catch (e) {
+					console.error(e);
+					toast("Error zipping files");
+				}
+				btn.innerHTML = original;
+				btn.disabled = false;
+			}
 
-          // Step 1: Update the "Last Updated" timestamp in footer
-          if (data.metadata && data.metadata.lastUpdated) {
-            dateEl.innerHTML = `<i class="fa-regular fa-clock"></i> Last Updated on: ${data.metadata.lastUpdated}`;
-          } else {
-            dateEl.innerHTML = "";
-          }
+			/* ---------- Theme ---------- */
+			const themeBtn = $("theme-toggle");
+			const syncThemeIcon = () => {
+				themeBtn.firstElementChild.textContent =
+					document.documentElement.dataset.theme === "dark"
+						? "light_mode"
+						: "dark_mode";
+			};
+			function setTheme(next) {
+				document.documentElement.dataset.theme = next;
+				localStorage.setItem("theme", next);
+				syncThemeIcon();
+			}
+			themeBtn.addEventListener("click", () => {
+				const next =
+					document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+				const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+				if (!document.startViewTransition || reduce) return setTheme(next);
 
-          // Step 2: Build UI - Create section cards for each category
-          main.innerHTML = "";
+				// Circle expands from the toggle button
+				const r = themeBtn.getBoundingClientRect();
+				const x = r.left + r.width / 2,
+					y = r.top + r.height / 2;
+				const radius = Math.hypot(
+					Math.max(x, innerWidth - x),
+					Math.max(y, innerHeight - y),
+				);
 
-          SECTIONS.forEach((section) => {
-            // Create the main section card container
-            const sectionCard = document.createElement("section");
-            sectionCard.className = "category-card";
-
-            // Add card header with title and download button
-            sectionCard.innerHTML = `
-          <div class="card-header">
-            <div class="header-title">
-              <i class="fa-solid ${section.icon}"></i> <h2>${section.title}</h2>
-            </div>
-            <button class="download-btn" onclick="downloadAll('${section.id}')">
-              <i class="fa-solid fa-download"></i> Download All
-            </button>
-          </div>
-        `;
-
-            // Create the file list container
-            const ul = document.createElement("ul");
-            ul.className = "file-list";
-            ul.id = `list-${section.id}`;
-
-            const fileData = data[section.id] || [];
-
-            // Render files or show empty state message
-            if (fileData.length === 0) {
-              ul.innerHTML =
-                '<li class="status-msg">No files uploaded yet.</li>';
-            } else {
-              renderList(ul, fileData);
-            }
-
-            sectionCard.appendChild(ul);
-            main.appendChild(sectionCard);
-
-            // Store file data in DOM element for download functionality
-            ul.dataset.files = JSON.stringify(fileData);
-          });
-        } catch (error) {
-          // Display error state if JSON cannot be loaded
-          showError(error.message || "Unknown error occurred");
-        }
-      }
-
-      function init() {
-        loadSemesterData(currentSem);
-      }
-
-      /**
-       * ============================================================================
-       * FILE LIST RENDERING
-       * ============================================================================
-       * Recursively renders a list of files and directories into the DOM.
-       */
-      function renderList(container, items) {
-        items.forEach((item) => {
-          if (item.type === "file") {
-            const li = document.createElement("li");
-            li.className = "file-item";
-            const icon = getFileIcon(item.name);
-
-            li.innerHTML = `
-          <a href="${item.url}" target="_blank">
-            <div class="file-info"><i class="fa-regular ${icon} file-icon"></i><span>${item.name}</span></div>
-            <i class="fa-solid fa-download action-icon"></i>
-          </a>`;
-            container.appendChild(li);
-          } else if (item.type === "dir") {
-            const li = document.createElement("li");
-            li.className = "folder-group";
-
-            const header = document.createElement("div");
-            header.className = "folder-header";
-            header.innerHTML = `
-          <div class="folder-name"><i class="fa-regular fa-folder folder-icon"></i><span>${item.name}</span></div>
-          <i class="fa-solid fa-chevron-down chevron"></i>`;
-
-            header.onclick = () => li.classList.toggle("is-open");
-            li.appendChild(header);
-
-            const nestedUl = document.createElement("ul");
-            nestedUl.className = "nested-list";
-            li.appendChild(nestedUl);
-            container.appendChild(li);
-
-            renderList(nestedUl, item.children);
-          }
-        });
-      }
-
-      /**
-       * ============================================================================
-       * BULK DOWNLOAD FUNCTIONALITY
-       * ============================================================================
-       * Downloads all files in a section as a single ZIP archive.
-       */
-      async function downloadAll(sectionId) {
-        const listElement = document.getElementById(`list-${sectionId}`);
-        const btn = listElement.parentElement.querySelector(".download-btn");
-        const originalText = btn.innerHTML;
-
-        function flattenFiles(items) {
-          let files = [];
-          items.forEach((item) => {
-            if (item.type === "file") files.push(item);
-            if (item.type === "dir")
-              files = files.concat(flattenFiles(item.children));
-          });
-          return files;
-        }
-
-        try {
-          const data = JSON.parse(listElement.dataset.files);
-          const allFiles = flattenFiles(data);
-
-          if (allFiles.length === 0) {
-            alert("Nothing to download");
-            return;
-          }
-
-          btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin"></i> Zipping...`;
-          btn.disabled = true;
-
-          const zip = new JSZip();
-
-          const promises = allFiles.map(async (file) => {
-            try {
-              const response = await fetch(file.path);
-              const blob = await response.blob();
-
-              const parts = file.path.split("/");
-              const sliceIndex = parts[0] === "6th_sem" ? 2 : 1;
-              const zipPath = parts.slice(sliceIndex).join("/");
-              zip.file(zipPath, blob);
-            } catch (e) {
-              console.error("Failed to fetch, skipping:", file.name);
-            }
-          });
-
-          await Promise.all(promises);
-
-          const content = await zip.generateAsync({ type: "blob" });
-          saveAs(content, `${sectionId}_${currentSem}_sem.zip`);
-
-          btn.innerHTML = `<i class="fa-solid fa-check"></i> Done`;
-          setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.disabled = false;
-          }, 2000);
-        } catch (e) {
-          console.error(e);
-          alert("Error zipping files");
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-        }
-      }
-
-      // ============================================================================
-      // THEME TOGGLE FUNCTIONALITY
-      // ============================================================================
-      const themeToggleBtn = document.getElementById("theme-toggle");
-      const themeIcon = themeToggleBtn.querySelector("i");
-
-      function updateThemeUI(theme) {
-        if (theme === "dark") {
-          themeIcon.className = "fa-solid fa-sun";
-        } else {
-          themeIcon.className = "fa-solid fa-moon";
-        }
-      }
-
-      // Set initial icon state based on active theme
-      const currentTheme =
-        document.documentElement.getAttribute("data-theme") || "light";
-      updateThemeUI(currentTheme);
-
-      themeToggleBtn.addEventListener("click", () => {
-        const newTheme =
-          document.documentElement.getAttribute("data-theme") === "dark"
-            ? "light"
-            : "dark";
-        document.documentElement.setAttribute("data-theme", newTheme);
-        localStorage.setItem("theme", newTheme);
-        updateThemeUI(newTheme);
-      });
-
-      // ============================================================================
-      // APPLICATION ENTRY POINT
-      // ============================================================================
-      // Initialize the application when the script loads
-      init();
-    </script>
-  </body>
+				document
+					.startViewTransition(() => setTheme(next))
+					.ready.then(() =>
+						document.documentElement.animate(
+							{
+								clipPath: [
+									`circle(0 at ${x}px ${y}px)`,
+									`circle(${radius}px at ${x}px ${y}px)`,
+								],
+							},
+							{
+								duration: 300,
+								easing: "cubic-bezier(.4, 0, .2, 1)",
+								pseudoElement: "::view-transition-new(root)",
+							},
+						),
+					);
+			});
+			syncThemeIcon();
+			Promise.all([
+				document.fonts ? document.fonts.ready : Promise.resolve(),
+				load(currentSem),
+			]).finally(() => {
+				document.documentElement.classList.remove("app-loading");
+				document.body.classList.add("app-ready");
+			});
+		</script>
+	</body>
 </html>

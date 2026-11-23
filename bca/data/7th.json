@@ -1,0 +1,240 @@
+{
+  "metadata": {
+    "lastUpdated": "November 23, 2026"
+  },
+  "syllabus": [
+    {
+      "type": "file",
+      "name": "BCA(H) Seventh Semester Syllabus.pdf",
+      "path": "bca/semesters/7th/syllabus/BCA(H) Seventh Semester Syllabus.pdf",
+      "url": "bca/semesters/7th/syllabus/BCA(H) Seventh Semester Syllabus.pdf"
+    }
+  ],
+  "notes": [
+    {
+      "type": "dir",
+      "name": "1. Machine Learning",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/7th/notes/1. Machine Learning",
+      "children": [
+        {
+          "type": "dir",
+          "name": "Module wise Notes",
+          "path": "C:/Users/amite/Development/ClassResources/bca/semesters/7th/notes/1. Machine Learning/Module wise Notes",
+          "children": [
+            {
+              "type": "file",
+              "name": "ML Module 1.pdf",
+              "path": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 1.pdf",
+              "url": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "ML Module 2.pdf",
+              "path": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 2.pdf",
+              "url": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "ML Module 3.pdf",
+              "path": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 3.pdf",
+              "url": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "ML Module 4.pdf",
+              "path": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 4.pdf",
+              "url": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "ML Module 5.pdf",
+              "path": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 5.pdf",
+              "url": "bca/semesters/7th/notes/1. Machine Learning/Module wise Notes/ML Module 5.pdf"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "name": "Machine_Learning_Notes_04_08_2026.pdf",
+          "path": "bca/semesters/7th/notes/1. Machine Learning/Machine_Learning_Notes_04_08_2026.pdf",
+          "url": "bca/semesters/7th/notes/1. Machine Learning/Machine_Learning_Notes_04_08_2026.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Machine_Learning_Notes_05_08_2026.pdf",
+          "path": "bca/semesters/7th/notes/1. Machine Learning/Machine_Learning_Notes_05_08_2026.pdf",
+          "url": "bca/semesters/7th/notes/1. Machine Learning/Machine_Learning_Notes_05_08_2026.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "2. Research Methedology",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/7th/notes/2. Research Methedology",
+      "children": [
+        {
+          "type": "dir",
+          "name": "Module wise Compiled Notes",
+          "path": "C:/Users/amite/Development/ClassResources/bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes",
+          "children": [
+            {
+              "type": "file",
+              "name": "RM Module 1.pdf",
+              "path": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 1.pdf",
+              "url": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 2.pdf",
+              "path": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 2.pdf",
+              "url": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 3.pdf",
+              "path": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 3.pdf",
+              "url": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 4.pdf",
+              "path": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 4.pdf",
+              "url": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 5.pdf",
+              "path": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 5.pdf",
+              "url": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "RM Module 6.pdf",
+              "path": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 6.pdf",
+              "url": "bca/semesters/7th/notes/2. Research Methedology/Module wise Compiled Notes/RM Module 6.pdf"
+            }
+          ]
+        },
+        {
+          "type": "file",
+          "name": "Research_Methodology_Notes_05_08_2026.pdf",
+          "path": "bca/semesters/7th/notes/2. Research Methedology/Research_Methodology_Notes_05_08_2026.pdf",
+          "url": "bca/semesters/7th/notes/2. Research Methedology/Research_Methodology_Notes_05_08_2026.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "3. CyberSecurity",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/7th/notes/3. CyberSecurity",
+      "children": [
+        {
+          "type": "file",
+          "name": "Module 1.pdf",
+          "path": "bca/semesters/7th/notes/3. CyberSecurity/Module 1.pdf",
+          "url": "bca/semesters/7th/notes/3. CyberSecurity/Module 1.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 2.pdf",
+          "path": "bca/semesters/7th/notes/3. CyberSecurity/Module 2.pdf",
+          "url": "bca/semesters/7th/notes/3. CyberSecurity/Module 2.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 3.pdf",
+          "path": "bca/semesters/7th/notes/3. CyberSecurity/Module 3.pdf",
+          "url": "bca/semesters/7th/notes/3. CyberSecurity/Module 3.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 4.pdf",
+          "path": "bca/semesters/7th/notes/3. CyberSecurity/Module 4.pdf",
+          "url": "bca/semesters/7th/notes/3. CyberSecurity/Module 4.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Module 5.pdf",
+          "path": "bca/semesters/7th/notes/3. CyberSecurity/Module 5.pdf",
+          "url": "bca/semesters/7th/notes/3. CyberSecurity/Module 5.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "4. Consumer Behaviour",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/7th/notes/4. Consumer Behaviour",
+      "children": [
+        {
+          "type": "file",
+          "name": "CB Module 1.pdf",
+          "path": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 1.pdf",
+          "url": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 1.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 2.pdf",
+          "path": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 2.pdf",
+          "url": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 2.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 3.pdf",
+          "path": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 3.pdf",
+          "url": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 3.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 4.pdf",
+          "path": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 4.pdf",
+          "url": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 4.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 5.pdf",
+          "path": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 5.pdf",
+          "url": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 5.pdf"
+        },
+        {
+          "type": "file",
+          "name": "CB Module 6.pdf",
+          "path": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 6.pdf",
+          "url": "bca/semesters/7th/notes/4. Consumer Behaviour/CB Module 6.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "5. Strategic Management",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/7th/notes/5. Strategic Management",
+      "children": [
+        {
+          "type": "file",
+          "name": "SM All Modules.pdf",
+          "path": "bca/semesters/7th/notes/5. Strategic Management/SM All Modules.pdf",
+          "url": "bca/semesters/7th/notes/5. Strategic Management/SM All Modules.pdf"
+        },
+        {
+          "type": "file",
+          "name": "SM Module 1.pdf",
+          "path": "bca/semesters/7th/notes/5. Strategic Management/SM Module 1.pdf",
+          "url": "bca/semesters/7th/notes/5. Strategic Management/SM Module 1.pdf"
+        },
+        {
+          "type": "file",
+          "name": "strategic_management.pdf",
+          "path": "bca/semesters/7th/notes/5. Strategic Management/strategic_management.pdf",
+          "url": "bca/semesters/7th/notes/5. Strategic Management/strategic_management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Strategic_Management_Notes_04_08_2026.pdf",
+          "path": "bca/semesters/7th/notes/5. Strategic Management/Strategic_Management_Notes_04_08_2026.pdf",
+          "url": "bca/semesters/7th/notes/5. Strategic Management/Strategic_Management_Notes_04_08_2026.pdf"
+        }
+      ]
+    }
+  ],
+  "assignments": [],
+  "question-papers": []
+}

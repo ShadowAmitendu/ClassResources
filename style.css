@@ -1,567 +1,837 @@
-/**
- * ============================================================================
- * CLASS RESOURCES - STYLESHEET
- * ============================================================================
- *
- * A modern, responsive stylesheet for the Class Resources web application.
- * Features a clean design with collapsible folders, fixed header/footer,
- * and mobile-optimized layouts.
- *
- * Author: Amitendu Bikash Dhusiya
- * Project: Class Resources - BCA 6th Semester
- *
- * Table of Contents:
- * 1. CSS Variables (Theme Colors)
- * 2. Base Styles & Reset
- * 3. Layout Components (Header, Footer, Container)
- * 4. Category Cards
- * 5. File List & Items
- * 6. Collapsible Folders
- * 7. Status Messages
- * 8. Mobile Responsive Styles
- * ============================================================================
- */
-
-/* ==========================================================================
-   1. CSS VARIABLES - Theme Colors & Design Tokens
-   ========================================================================== */
+/* Material Design 2 — simple, responsive */
 :root {
-    /* Background Colors */
-    --bg-color: #F3F4F6;
-    --card-bg: #FFFFFF;
-    --folder-bg: #F9FAFB;
-    --folder-header-bg: #FAFAFA;
-    --folder-header-hover: #F3F4F6;
-    --nested-list-bg: #FFFFFF;
-
-    /* Text Colors */
-    --text-primary: #111827;
-    --text-secondary: #6B7280;
-
-    /* Accent Colors */
-    --accent-color: #4F46E5;
-    --accent-light: #E0E7FF;
-
-    /* Border & Dividers */
-    --border-color: #E5E7EB;
-
-    /* File Type Icon Colors */
-    --icon-pdf: #EF4444;      /* Red - PDF files */
-    --icon-word: #2563EB;     /* Blue - Word documents */
-    --icon-code: #10B981;     /* Green - Code files */
-    --icon-zip: #F59E0B;      /* Orange - Archive files */
-    --icon-default: #9CA3AF;  /* Gray - Unknown types */
-
-    /* Glassmorphism Headers/Footers */
-    --header-footer-bg: rgba(255, 255, 255, 0.95);
-
-    /* Button Colors */
-    --btn-bg: #FFFFFF;
+	--bg: #fafafa;
+	--surface: #fff;
+	--hover: rgba(0, 0, 0, 0.04);
+	--text: rgba(0, 0, 0, 0.87);
+	--text-2: rgba(0, 0, 0, 0.6);
+	--divider: rgba(0, 0, 0, 0.12);
+	--primary: #3f51b5;
+	--on-primary: #fff;
+	--primary-tint: rgba(63, 81, 181, 0.12);
+	--bar-bg: #3f51b5;
+	--bar-fg: #fff;
+	--bar-accent: #fff;
+	--bar-hover: rgba(255, 255, 255, 0.16);
+	--error: #b00020;
+	--shadow-1:
+		0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
+		0 1px 3px rgba(0, 0, 0, 0.12);
+	--shadow-4:
+		0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14),
+		0 1px 10px rgba(0, 0, 0, 0.12);
+	--radius: 4px;
+	--md2-duration-short: 100ms;
+	--md2-duration-icon: 150ms;
+	--md2-duration-small: 225ms;
+	--md2-duration-medium: 300ms;
+	--md2-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
+	--md2-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
+	--md2-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+	--md2-easing-sharp: cubic-bezier(0.4, 0, 0.6, 1);
+}
+[data-theme="dark"] {
+	--bg: #121212;
+	--surface: #1e1e1e;
+	--hover: rgba(255, 255, 255, 0.06);
+	--text: rgba(255, 255, 255, 0.87);
+	--text-2: rgba(255, 255, 255, 0.6);
+	--divider: rgba(255, 255, 255, 0.12);
+	--primary: #9fa8da;
+	--on-primary: #121212;
+	--primary-tint: rgba(159, 168, 218, 0.16);
+	--bar-bg: #272727; /* MD2 dark: surface + 4dp elevation overlay */
+	--bar-fg: rgba(255, 255, 255, 0.87);
+	--bar-accent: #9fa8da;
+	--bar-hover: rgba(255, 255, 255, 0.08);
+	--error: #cf6679;
 }
 
-:root[data-theme="dark"] {
-    /* Background Colors */
-    --bg-color: #0F172A;
-    --card-bg: #1E293B;
-    --folder-bg: #0F172A;
-    --folder-header-bg: #151E2E;
-    --folder-header-hover: #242F41;
-    --nested-list-bg: #1E293B;
-
-    /* Text Colors */
-    --text-primary: #F9FAFB;
-    --text-secondary: #9CA3AF;
-
-    /* Accent Colors */
-    --accent-color: #818CF8;
-    --accent-light: #312E81;
-
-    /* Border & Dividers */
-    --border-color: #334155;
-
-    /* File Type Icon Colors */
-    --icon-pdf: #F87171;
-    --icon-word: #60A5FA;
-    --icon-code: #34D399;
-    --icon-zip: #FBBF24;
-    --icon-default: #9CA3AF;
-
-    /* Glassmorphism Headers/Footers */
-    --header-footer-bg: rgba(15, 23, 42, 0.9);
-
-    /* Button Colors */
-    --btn-bg: #1E293B;
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
-
-/* ==========================================================================
-   2. BASE STYLES & CSS RESET
-   ========================================================================== */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
 html {
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-color) var(--bg-color);
+	color-scheme: light dark;
+	direction: rtl;
+	overflow-y: scroll;
+	scrollbar-gutter: stable;
+	scrollbar-width: thin;
+	scrollbar-color: var(--text-2) var(--bg);
 }
-
-/* Custom scrollbar styling for Webkit browsers (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
+body,
+.app-bar,
+.app-bar *,
+main,
+footer,
+footer * {
+	direction: ltr;
 }
-
-::-webkit-scrollbar-track {
-    background: var(--bg-color);
+html::-webkit-scrollbar {
+	width: 10px;
 }
-
-::-webkit-scrollbar-thumb {
-    background-color: var(--border-color);
-    border-radius: 4px;
-    border: 2px solid var(--bg-color);
+html::-webkit-scrollbar-track {
+	background: var(--bg);
 }
-
-::-webkit-scrollbar-thumb:hover {
-    background-color: var(--text-secondary);
+html::-webkit-scrollbar-thumb {
+	background: var(--text-2);
+	border: 2px solid var(--bg);
+	border-radius: 5px;
+}
+[data-theme="light"] {
+	color-scheme: light;
+}
+[data-theme="dark"] {
+	color-scheme: dark;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-primary);
-    -webkit-font-smoothing: antialiased;
-
-    /* Padding accounts for fixed header and footer */
-    padding-top: 200px;     /* Space for fixed header with tabs */
-    padding-bottom: 100px;  /* Space for fixed footer */
-
-    min-height: 100vh;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	padding-bottom: 48px;
+	background: var(--bg);
+	color: var(--text);
+	font:
+		400 1rem/1.5 "Roboto",
+		system-ui,
+		sans-serif;
+	-webkit-font-smoothing: antialiased;
+	transition:
+		background-color var(--md2-duration-medium) var(--md2-easing-decelerate),
+		color var(--md2-duration-medium) var(--md2-easing-decelerate);
+}
+.app-loading body {
+	visibility: hidden;
+}
+body.app-ready {
+	visibility: visible;
+}
+button {
+	font: inherit;
+	color: inherit;
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+ul {
+	list-style: none;
+}
+:focus-visible {
+	outline: 2px solid var(--primary);
+	outline-offset: -2px;
 }
 
-/* ==========================================================================
-   3. LAYOUT COMPONENTS
-   ========================================================================== */
-
-/* Container - Centered content wrapper */
-.container { max-width: 800px; margin: 0 auto; padding: 0 20px; }
-
-/* ---------- Fixed Header ---------- */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-
-    /* Frosted glass effect */
-    background: var(--header-footer-bg);
-    backdrop-filter: blur(10px);
-
-    border-bottom: 1px solid var(--border-color);
-    padding: 20px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    transition: all 0.3s ease;
+.container {
+	width: 100%;
+	max-width: 840px;
+	margin: 0 auto;
+	padding: 0 16px;
 }
 
-/* Header Content - Flex layout for icon and title */
-.header-content { display: flex; align-items: center; gap: 20px; }
-
-/* Icon Box - Styled container for graduation cap icon */
-.icon-box {
-    width: 50px; height: 50px;
-    background: var(--accent-light);
-    color: var(--accent-color);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.25rem;
-    transition: all 0.3s ease;
+/* Icons */
+.icon {
+	font-family: "Material Symbols Rounded";
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 1;
+	letter-spacing: normal;
+	text-transform: none;
+	white-space: nowrap;
+	direction: ltr;
+	display: inline-flex;
+	flex: none;
+	user-select: none;
+	font-feature-settings: "liga";
+}
+.spin {
+	animation: spin 1s var(--md2-easing-standard) infinite;
+}
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
 }
 
-/* Header Typography */
-header h1 { font-size: 1.5rem; font-weight: 700; transition: font-size 0.3s ease; }
-header p { color: var(--text-secondary); margin-top: 2px; font-size: 0.9rem; }
-
-/* ---------- Semester Tabs Navigation (Combined & Centered) ---------- */
-.semester-tabs-wrapper {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    margin-top: 15px;
-    padding-top: 12px;
-    border-top: 1px solid var(--border-color);
+/* ---------- App bar ---------- */
+.app-bar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	background: var(--bar-bg);
+	color: var(--bar-fg);
+	box-shadow: var(--shadow-4);
+	transition: background-color var(--md2-duration-medium) var(--md2-easing-decelerate);
+}
+.toolbar {
+	position: relative;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	min-height: 64px;
+}
+.toolbar-actions {
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	margin-left: auto;
+}
+.logo {
+	font-size: 28px;
+	color: var(--bar-accent);
+}
+.titles {
+	flex: 1;
+	min-width: 0;
+}
+.titles h1 {
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.3;
+	letter-spacing: 0.01em;
+}
+.semester-count {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-size: 0.875rem;
+	font-weight: 500;
+	white-space: nowrap;
+	opacity: 0.85;
 }
 
-.semester-tabs {
-    display: inline-flex;
-    background: var(--folder-bg);
-    border: 1px solid var(--border-color);
-    padding: 4px;
-    border-radius: 30px;
-    gap: 4px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+.icon-btn {
+	display: grid;
+	place-items: center;
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	color: var(--bar-fg);
+	text-decoration: none;
+	transition:
+		background-color var(--md2-duration-icon) var(--md2-easing-standard),
+		transform var(--md2-duration-short) var(--md2-easing-standard);
+}
+.icon-btn:hover,
+.icon-btn:focus-visible {
+	background: var(--bar-hover);
+}
+.github-mark {
+	display: grid;
+	width: 24px;
+	height: 24px;
+	place-items: center;
+	color: inherit;
 }
 
-.tab-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 22px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    font-family: inherit;
-    color: var(--text-secondary);
-    background: transparent;
-    border: none;
-    border-radius: 24px;
-    cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+/* Tabs */
+.tabs {
+	display: flex;
+	overflow-x: auto;
+	scrollbar-width: none;
+}
+.tabs::-webkit-scrollbar {
+	display: none;
+}
+.mobile-semester {
+	display: none;
+}
+.tab {
+	position: relative;
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-width: 0;
+	min-height: 48px;
+	padding: 0 12px;
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	white-space: nowrap;
+	opacity: 0.7;
+	transition:
+		opacity var(--md2-duration-icon) var(--md2-easing-standard),
+		background-color var(--md2-duration-icon) var(--md2-easing-standard);
+}
+.tab .icon {
+	font-size: 20px;
+}
+.tab:hover {
+	background: var(--bar-hover);
+	opacity: 1;
+}
+.tab.active {
+	color: var(--bar-accent);
+}
+.tab.active {
+	opacity: 1;
+}
+.tab::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 2px;
+	background: var(--bar-accent);
+	transform: scaleX(0);
+	transition: transform var(--md2-duration-small) var(--md2-easing-decelerate);
+}
+.tab.active::after {
+	transform: scaleX(1);
 }
 
-.tab-btn:hover {
-    color: var(--text-primary);
+/* ---------- Content ---------- */
+main {
+	flex: 1;
+	padding-bottom: 72px !important;
 }
 
-.tab-btn.active {
-    color: #ffffff;
-    background: var(--accent-color);
-    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.3);
+#main-content {
+	margin-top: 144px;
 }
 
-:root[data-theme="dark"] .tab-btn.active {
-    color: #ffffff;
-    box-shadow: 0 2px 10px rgba(129, 140, 248, 0.4);
+.card {
+	margin-bottom: 16px;
+	overflow: hidden;
+	background: var(--surface);
+	border-radius: var(--radius);
+	box-shadow: var(--shadow-1);
+	animation: fade var(--md2-duration-medium) var(--md2-easing-decelerate) both;
+}
+.semester-placeholder {
+	display: flex;
+	align-items: flex-start;
+	gap: 16px;
+	padding: 24px;
+}
+.semester-placeholder h3 {
+	margin-bottom: 4px;
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+.semester-placeholder p {
+	max-width: 560px;
+	color: var(--text-2);
+	font-size: 0.875rem;
+}
+.placeholder-icon {
+	flex: 0 0 auto;
+	color: var(--primary);
+	font-size: 32px;
 }
 
-/* ---------- Loading State ---------- */
-.loading-state { text-align: center; padding: 40px; color: var(--text-secondary); }
-
-/* ==========================================================================
-   4. CATEGORY CARDS
-   ========================================================================== */
-/* Category Card - Main container for each section */
-.category-card {
-    background: var(--card-bg);
-    border-radius: 16px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    margin-bottom: 30px;
-    border: 1px solid var(--border-color);
-    overflow: hidden;
+.changelog-main {
+	margin-top: 144px;
+	padding-bottom: 72px;
+}
+.changelog-header {
+	margin-bottom: 16px;
+}
+.changelog-header h1 {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
+.changelog-header p {
+	margin-top: 4px;
+	color: var(--text-2);
+}
+.changelog-list {
+	display: grid;
+	gap: 16px;
+}
+.changelog-entry {
+	padding: 20px;
+	border-radius: var(--radius);
+	background: var(--surface);
+	box-shadow: var(--shadow-1);
+	animation: fade var(--md2-duration-medium) var(--md2-easing-decelerate) both;
+}
+.changelog-entry-head {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 10px;
+}
+.changelog-entry h2 {
+	font-size: 1.125rem;
+	font-weight: 500;
+}
+.changelog-date {
+	flex: none;
+	color: var(--text-2);
+	font-size: 0.8125rem;
+}
+.changelog-entry ul {
+	display: grid;
+	gap: 6px;
+	padding-left: 20px;
+	list-style: disc;
+	color: var(--text-2);
+}
+@keyframes fade {
+	from {
+		opacity: 0;
+		transform: translateY(6px);
+	}
 }
 
-/* Card Header - Contains section title and download button */
-.card-header {
-    background: var(--card-bg);
-    padding: 16px 24px;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.card-head {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	padding: 16px;
+	border-bottom: 1px solid var(--divider);
+}
+.avatar {
+	display: grid;
+	place-items: center;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background: var(--primary);
+	color: var(--on-primary);
+}
+.grow {
+	flex: 1;
+	min-width: 0;
+}
+.card-head h2 {
+	font-size: 1.25rem;
+	font-weight: 500;
+	line-height: 1.3;
+}
+.muted-text {
+	font-size: 0.875rem;
+	color: var(--text-2);
 }
 
-/* Header Title - Icon + section name */
-.header-title {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+.empty-status {
+	display: inline-flex;
+	flex: none;
+	align-items: center;
+	gap: 6px;
+	min-height: 36px;
+	padding: 0 10px;
+	border: 1px solid var(--divider);
+	border-radius: var(--radius);
+	background: var(--hover);
+	color: var(--text-2);
+	font-size: 0.875rem;
+	white-space: nowrap;
+}
+.empty-status-icon {
+	font-size: 18px;
 }
 
-.header-title i { color: var(--accent-color); }
-.header-title h2 { font-size: 1.1rem; font-weight: 600; }
-
-/* ---------- Download All Button ---------- */
-.download-btn {
-    background-color: var(--btn-bg);
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    white-space: nowrap;  /* Prevent text wrapping */
+.btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	min-height: 36px;
+	padding: 0 16px;
+	border-radius: var(--radius);
+	background: var(--primary);
+	color: var(--on-primary);
+	font-size: 0.875rem;
+	font-weight: 500;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	box-shadow: var(--shadow-1);
+	transition:
+		background-color var(--md2-duration-icon) var(--md2-easing-standard),
+		box-shadow var(--md2-duration-icon) var(--md2-easing-standard),
+		transform var(--md2-duration-short) var(--md2-easing-standard);
+}
+.btn .icon {
+	font-size: 18px;
+}
+.btn:hover,
+.btn:focus-visible {
+	background: var(--primary);
+	box-shadow: var(--shadow-4);
+}
+.btn:active {
+	box-shadow: var(--shadow-1);
+	transform: translateY(1px);
+}
+.btn:disabled {
+	opacity: 0.6;
+	cursor: progress;
 }
 
-/* Download Button Hover State */
-.download-btn:hover {
-    background-color: var(--folder-bg);
-    color: var(--accent-color);
-    border-color: var(--accent-color);
+/* ---------- Lists ---------- */
+.row {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	width: 100%;
+	min-height: 56px;
+	padding: 8px 16px;
+	color: inherit;
+	text-decoration: none;
+	text-align: left;
+	transition: background-color var(--md2-duration-icon) var(--md2-easing-standard);
+}
+.row:hover,
+.row:focus-visible {
+	background: var(--hover);
+}
+.name {
+	flex: 1;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-size: 0.9375rem;
+}
+.muted {
+	color: var(--text-2);
+}
+.row:hover .muted {
+	color: var(--primary);
 }
 
-/* Download Button Disabled State (during zipping) */
-.download-btn:disabled { opacity: 0.7; cursor: not-allowed; }
-
-/* ==========================================================================
-   5. FILE LIST & ITEMS
-   ========================================================================== */
-.file-list { list-style: none; }
-
-/* Individual File Item */
-.file-item { border-bottom: 1px solid var(--border-color); }
-.file-item:last-child { border-bottom: none; }
-
-/* File Item Link - Clickable area */
-.file-item a {
-    display: flex; justify-content: space-between; align-items: center;
-    text-decoration: none; padding: 16px 24px;
-    transition: background 0.2s ease; color: var(--text-primary);
-}
-.file-item a:hover { background-color: var(--folder-bg); }
-
-/* File Info - Icon and name container */
-.file-info {
-    display: flex; align-items: center; gap: 12px;
-    overflow: hidden;  /* Prevent overflow on long names */
-}
-.file-info span {
-    font-weight: 500; font-size: 0.95rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;  /* Truncate long file names with ... */
-    max-width: 90%;
+.list > li + li,
+.collapse li + li {
+	border-top: 1px solid var(--divider);
 }
 
-/* ---------- File Type Icons ---------- */
-.file-icon { font-size: 1.2rem; width: 24px; text-align: center; flex-shrink: 0; }
-
-/* Icon Colors by File Type */
-.fa-file-pdf { color: var(--icon-pdf); }
-.fa-file-word { color: var(--icon-word); }
-.fa-file-code { color: var(--icon-code); }
-.fa-file-zipper { color: var(--icon-zip); }
-.fa-file { color: var(--icon-default); }
-
-/* Download Action Icon - Always visible */
-.action-icon {
-    color: var(--text-secondary);
-    opacity: 1;
-    transition: color 0.2s ease;
-    flex-shrink: 0;
+.file-icon.picture_as_pdf {
+	color: #e53935;
 }
-.file-item a:hover .action-icon {
-    color: var(--accent-color);
+.file-icon.description {
+	color: #1e88e5;
 }
-
-/* ==========================================================================
-   6. COLLAPSIBLE FOLDERS
-   ========================================================================== */
-/* Folder Group Container */
-.folder-group { border-bottom: 1px solid var(--border-color); }
-
-/* Folder Header - Clickable area to toggle folder */
-.folder-header {
-    background-color: var(--folder-header-bg);
-    padding: 14px 24px;
-    cursor: pointer;
-    user-select: none;
-    display: flex; justify-content: space-between; align-items: center;
-    transition: background 0.2s;
+.file-icon.table_view {
+	color: #43a047;
 }
-.folder-header:hover { background-color: var(--folder-header-hover); }
-
-/* Folder Name - Icon and label */
-.folder-name {
-    display: flex; align-items: center; gap: 10px;
-    font-weight: 600; color: var(--text-secondary); font-size: 0.9rem;
+.file-icon.slideshow {
+	color: #fb8c00;
+}
+.file-icon.archive {
+	color: #f9a825;
+}
+.file-icon.image {
+	color: #8e24aa;
+}
+.file-icon.code {
+	color: #00897b;
+}
+.file-icon.draft {
+	color: var(--text-2);
 }
 
-/* Folder Icon - Transition for color change */
-.folder-icon { transition: color 0.2s ease; }
-
-/* ---------- Chevron Toggle Animation ---------- */
-/* Arrow points down when closed, rotates up (-180deg) when open */
+/* Folders */
+.folder-btn {
+	font-weight: 500;
+	background: var(--hover);
+}
+.folder-btn:hover {
+	background: var(--divider);
+}
+.badge {
+	min-width: 24px;
+	padding: 0 8px;
+	border-radius: 12px;
+	background: var(--surface);
+	color: var(--text-2);
+	font-size: 0.75rem;
+	line-height: 24px;
+	text-align: center;
+}
 .chevron {
-    font-size: 0.8rem;
-    color: #9CA3AF;
-    transition: transform 0.3s ease, color 0.2s ease;
+	transition: transform var(--md2-duration-small) var(--md2-easing-decelerate);
+}
+.folder.open > .folder-btn .chevron {
+	transform: rotate(180deg);
+}
+.folder.open > .folder-btn .folder-icon {
+	color: var(--primary);
 }
 
-/* Rotate chevron when folder is open (down → up) */
-/* Using direct child combinator (>) to only affect the folder's own header, not nested folders */
-.folder-group.is-open > .folder-header .chevron {
-    transform: rotate(-180deg);
-    color: var(--accent-color);
+.collapse {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows var(--md2-duration-small) var(--md2-easing-decelerate);
+}
+.collapse > ul {
+	min-height: 0;
+	overflow: hidden;
+	border-top: 0;
+}
+.folder.open > .collapse {
+	grid-template-rows: 1fr;
+}
+.collapse .row {
+	padding-left: 40px;
+}
+.collapse .collapse .row {
+	padding-left: 64px;
 }
 
-/* Folder header styling when open */
-/* Using direct child combinator (>) to only affect the folder's own header */
-.folder-group.is-open > .folder-header {
-    background-color: var(--folder-header-hover);
-    color: var(--text-primary);
+/* ---------- States ---------- */
+.empty {
+	padding: 32px 16px;
+	text-align: center;
+	color: var(--text-2);
+	font-size: 0.875rem;
+}
+.error {
+	padding: 40px 16px;
+	text-align: center;
+	color: var(--error);
+}
+.error .icon {
+	font-size: 40px;
+}
+.error h3 {
+	margin: 8px 0 4px;
+	font-size: 1.25rem;
+	font-weight: 500;
+	color: var(--text);
+}
+.error p {
+	color: var(--text-2);
+	font-size: 0.875rem;
 }
 
-/* Folder icon color change when open */
-.folder-group.is-open > .folder-header .folder-icon {
-    color: var(--accent-color);
+.skeleton {
+	height: 140px;
+	background: linear-gradient(
+			90deg,
+			var(--surface) 25%,
+			var(--hover) 50%,
+			var(--surface) 75%
+		)
+		0 0 / 200% 100%;
+	animation: shimmer var(--md2-duration-medium) var(--md2-easing-standard) infinite;
+}
+@keyframes shimmer {
+	to {
+		background-position: -200% 0;
+	}
 }
 
-/* ---------- Nested File List ---------- */
-.nested-list {
-    list-style: none;
-    display: none;  /* Hidden by default */
-    background: var(--nested-list-bg);
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
-}
-
-/* Show nested list when folder is open */
-.folder-group.is-open > .nested-list { display: block; }
-
-/* Indentation for nested items (visual hierarchy) */
-.nested-list .file-item a, .nested-list .folder-header { padding-left: 48px; }
-.nested-list .nested-list .file-item a { padding-left: 72px; }
-
-/* ==========================================================================
-   7. STATUS MESSAGES
-   ========================================================================== */
-/* Status Message - Empty state or error messages */
-.status-msg { padding: 24px; text-align: center; color: var(--text-secondary); font-style: italic; font-size: 0.9rem; }
-.status-msg.error { color: var(--icon-pdf); }
-
-/* ---------- Fixed Footer ---------- */
+/* ---------- Footer ---------- */
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-
-    /* Frosted glass effect (matches header) */
-    background-color: var(--header-footer-bg);
-    backdrop-filter: blur(10px);
-
-    border-top: 1px solid var(--border-color);
-    padding: 15px 0;
-    box-shadow: 0 -4px 10px rgba(0,0,0,0.02);
-    z-index: 1000;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 20;
+	width: 100%;
+	border-top: 1px solid var(--divider);
+	background: var(--surface);
+}
+footer .container {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	min-height: 48px;
+	font-size: 0.75rem;
+	color: var(--text-2);
+}
+.footer-hosted,
+.footer-author,
+.footer-updated {
+	flex: 1;
+}
+.footer-hosted {
+	text-align: left;
+}
+.footer-author {
+	text-align: center;
+}
+.footer-updated {
+	text-align: right;
+}
+.footer-author {
+	color: inherit;
+	text-decoration: none;
+}
+.footer-author:hover,
+.footer-author:focus-visible {
+	color: var(--primary);
+	text-decoration: underline;
+	text-underline-offset: 3px;
 }
 
-/* Footer Content Layout */
-.footer-content { display: flex; justify-content: space-between; align-items: center; }
-footer p { color: var(--text-secondary); font-size: 0.85rem; font-weight: 500; }
-footer i { color: #f43f5e; margin: 0 2px; }  /* Heart icon color */
-
-/* Last Updated Badge */
-.last-updated {
-    background-color: var(--bg-color);
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
+/* ---------- Radial theme transition ---------- */
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation: none;
+	mix-blend-mode: normal;
+}
+::view-transition-old(root) {
+	z-index: 1;
+}
+::view-transition-new(root) {
+	z-index: 2;
 }
 
-/* ---------- Theme Toggle Button ---------- */
-.theme-toggle {
-    margin-left: auto;
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: all 0.2s ease;
+/* ---------- Snackbar ---------- */
+.snackbar {
+	position: fixed;
+	left: 50%;
+	bottom: 24px;
+	z-index: 20;
+	max-width: calc(100% - 32px);
+	padding: 14px 16px;
+	border-radius: var(--radius);
+	background: #323232;
+	color: #fff;
+	font-size: 0.875rem;
+	box-shadow: var(--shadow-4);
+	opacity: 0;
+	transform: translate(-50%, 16px);
+	pointer-events: none;
+	transition:
+		opacity var(--md2-duration-icon) var(--md2-easing-decelerate),
+		transform var(--md2-duration-small) var(--md2-easing-decelerate);
+}
+.snackbar.show {
+	opacity: 1;
+	transform: translate(-50%, 0);
 }
 
-.theme-toggle:hover {
-    background-color: var(--folder-bg);
-    color: var(--accent-color);
-    border-color: var(--accent-color);
-}
-
-/* ==========================================================================
-   8. MOBILE RESPONSIVE STYLES
-   ========================================================================== */
+/* ---------- Responsive ---------- */
 @media (max-width: 600px) {
+	.hide-sm {
+		display: none;
+	}
+	.container {
+		padding: 0 8px;
+	}
+	.toolbar {
+		min-height: 56px;
+		gap: 12px;
+		padding: 0 8px;
+	}
+	.semester-count {
+		display: none;
+	}
+	.tab {
+		letter-spacing: 0.04em;
+		padding: 0 8px;
+	}
+	.tabs {
+		display: none;
+	}
+	.mobile-semester {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		min-height: 48px;
+		padding: 6px 8px 8px;
+		border-top: 1px solid var(--bar-hover);
+	}
+	.mobile-semester label {
+		font-size: 0.875rem;
+		font-weight: 500;
+		white-space: nowrap;
+	}
+	.mobile-semester select {
+		min-width: 160px;
+		min-height: 40px;
+		padding: 0 36px 0 12px;
+		border: 1px solid var(--bar-hover);
+		border-radius: var(--radius);
+		background: var(--bar-bg);
+		color: var(--bar-fg);
+		font: inherit;
+	}
+	#main-content {
+		margin-top: 124px;
+	}
+	.changelog-main {
+		margin-top: 124px;
+	}
+	.changelog-entry {
+		padding: 16px;
+	}
+	.changelog-entry-head {
+		display: grid;
+		gap: 4px;
+	}
+	.card {
+		margin-bottom: 12px;
+	}
+	.card-head {
+		padding: 12px;
+		gap: 12px;
+	}
+	.empty-card .card-head {
+		gap: 8px;
+	}
+	.empty-status {
+		min-height: 32px;
+		padding: 0 8px;
+		font-size: 0.8125rem;
+	}
+	.btn {
+		min-width: 40px;
+		padding: 0 8px;
+		justify-content: center;
+	}
+	.row {
+		padding: 8px 12px;
+		gap: 12px;
+	}
+	.collapse .row {
+		padding-left: 28px;
+	}
+	.collapse .collapse .row {
+		padding-left: 44px;
+	}
+	footer .container {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+		gap: 8px;
+		min-height: 48px;
+		padding: 6px 8px;
+	}
+	.footer-hosted {
+		display: block;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.footer-author {
+		display: block;
+		min-width: 0;
+		overflow: hidden;
+		text-align: left;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	.footer-updated {
+		max-width: 52%;
+		overflow: hidden;
+		text-align: right;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+}
 
-    /* ---------- Body Adjustments ---------- */
-    /* Reduced padding for smaller fixed header/footer on mobile */
-    body {
-        padding-top: 160px;
-        padding-bottom: 90px;
-    }
+@media (min-width: 1200px) {
+	.container {
+		max-width: 920px;
+	}
+}
 
-    /* ---------- Compact Header ---------- */
-    header { padding: 12px 0; }
-
-    .icon-box {
-        width: 40px; height: 40px;
-        font-size: 1rem;
-        border-radius: 10px;
-    }
-
-    header h1 { font-size: 1.25rem; }
-    header p { display: none; }  /* Hide subtitle to save space */
-
-    .theme-toggle {
-        width: 36px;
-        height: 36px;
-        font-size: 0.95rem;
-    }
-
-    .semester-tabs-wrapper {
-        margin-top: 10px;
-        padding-top: 8px;
-    }
-
-    .semester-tabs {
-        width: 100%;
-        max-width: 360px;
-        padding: 3px;
-        border-radius: 24px;
-        gap: 3px;
-    }
-
-    .tab-btn {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-        flex: 1;
-        justify-content: center;
-        border-radius: 20px;
-    }
-
-    /* ---------- Compact Footer ---------- */
-    .footer-content {
-        flex-direction: column;
-        gap: 5px;
-    }
-    footer p { font-size: 0.75rem; }
-
-    /* ---------- Card Adjustments ---------- */
-    .category-card { margin-bottom: 20px; }
-
-    .card-header {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
-        padding: 15px;
-    }
-
-    /* Full-width download button on mobile */
-    .download-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 10px;  /* Larger touch target */
-    }
-
-    /* ---------- Compact File Lists ---------- */
-    .file-item a { padding: 14px 15px; }
-    .folder-header { padding: 14px 15px; }
-
-    /* Reduced indentation for nested items on mobile */
-    .nested-list .file-item a, .nested-list .folder-header { padding-left: 30px; }
-    .nested-list .nested-list .file-item a { padding-left: 45px; }
-
-    /* Always show download icon on mobile (no hover on touch devices) */
-    .action-icon {
-        opacity: 1;
-        color: var(--text-secondary);
-    }
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition-duration: 0.01ms !important;
+	}
 }

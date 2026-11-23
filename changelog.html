@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Changelog - Class Resources</title>
+		<script>
+			document.documentElement.classList.add("app-loading");
+		</script>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="favicon_io/favicon-32x32.png" />
+		<link rel="stylesheet" href="style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+			rel="stylesheet" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0&display=swap"
+			rel="stylesheet" />
+		<script>
+			(function () {
+				const saved = localStorage.getItem("theme");
+				const dark = matchMedia("(prefers-color-scheme: dark)").matches;
+				document.documentElement.dataset.theme =
+					saved === "light" || saved === "dark"
+						? saved
+						: dark
+							? "dark"
+							: "light";
+			})();
+		</script>
+	</head>
+	<body>
+		<header class="app-bar">
+			<div class="container">
+				<div class="toolbar">
+					<div class="titles">
+						<h1>Changelog</h1>
+					</div>
+					<p class="semester-count">Class Resources</p>
+					<div class="toolbar-actions">
+						<a
+							class="icon-btn"
+							href="index.html"
+							aria-label="Back to resources"
+							title="Back to resources">
+							<span class="icon" aria-hidden="true">arrow_back</span>
+						</a>
+						<button
+							id="theme-toggle"
+							class="icon-btn"
+							aria-label="Toggle theme">
+							<span class="icon" aria-hidden="true">dark_mode</span>
+						</button>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="container changelog-main">
+			<div class="changelog-header">
+				<h1>Website updates</h1>
+				<p>
+					Recent improvements to resources, navigation, and the site experience.
+				</p>
+			</div>
+
+			<div class="changelog-list">
+				<article class="changelog-entry">
+					<div class="changelog-entry-head">
+						<h2>Organized semester content</h2>
+						<time class="changelog-date" datetime="2026-11-23"
+							>November 23, 2026</time
+						>
+					</div>
+					<ul>
+						<li>
+							Moved resources under the BCA semester and category folder
+							structure.
+						</li>
+						<li>
+							Added question-papers support and automatic semester JSON
+							generation.
+						</li>
+						<li>Added 1st through 8th semester navigation.</li>
+					</ul>
+				</article>
+
+				<article class="changelog-entry">
+					<div class="changelog-entry-head">
+						<h2>Material 2 interface refresh</h2>
+						<time class="changelog-date" datetime="2026-11-23"
+							>November 23, 2026</time
+						>
+					</div>
+					<ul>
+						<li>Updated cards, buttons, icons, theme colors, and motion.</li>
+						<li>Added a fixed app bar and footer for consistent navigation.</li>
+						<li>
+							Added a mobile semester dropdown and circular theme transition.
+						</li>
+					</ul>
+				</article>
+
+				<article class="changelog-entry">
+					<div class="changelog-entry-head">
+						<h2>Submission tools</h2>
+						<time class="changelog-date" datetime="2026-11-23"
+							>November 23, 2026</time
+						>
+					</div>
+					<ul>
+						<li>Added a pull request template for resource submissions.</li>
+						<li>
+							Added a GitHub issue form for question papers and class resources.
+						</li>
+						<li>
+							Added direct links to the GitHub repository and author website.
+						</li>
+					</ul>
+				</article>
+
+				<article class="changelog-entry">
+					<div class="changelog-entry-head">
+						<h2>Resource updates</h2>
+						<time class="changelog-date" datetime="2026-10-31"
+							>October 31, 2026</time
+						>
+					</div>
+					<ul>
+						<li>
+							Added Strategic Management, Consumer Behaviour, CyberSecurity, and
+							machine learning resources.
+						</li>
+						<li>Updated file indexes and 6th/7th semester metadata.</li>
+					</ul>
+				</article>
+
+				<article class="changelog-entry">
+					<div class="changelog-entry-head">
+						<h2>Earlier semester additions</h2>
+						<time class="changelog-date" datetime="2026-08-04"
+							>August 4, 2026</time
+						>
+					</div>
+					<ul>
+						<li>
+							Added Strategic Management and the seventh-semester syllabus.
+						</li>
+						<li>Updated semester directory structures and resource indexes.</li>
+					</ul>
+				</article>
+			</div>
+		</main>
+
+		<footer>
+			<div class="container">
+				<span class="footer-hosted">Hosted with ❤️ on GitHub Pages</span>
+				<a
+					class="footer-author"
+					href="https://amitendu.me"
+					target="_blank"
+					rel="noopener noreferrer">
+					Amitendu Bikash Dhusiya
+				</a>
+				<span class="footer-updated">Class Resources</span>
+			</div>
+		</footer>
+
+		<script>
+			const themeToggle = document.getElementById("theme-toggle");
+			const themeIcon = themeToggle.querySelector(".icon");
+
+			function syncTheme() {
+				const dark = document.documentElement.dataset.theme === "dark";
+				themeIcon.textContent = dark ? "light_mode" : "dark_mode";
+			}
+
+			themeToggle.addEventListener("click", () => {
+				const next =
+					document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+				document.documentElement.dataset.theme = next;
+				localStorage.setItem("theme", next);
+				syncTheme();
+				Promise.resolve(
+					document.fonts ? document.fonts.ready : undefined,
+				).finally(() => {
+					document.documentElement.classList.remove("app-loading");
+					document.body.classList.add("app-ready");
+				});
+			});
+
+			syncTheme();
+		</script>
+	</body>
+</html>

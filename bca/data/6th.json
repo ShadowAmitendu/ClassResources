@@ -1,0 +1,422 @@
+{
+  "metadata": {
+    "lastUpdated": "November 23, 2026"
+  },
+  "syllabus": [
+    {
+      "type": "file",
+      "name": "BCA Sixth Semester Syllabus.pdf",
+      "path": "bca/semesters/6th/syllabus/BCA Sixth Semester Syllabus.pdf",
+      "url": "bca/semesters/6th/syllabus/BCA Sixth Semester Syllabus.pdf"
+    }
+  ],
+  "notes": [
+    {
+      "type": "dir",
+      "name": "Exam Notes",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Exam Notes",
+      "children": [
+        {
+          "type": "dir",
+          "name": "CPM",
+          "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Exam Notes/CPM",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/CPM/Module 1.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/CPM/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/CPM/Module 2.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/CPM/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/CPM/Module 3.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/CPM/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/CPM/Module 4.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/CPM/Module 4.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "CRM",
+          "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Exam Notes/CRM",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/CRM/Module 1.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/CRM/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/CRM/Module 2.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/CRM/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/CRM/Module 3.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/CRM/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/CRM/Module 4.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/CRM/Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 5.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/CRM/Module 5.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/CRM/Module 5.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "Java EE",
+          "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Exam Notes/Java EE",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 1.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 2.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 3.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 4.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 5.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 5.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 6.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 6.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Java EE/Module 6.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "Networking",
+          "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Exam Notes/Networking",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Networking/Module 1.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Networking/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Networking/Module 2.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Networking/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Networking/Module 3.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Networking/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Networking/Module 4.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Networking/Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 5.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Networking/Module 5.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Networking/Module 5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 6.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Networking/Module 6.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Networking/Module 6.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 7.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/Networking/Module 7.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/Networking/Module 7.pdf"
+            }
+          ]
+        },
+        {
+          "type": "dir",
+          "name": "UNIX",
+          "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Exam Notes/UNIX",
+          "children": [
+            {
+              "type": "file",
+              "name": "Module 1.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 1.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 1.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 2.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 2.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 2.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 3.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 3.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 3.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 4.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 4.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 4.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 5.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 5.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 5.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 6.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 6.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 6.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 7.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 7.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 7.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Module 8.pdf",
+              "path": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 8.pdf",
+              "url": "bca/semesters/6th/notes/Exam Notes/UNIX/Module 8.pdf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "Extras",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Extras",
+      "children": [
+        {
+          "type": "file",
+          "name": "Networking_Acronyms_Short_Notes.pdf",
+          "path": "bca/semesters/6th/notes/Extras/Networking_Acronyms_Short_Notes.pdf",
+          "url": "bca/semesters/6th/notes/Extras/Networking_Acronyms_Short_Notes.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "Major Subjects",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Major Subjects",
+      "children": [
+        {
+          "type": "file",
+          "name": "Advance Java with Web Application.pdf",
+          "path": "bca/semesters/6th/notes/Major Subjects/Advance Java with Web Application.pdf",
+          "url": "bca/semesters/6th/notes/Major Subjects/Advance Java with Web Application.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Networking.pdf",
+          "path": "bca/semesters/6th/notes/Major Subjects/Networking.pdf",
+          "url": "bca/semesters/6th/notes/Major Subjects/Networking.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX and Shell Programming.pdf",
+          "path": "bca/semesters/6th/notes/Major Subjects/UNIX and Shell Programming.pdf",
+          "url": "bca/semesters/6th/notes/Major Subjects/UNIX and Shell Programming.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "Minor Subjects",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Minor Subjects",
+      "children": [
+        {
+          "type": "dir",
+          "name": "Marketing",
+          "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/notes/Minor Subjects/Marketing",
+          "children": [
+            {
+              "type": "file",
+              "name": "Career Planning and Management.pdf",
+              "path": "bca/semesters/6th/notes/Minor Subjects/Marketing/Career Planning and Management.pdf",
+              "url": "bca/semesters/6th/notes/Minor Subjects/Marketing/Career Planning and Management.pdf"
+            },
+            {
+              "type": "file",
+              "name": "Customer Relationship Management.pdf",
+              "path": "bca/semesters/6th/notes/Minor Subjects/Marketing/Customer Relationship Management.pdf",
+              "url": "bca/semesters/6th/notes/Minor Subjects/Marketing/Customer Relationship Management.pdf"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "assignments": [
+    {
+      "type": "dir",
+      "name": "CA1",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/assignments/CA1",
+      "children": [
+        {
+          "type": "file",
+          "name": "Advanced Java.pdf",
+          "path": "bca/semesters/6th/assignments/CA1/Advanced Java.pdf",
+          "url": "bca/semesters/6th/assignments/CA1/Advanced Java.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Career Planning and Management.pdf",
+          "path": "bca/semesters/6th/assignments/CA1/Career Planning and Management.pdf",
+          "url": "bca/semesters/6th/assignments/CA1/Career Planning and Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Computer Networking.pdf",
+          "path": "bca/semesters/6th/assignments/CA1/Computer Networking.pdf",
+          "url": "bca/semesters/6th/assignments/CA1/Computer Networking.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Customer Relationship Management.pdf",
+          "path": "bca/semesters/6th/assignments/CA1/Customer Relationship Management.pdf",
+          "url": "bca/semesters/6th/assignments/CA1/Customer Relationship Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX and Shell Scripting.pdf",
+          "path": "bca/semesters/6th/assignments/CA1/UNIX and Shell Scripting.pdf",
+          "url": "bca/semesters/6th/assignments/CA1/UNIX and Shell Scripting.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "CA2",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/assignments/CA2",
+      "children": [
+        {
+          "type": "file",
+          "name": "Advanced Java with Web Application.pdf",
+          "path": "bca/semesters/6th/assignments/CA2/Advanced Java with Web Application.pdf",
+          "url": "bca/semesters/6th/assignments/CA2/Advanced Java with Web Application.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Career Planning and Management.pdf",
+          "path": "bca/semesters/6th/assignments/CA2/Career Planning and Management.pdf",
+          "url": "bca/semesters/6th/assignments/CA2/Career Planning and Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Customer Relationship Management.pdf",
+          "path": "bca/semesters/6th/assignments/CA2/Customer Relationship Management.pdf",
+          "url": "bca/semesters/6th/assignments/CA2/Customer Relationship Management.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Networking.pdf",
+          "path": "bca/semesters/6th/assignments/CA2/Networking.pdf",
+          "url": "bca/semesters/6th/assignments/CA2/Networking.pdf"
+        },
+        {
+          "type": "file",
+          "name": "UNIX and Shell Programming.pdf",
+          "path": "bca/semesters/6th/assignments/CA2/UNIX and Shell Programming.pdf",
+          "url": "bca/semesters/6th/assignments/CA2/UNIX and Shell Programming.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "PCA1",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/assignments/PCA1",
+      "children": [
+        {
+          "type": "file",
+          "name": "PCA 1 with Answers (Please refer sir's questions).pdf",
+          "path": "bca/semesters/6th/assignments/PCA1/PCA 1 with Answers (Please refer sir's questions).pdf",
+          "url": "bca/semesters/6th/assignments/PCA1/PCA 1 with Answers (Please refer sir's questions).pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "Presentations",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/6th/assignments/Presentations",
+      "children": [
+        {
+          "type": "file",
+          "name": "Advance Java with Web Application.pptx",
+          "path": "bca/semesters/6th/assignments/Presentations/Advance Java with Web Application.pptx",
+          "url": "bca/semesters/6th/assignments/Presentations/Advance Java with Web Application.pptx"
+        },
+        {
+          "type": "file",
+          "name": "Career Planning and Management.pptx",
+          "path": "bca/semesters/6th/assignments/Presentations/Career Planning and Management.pptx",
+          "url": "bca/semesters/6th/assignments/Presentations/Career Planning and Management.pptx"
+        },
+        {
+          "type": "file",
+          "name": "Computer Networking.pptx",
+          "path": "bca/semesters/6th/assignments/Presentations/Computer Networking.pptx",
+          "url": "bca/semesters/6th/assignments/Presentations/Computer Networking.pptx"
+        },
+        {
+          "type": "file",
+          "name": "Customer Relationship Management.pptx",
+          "path": "bca/semesters/6th/assignments/Presentations/Customer Relationship Management.pptx",
+          "url": "bca/semesters/6th/assignments/Presentations/Customer Relationship Management.pptx"
+        }
+      ]
+    }
+  ],
+  "question-papers": []
+}

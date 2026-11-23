@@ -1,0 +1,48 @@
+name: Resource submission
+description: Submit question papers or other class resources
+title: "[Resource] "
+labels:
+  - resource-submission
+body:
+  - type: dropdown
+    id: semester
+    attributes:
+      label: Semester
+      options:
+        - 1st
+        - 2nd
+        - 3rd
+        - 4th
+        - 5th
+        - 6th
+        - 7th
+        - 8th
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: Resource category
+      options:
+        - Syllabus
+        - Lecture notes
+        - Assignments
+        - Question papers
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: subject
+    attributes:
+      label: Subject
+      placeholder: e.g. Machine Learning
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Resource details
+      description: Link or describe the files you want to submit.
+      placeholder: Include file names, year, and whether they are question papers or notes.
+    validations:
+      required: true
