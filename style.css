@@ -177,6 +177,10 @@ ul {
 	min-height: 64px;
 }
 
+.toolbar > .icon-btn:first-child {
+	margin-left: -12px;
+}
+
 .toolbar-actions {
 	display: flex;
 	align-items: center;
@@ -1025,6 +1029,10 @@ footer .container {
 		min-height: 56px;
 		gap: 12px;
 		padding: 0 8px;
+	}
+
+	.toolbar > .icon-btn:first-child {
+		margin-left: -8px;
 	}
 
 	.semester-count {
