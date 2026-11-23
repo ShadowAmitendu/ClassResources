@@ -14,7 +14,7 @@
 	--bar-accent: #fff;
 	--bar-hover: rgba(255, 255, 255, 0.16);
 	--error: #b00020;
-	--tree-line: rgba(0, 0, 0, 0.16);
+	--tree-line: rgba(0, 0, 0, 0.24);
 	--shadow-1:
 		0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
 		0 1px 3px rgba(0, 0, 0, 0.12);
@@ -48,7 +48,7 @@
 	--bar-accent: #9fa8da;
 	--bar-hover: rgba(255, 255, 255, 0.08);
 	--error: #cf6679;
-	--tree-line: rgba(255, 255, 255, 0.18);
+	--tree-line: rgba(255, 255, 255, 0.3);
 }
 
 * {
@@ -656,8 +656,8 @@ main {
 	content: "";
 	position: absolute;
 	top: 28px;
-	left: 27px;
-	width: 9px;
+	left: 28px;
+	width: 12px;
 	height: 1px;
 	background: var(--tree-line);
 	pointer-events: none;
@@ -670,7 +670,7 @@ main {
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: 27px;
+	left: 28px;
 	width: 1px;
 	background: var(--tree-line);
 	pointer-events: none;
@@ -685,12 +685,12 @@ main {
 
 /* Level 2 tree guides */
 .collapse .collapse>ul>li::before {
-	left: 51px;
-	width: 9px;
+	left: 52px;
+	width: 12px;
 }
 
 .collapse .collapse>ul>li::after {
-	left: 51px;
+	left: 52px;
 }
 
 .collapse .collapse>ul>li:last-child::after {
@@ -700,12 +700,12 @@ main {
 
 /* Level 3 tree guides */
 .collapse .collapse .collapse>ul>li::before {
-	left: 75px;
-	width: 9px;
+	left: 76px;
+	width: 12px;
 }
 
 .collapse .collapse .collapse>ul>li::after {
-	left: 75px;
+	left: 76px;
 }
 
 .collapse .collapse .collapse>ul>li:last-child::after {
@@ -1127,30 +1127,30 @@ footer .container {
 	}
 
 	.collapse>ul>li::before {
-		left: 21px;
+		left: 24px;
 		width: 8px;
 	}
 
 	.collapse>ul>li::after {
-		left: 21px;
+		left: 24px;
 	}
 
 	.collapse .collapse>ul>li::before {
-		left: 41px;
+		left: 44px;
 		width: 8px;
 	}
 
 	.collapse .collapse>ul>li::after {
-		left: 41px;
+		left: 44px;
 	}
 
 	.collapse .collapse .collapse>ul>li::before {
-		left: 61px;
+		left: 64px;
 		width: 8px;
 	}
 
 	.collapse .collapse .collapse>ul>li::after {
-		left: 61px;
+		left: 64px;
 	}
 
 	footer {

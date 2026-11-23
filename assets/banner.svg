@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0e1320" />
+      <stop offset="50%" stop-color="#141a2e" />
+      <stop offset="100%" stop-color="#1a1c2e" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7986cb" />
+      <stop offset="50%" stop-color="#9fa8da" />
+      <stop offset="100%" stop-color="#c5cae9" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3f51b5" />
+      <stop offset="100%" stop-color="#1a237e" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="24" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="420" fill="url(#bg)" />
+
+  <!-- Subtle Grid Accent -->
+  <g stroke="rgba(255, 255, 255, 0.03)" stroke-width="1">
+    <line x1="0" y1="70" x2="1200" y2="70" />
+    <line x1="0" y1="140" x2="1200" y2="140" />
+    <line x1="0" y1="210" x2="1200" y2="210" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="0" y1="350" x2="1200" y2="350" />
+    <line x1="150" y1="0" x2="150" y2="420" />
+    <line x1="300" y1="0" x2="300" y2="420" />
+    <line x1="450" y1="0" x2="450" y2="420" />
+    <line x1="600" y1="0" x2="600" y2="420" />
+    <line x1="750" y1="0" x2="750" y2="420" />
+    <line x1="900" y1="0" x2="900" y2="420" />
+    <line x1="1050" y1="0" x2="1050" y2="420" />
+  </g>
+
+  <!-- Glowing background orbs -->
+  <circle cx="200" cy="120" r="140" fill="#3f51b5" opacity="0.18" filter="url(#glow)" />
+  <circle cx="1020" cy="300" r="160" fill="#7986cb" opacity="0.12" filter="url(#glow)" />
+
+  <!-- Decorative Graduation Cap Icon Accent -->
+  <g transform="translate(100, 150)" opacity="0.9">
+    <rect width="72" height="72" rx="16" fill="url(#accentGrad)" />
+    <!-- Cap Path -->
+    <path d="M36 18 L16 28 L36 38 L56 28 Z" fill="#ffffff" />
+    <path d="M22 35.5 L22 46 C22 51.5 36 55 36 55 C36 55 50 51.5 50 46 L50 35.5 L36 42.5 Z" fill="#c5cae9" />
+    <path d="M52 30 L52 48" stroke="#ffffff" stroke-width="2" stroke-linecap="round" />
+    <circle cx="52" cy="49" r="2.5" fill="#ffffff" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(196, 175)">
+    <!-- Pill Badge -->
+    <rect x="0" y="-32" width="170" height="26" rx="13" fill="rgba(159, 168, 218, 0.12)" stroke="rgba(159, 168, 218, 0.3)" stroke-width="1" />
+    <text x="14" y="-15" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#9fa8da" letter-spacing="1.5">ACADEMIC HUB</text>
+
+    <!-- Main Title -->
+    <text x="0" y="28" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="44" font-weight="700" fill="url(#primaryGrad)" letter-spacing="-0.5">
+      Class Resources
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="62" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="400" fill="#a0aec0" letter-spacing="0.2">
+      Curated BCA syllabus, lecture notes, continuous assessments &amp; exam papers
+    </text>
+
+    <!-- Feature Tags -->
+    <g transform="translate(0, 96)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">
+      <rect x="0" y="0" width="105" height="28" rx="6" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" />
+      <text x="12" y="18" fill="#e2e8f0">📚 1st–8th Sem</text>
+
+      <rect x="117" y="0" width="112" height="28" rx="6" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" />
+      <text x="129" y="18" fill="#e2e8f0">⚡ 1-Click ZIP</text>
+
+      <rect x="241" y="0" width="104" height="28" rx="6" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" />
+      <text x="253" y="18" fill="#e2e8f0">🌓 Dark Mode</text>
+
+      <rect x="357" y="0" width="110" height="28" rx="6" fill="rgba(255, 255, 255, 0.05)" stroke="rgba(255, 255, 255, 0.1)" />
+      <text x="369" y="18" fill="#e2e8f0">📂 File Explorer</text>
+    </g>
+  </g>
+
+  <!-- Bottom Accent Line -->
+  <rect x="0" y="416" width="1200" height="4" fill="url(#primaryGrad)" />
+</svg>
