@@ -36,7 +36,7 @@ Every semester is organized into a clean folder tree explorer powered by modern 
 
 - 📁 **File Explorer Tree View:** Interactive nested folders with real-time guide lines (`│`, `├──`, `└──`) inspired by modern code editors and desktop file explorers.
 - 📦 **1-Click Bulk ZIP Downloads:** Download entire subjects or whole categories (Notes, Question Papers, Assignments) simultaneously via client-side [JSZip](https://stuk.github.io/jszip/) without server strain.
-- 🌓 **Radial Dark Mode Transition:** Silky-smooth exponential bloom theme toggle matching the View Transitions API and CSS clip-path fallbacks.
+- 🌓 **Radial Dark Mode & Material 3 Palette:** Silky-smooth exponential bloom theme toggle matching the View Transitions API with expressive Material Design 3 (Material You) tonal palettes.
 - 📱 **Mobile Optimized:** Full-featured responsive layout with adaptive semester switcher dropdown, native touch targets, and sticky frosted-glass header/footer.
 - ⚡ **Zero Backend Overhead:** Pure HTML5, CSS3, and Vanilla JavaScript hosted entirely on GitHub Pages with automated Python-driven JSON indexing.
 - 🛡️ **Built-in Disclaimers & Empty State Banners:** Clear university syllabus notices (including 8th-semester syllabus advisories) and community submission banners.

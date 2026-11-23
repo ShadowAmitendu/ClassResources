@@ -1,54 +1,111 @@
-/* Material Design 2 — simple, responsive */
+/* Material Design 3 (Material You) — Expressive Indigo Tonal Palette */
 :root {
-	--bg: #fafafa;
-	--surface: #fff;
-	--hover: rgba(0, 0, 0, 0.04);
-	--text: rgba(0, 0, 0, 0.87);
-	--text-2: rgba(0, 0, 0, 0.6);
-	--divider: rgba(0, 0, 0, 0.12);
-	--primary: #3f51b5;
-	--on-primary: #fff;
-	--primary-tint: rgba(63, 81, 181, 0.12);
-	--bar-bg: #3f51b5;
-	--bar-fg: #fff;
-	--bar-accent: #fff;
-	--bar-hover: rgba(255, 255, 255, 0.16);
-	--error: #b00020;
-	--tree-line: rgba(0, 0, 0, 0.24);
-	--shadow-1:
-		0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px rgba(0, 0, 0, 0.14),
-		0 1px 3px rgba(0, 0, 0, 0.12);
-	--shadow-4:
-		0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.14),
-		0 1px 10px rgba(0, 0, 0, 0.12);
-	--radius: 4px;
+	/* M3 Light Tonal Palette */
+	--md-sys-color-primary: #4355b9;
+	--md-sys-color-on-primary: #ffffff;
+	--md-sys-color-primary-container: #dee0ff;
+	--md-sys-color-on-primary-container: #00105c;
+	--md-sys-color-secondary: #5b5d72;
+	--md-sys-color-secondary-container: #e0e1f9;
+	--md-sys-color-surface: #ffffff;
+	--md-sys-color-surface-variant: #e3e1ec;
+	--md-sys-color-surface-container: #efecf4;
+	--md-sys-color-background: #f8f9ff;
+	--md-sys-color-on-surface: #1a1b21;
+	--md-sys-color-on-surface-variant: #45464f;
+	--md-sys-color-outline: #767680;
+	--md-sys-color-outline-variant: #c7c5d0;
+	--md-sys-color-error: #ba1a1a;
+	--md-sys-color-error-container: #ffdad6;
+
+	/* App Core Mappings */
+	--bg: #f8f9ff;
+	--surface: #ffffff;
+	--surface-variant: #f0edf6;
+	--hover: rgba(67, 85, 185, 0.06);
+	--text: #1a1b21;
+	--text-2: #45464f;
+	--divider: #e2e1ec;
+	--primary: #4355b9;
+	--on-primary: #ffffff;
+	--primary-container: #dee0ff;
+	--on-primary-container: #00105c;
+	--primary-tint: rgba(67, 85, 185, 0.12);
+	--bar-bg: #4355b9;
+	--bar-fg: #ffffff;
+	--bar-accent: #dee0ff;
+	--bar-hover: rgba(255, 255, 255, 0.14);
+	--error: #ba1a1a;
+	--tree-line: rgba(69, 70, 79, 0.28);
+
+	/* M3 Shadows & Elevation */
+	--shadow-1: 0 1px 3px 1px rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+	--shadow-2: 0 2px 6px 2px rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.04);
+	--shadow-4: 0 4px 12px 3px rgba(0, 0, 0, 0.1), 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+	/* M3 Shapes */
+	--radius-sm: 8px;
+	--radius: 14px;
+	--radius-lg: 18px;
+	--radius-full: 9999px;
+
+	/* M3 Motion & Transitions */
+	--md3-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+	--md3-easing-emphasized: cubic-bezier(0.2, 0, 0, 1);
+	--md3-easing-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
 	--md2-duration-short: 100ms;
 	--md2-duration-icon: 150ms;
 	--md2-duration-small: 225ms;
 	--md2-duration-medium: 300ms;
-	--md2-easing-standard: cubic-bezier(0.4, 0, 0.2, 1);
-	--md2-easing-decelerate: cubic-bezier(0, 0, 0.2, 1);
-	--md2-easing-accelerate: cubic-bezier(0.4, 0, 1, 1);
+	--md2-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+	--md2-easing-decelerate: cubic-bezier(0.05, 0.7, 0.1, 1);
+	--md2-easing-accelerate: cubic-bezier(0.3, 0, 1, 1);
 	--md2-easing-sharp: cubic-bezier(0.4, 0, 0.6, 1);
 }
 
 [data-theme="dark"] {
-	--bg: #121212;
-	--surface: #1e1e1e;
-	--hover: rgba(255, 255, 255, 0.06);
-	--text: rgba(255, 255, 255, 0.87);
-	--text-2: rgba(255, 255, 255, 0.6);
-	--divider: rgba(255, 255, 255, 0.12);
-	--primary: #9fa8da;
-	--on-primary: #121212;
-	--primary-tint: rgba(159, 168, 218, 0.16);
-	--bar-bg: #272727;
-	/* MD2 dark: surface + 4dp elevation overlay */
-	--bar-fg: rgba(255, 255, 255, 0.87);
-	--bar-accent: #9fa8da;
+	/* M3 Dark Tonal Palette */
+	--md-sys-color-primary: #bac3ff;
+	--md-sys-color-on-primary: #0c238b;
+	--md-sys-color-primary-container: #2a3c9f;
+	--md-sys-color-on-primary-container: #dee0ff;
+	--md-sys-color-secondary: #c4c5dd;
+	--md-sys-color-secondary-container: #434559;
+	--md-sys-color-surface: #1b1b22;
+	--md-sys-color-surface-variant: #282932;
+	--md-sys-color-surface-container: #1f1f26;
+	--md-sys-color-background: #111318;
+	--md-sys-color-on-surface: #e4e1e9;
+	--md-sys-color-on-surface-variant: #c6c5d0;
+	--md-sys-color-outline: #90909a;
+	--md-sys-color-outline-variant: #46464f;
+	--md-sys-color-error: #ffb4ab;
+	--md-sys-color-error-container: #93000a;
+
+	/* App Core Mappings */
+	--bg: #111318;
+	--surface: #1b1b22;
+	--surface-variant: #282932;
+	--hover: rgba(186, 195, 255, 0.08);
+	--text: #e4e1e9;
+	--text-2: #c6c5d0;
+	--divider: rgba(198, 197, 208, 0.14);
+	--primary: #bac3ff;
+	--on-primary: #0c238b;
+	--primary-container: #2a3c9f;
+	--on-primary-container: #dee0ff;
+	--primary-tint: rgba(186, 195, 255, 0.16);
+	--bar-bg: #191a20;
+	--bar-fg: #e4e1e9;
+	--bar-accent: #bac3ff;
 	--bar-hover: rgba(255, 255, 255, 0.08);
-	--error: #cf6679;
-	--tree-line: rgba(255, 255, 255, 0.3);
+	--error: #ffb4ab;
+	--tree-line: rgba(186, 195, 255, 0.32);
+
+	/* M3 Dark Shadows */
+	--shadow-1: 0 1px 3px 1px rgba(0, 0, 0, 0.32), 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+	--shadow-2: 0 2px 6px 2px rgba(0, 0, 0, 0.36), 0 1px 2px 0 rgba(0, 0, 0, 0.22);
+	--shadow-4: 0 4px 12px 3px rgba(0, 0, 0, 0.45), 0 2px 4px 0 rgba(0, 0, 0, 0.28);
 }
 
 * {
@@ -302,7 +359,8 @@ ul {
 	left: 0;
 	right: 0;
 	bottom: 0;
-	height: 2px;
+	height: 3px;
+	border-radius: 3px 3px 0 0;
 	background: var(--bar-accent);
 	transform: scaleX(0);
 	transition: transform var(--md2-duration-small) var(--md2-easing-decelerate);
@@ -327,6 +385,7 @@ main {
 	overflow: hidden;
 	background: var(--surface);
 	border-radius: var(--radius);
+	border: 1px solid var(--divider);
 	box-shadow: var(--shadow-1);
 	animation: fade var(--md2-duration-medium) var(--md2-easing-decelerate) both;
 }
@@ -383,6 +442,7 @@ main {
 .changelog-entry {
 	padding: 20px;
 	border-radius: var(--radius);
+	border: 1px solid var(--divider);
 	background: var(--surface);
 	box-shadow: var(--shadow-1);
 	animation: fade var(--md2-duration-medium) var(--md2-easing-decelerate) both;
@@ -435,9 +495,9 @@ main {
 	place-items: center;
 	width: 40px;
 	height: 40px;
-	border-radius: 50%;
-	background: var(--primary);
-	color: var(--on-primary);
+	border-radius: 12px;
+	background: var(--primary-container);
+	color: var(--on-primary-container);
 }
 
 .grow {
@@ -462,9 +522,9 @@ main {
 	align-items: center;
 	gap: 6px;
 	min-height: 36px;
-	padding: 0 10px;
+	padding: 0 12px;
 	border: 1px solid var(--divider);
-	border-radius: var(--radius);
+	border-radius: var(--radius-full);
 	background: var(--hover);
 	color: var(--text-2);
 	font-size: 0.875rem;
@@ -479,15 +539,14 @@ main {
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
-	min-height: 36px;
-	padding: 0 16px;
-	border-radius: var(--radius);
+	min-height: 38px;
+	padding: 0 18px;
+	border-radius: var(--radius-full);
 	background: var(--primary);
 	color: var(--on-primary);
 	font-size: 0.875rem;
 	font-weight: 500;
-	letter-spacing: 0.06em;
-	text-transform: uppercase;
+	letter-spacing: 0.02em;
 	box-shadow: var(--shadow-1);
 	transition:
 		background-color var(--md2-duration-icon) var(--md2-easing-standard),
@@ -595,17 +654,18 @@ main {
 }
 
 .folder-btn:hover {
-	background: var(--divider);
+	background: var(--surface-variant);
 }
 
 .badge {
 	min-width: 24px;
-	padding: 0 8px;
-	border-radius: 12px;
-	background: var(--surface);
+	padding: 0 10px;
+	border-radius: var(--radius-full);
+	background: var(--surface-variant);
 	color: var(--text-2);
 	font-size: 0.75rem;
-	line-height: 24px;
+	font-weight: 600;
+	line-height: 22px;
 	text-align: center;
 }
 
@@ -769,6 +829,8 @@ main {
 	gap: 16px;
 	padding: 20px 24px;
 	margin-top: 16px;
+	border-radius: var(--radius);
+	border: 1px solid var(--divider);
 	border-left: 4px solid var(--primary);
 	background: var(--surface);
 }
@@ -818,8 +880,8 @@ main {
 	color: var(--primary);
 	text-decoration: none;
 	font-weight: 500;
-	padding: 0 16px;
-	border-radius: var(--radius);
+	padding: 0 18px;
+	border-radius: var(--radius-full);
 	display: inline-flex;
 	align-items: center;
 	gap: 8px;
