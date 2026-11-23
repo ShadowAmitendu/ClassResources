@@ -21,7 +21,7 @@
 			href="./favicon_io/favicon-16x16.png" />
 		<link rel="manifest" href="favicon_io/site.webmanifest" />
 
-		<link rel="stylesheet" href="style.css?v=3.1" />
+		<link rel="stylesheet" href="style.css?v=3.2" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -185,6 +185,39 @@
 			role="tabpanel"
 			aria-live="polite">
 			<div class="explorer-bar">
+				<div class="explorer-nav-row">
+					<div class="explorer-address-bar">
+						<button
+							id="explorer-up-btn"
+							class="icon-btn-sm"
+							title="Up to parent folder"
+							aria-label="Up to parent folder">
+							<span class="icon" aria-hidden="true">arrow_upward</span>
+						</button>
+						<nav
+							class="explorer-breadcrumbs"
+							id="breadcrumbs"
+							aria-label="File path"></nav>
+					</div>
+					<div class="explorer-actions">
+						<button
+							id="toggle-all-folders"
+							class="btn btn-outlined btn-sm"
+							title="Expand or collapse all folders"
+							aria-label="Expand all folders">
+							<span class="icon" id="toggle-all-icon" aria-hidden="true">unfold_more</span>
+							<span class="btn-text hide-sm" id="toggle-all-text">Expand all</span>
+						</button>
+						<button
+							id="view-mode-toggle"
+							class="btn btn-outlined btn-sm"
+							title="Toggle between Tree List and Folder View"
+							aria-label="Toggle Folder View">
+							<span class="icon" id="view-mode-icon" aria-hidden="true">folder</span>
+							<span class="btn-text hide-sm" id="view-mode-text">Folder view</span>
+						</button>
+					</div>
+				</div>
 				<div class="explorer-search">
 					<span class="icon" aria-hidden="true">search</span>
 					<input
@@ -192,24 +225,6 @@
 						id="file-search"
 						placeholder="Search notes, subjects, assignments..."
 						aria-label="Search resources" />
-				</div>
-				<div class="explorer-actions">
-					<button
-						id="toggle-all-folders"
-						class="btn btn-outlined btn-sm"
-						title="Expand all folders"
-						aria-label="Expand all folders">
-						<span class="icon" id="toggle-all-icon" aria-hidden="true">unfold_more</span>
-						<span class="btn-text hide-sm" id="toggle-all-text">Expand all</span>
-					</button>
-					<button
-						id="view-mode-toggle"
-						class="btn btn-outlined btn-sm"
-						title="Toggle between Tree List and Folder Grid view"
-						aria-label="Switch to Folder Grid View">
-						<span class="icon" id="view-mode-icon" aria-hidden="true">grid_view</span>
-						<span class="btn-text hide-sm" id="view-mode-text">Folder view</span>
-					</button>
 				</div>
 			</div>
 			<div id="sections-container"></div>
@@ -376,25 +391,212 @@
 			}
 
 			const sectionsContainer = $("sections-container");
+			let explorerPath = [];
+			let currentView = localStorage.getItem("view-mode") || "folder";
 
-			/* ---------- View Mode & Explorer Controls ---------- */
-			let currentView = localStorage.getItem("view-mode") || "list";
+			function initExplorerPath(sem, data) {
+				const rootItems = SECTIONS.map((s) => ({
+					type: "dir",
+					name: s.title,
+					id: s.id,
+					isCategory: true,
+					icon: s.icon,
+					children: data[s.id] || [],
+				}));
+				explorerPath = [
+					{
+						name: `${sem.toUpperCase()} SEMESTER`,
+						items: rootItems,
+						isRoot: true,
+					},
+				];
+			}
+
+			function renderBreadcrumbs() {
+				const bcEl = $("breadcrumbs");
+				if (!bcEl) return;
+				const upBtn = $("explorer-up-btn");
+				const isRoot = explorerPath.length <= 1;
+				if (upBtn) {
+					upBtn.disabled = isRoot;
+					upBtn.style.opacity = isRoot ? "0.3" : "1";
+				}
+				bcEl.innerHTML = explorerPath
+					.map((level, idx) => {
+						const isLast = idx === explorerPath.length - 1;
+						return isLast
+							? `<span class="fe-bc-current">${esc(level.name)}</span>`
+							: `<button class="fe-bc-link" data-idx="${idx}">${esc(level.name)}</button><span class="fe-bc-sep">/</span>`;
+					})
+					.join("");
+			}
+
+			function renderFolderView() {
+				renderBreadcrumbs();
+				const currentLevel = explorerPath[explorerPath.length - 1];
+				const items = currentLevel.items || [];
+				const folders = items.filter((i) => i.type === "dir");
+				const files = items.filter((i) => i.type === "file");
+
+				let html = `<div class="card fe-container">`;
+
+				if (folders.length === 0 && files.length === 0) {
+					html += `<div class="fe-empty">
+						${icon("folder_open", "fe-empty-icon")}
+						<h3>Folder is empty</h3>
+						<p>No materials or documents found in this directory.</p>
+					</div>`;
+				} else {
+					if (folders.length > 0) {
+						html += `<div class="fe-section">
+							<div class="fe-section-header">
+								<span class="icon">folder</span>
+								<h4>Folders (${folders.length})</h4>
+							</div>
+							<div class="fe-grid">`;
+						folders.forEach((f, idx) => {
+							const fileCount = flatten(f.children || []).length;
+							const fIcon = f.isCategory ? f.icon || "folder" : "folder";
+							html += `
+								<div class="fe-folder-card" data-findex="${idx}" tabindex="0" role="button" aria-label="Open folder ${esc(f.name)}">
+									<div class="fe-folder-icon-wrap">
+										<span class="icon fe-folder-icon">${fIcon}</span>
+									</div>
+									<div class="fe-item-info">
+										<span class="fe-item-name" title="${esc(f.name)}">${esc(f.name)}</span>
+										<span class="fe-item-sub">${fileCount} file${fileCount === 1 ? "" : "s"}</span>
+									</div>
+									<span class="icon fe-arrow-icon" aria-hidden="true">chevron_right</span>
+								</div>`;
+						});
+						html += `</div></div>`;
+					}
+
+					if (files.length > 0) {
+						html += `<div class="fe-section">
+							<div class="fe-section-header">
+								<span class="icon">draft</span>
+								<h4>Files (${files.length})</h4>
+							</div>
+							<div class="fe-grid">`;
+						files.forEach((f) => {
+							const ext = iconFor(f.name);
+							const extLabel = f.name.split(".").pop().toUpperCase();
+							const safeUrl = esc(f.url);
+							html += `
+								<a class="fe-file-card" href="${safeUrl}" target="_blank" rel="noopener noreferrer" title="${esc(f.name)}">
+									<div class="fe-file-icon-wrap">
+										<span class="icon fe-file-icon ${ext}">${ext}</span>
+										<span class="fe-ext-badge ${ext}">${extLabel}</span>
+									</div>
+									<span class="fe-item-name">${esc(f.name)}</span>
+									<div class="fe-file-footer">
+										<span class="fe-file-hint">Open file</span>
+										<span class="fe-download-btn">${icon("download")}</span>
+									</div>
+								</a>`;
+						});
+						html += `</div></div>`;
+					}
+				}
+
+				html += `</div>`;
+				sectionsContainer.innerHTML = html;
+			}
+
+			function renderTreeView(data) {
+				const totalFiles = SECTIONS.reduce(
+					(acc, s) => acc + flatten(data[s.id] || []).length,
+					0,
+				);
+				$("breadcrumbs").innerHTML = `<span class="fe-bc-current">${currentSem.toUpperCase()} SEMESTER (Tree View)</span>`;
+				const upBtn = $("explorer-up-btn");
+				if (upBtn) {
+					upBtn.disabled = true;
+					upBtn.style.opacity = "0.3";
+				}
+				sectionsContainer.innerHTML =
+					SECTIONS.map((s) => renderSection(s, data[s.id] || [])).join("") +
+					renderNoticeBanner(currentSem, totalFiles);
+			}
+
 			function applyViewMode(mode) {
 				currentView = mode;
 				localStorage.setItem("view-mode", mode);
-				const isGrid = mode === "grid";
-				main.classList.toggle("view-grid", isGrid);
-				$("view-mode-icon").textContent = isGrid ? "view_list" : "grid_view";
-				$("view-mode-text").textContent = isGrid ? "List view" : "Folder view";
+				const isFolder = mode === "folder";
+				main.classList.toggle("view-folder", isFolder);
+				$("view-mode-icon").textContent = isFolder
+					? "format_list_bulleted"
+					: "folder";
+				$("view-mode-text").textContent = isFolder
+					? "Tree view"
+					: "Folder view";
 				$("view-mode-toggle").setAttribute(
 					"title",
-					isGrid ? "Switch to List View" : "Switch to Folder Grid View",
+					isFolder ? "Switch to Tree List View" : "Switch to Folder View",
 				);
+				$("toggle-all-folders").style.display = isFolder ? "none" : "";
+
+				if (!main._data) return;
+				if (isFolder) {
+					renderFolderView();
+				} else {
+					renderTreeView(main._data);
+				}
 			}
+
 			applyViewMode(currentView);
 
 			$("view-mode-toggle").addEventListener("click", () => {
-				applyViewMode(currentView === "grid" ? "list" : "grid");
+				applyViewMode(currentView === "folder" ? "list" : "folder");
+			});
+
+			$("explorer-up-btn").addEventListener("click", () => {
+				if (explorerPath.length > 1) {
+					explorerPath.pop();
+					renderFolderView();
+				}
+			});
+
+			$("breadcrumbs").addEventListener("click", (e) => {
+				const btn = e.target.closest(".fe-bc-link");
+				if (btn) {
+					const idx = parseInt(btn.dataset.idx, 10);
+					explorerPath = explorerPath.slice(0, idx + 1);
+					renderFolderView();
+				}
+			});
+
+			sectionsContainer.addEventListener("click", (e) => {
+				const folderCard = e.target.closest(".fe-folder-card");
+				if (folderCard) {
+					const idx = parseInt(folderCard.dataset.findex, 10);
+					const currentLevel = explorerPath[explorerPath.length - 1];
+					const folders = (currentLevel.items || []).filter(
+						(i) => i.type === "dir",
+					);
+					const chosen = folders[idx];
+					if (chosen) {
+						explorerPath.push({
+							name: chosen.name,
+							items: chosen.children || [],
+							id: chosen.id,
+						});
+						renderFolderView();
+						$("file-search").value = "";
+					}
+					return;
+				}
+			});
+
+			sectionsContainer.addEventListener("keydown", (e) => {
+				if (e.key === "Enter" || e.key === " ") {
+					const card = document.activeElement.closest(".fe-folder-card");
+					if (card) {
+						e.preventDefault();
+						card.click();
+					}
+				}
 			});
 
 			let allExpanded = false;
@@ -419,42 +621,99 @@
 
 			$("file-search").addEventListener("input", (e) => {
 				const query = e.target.value.trim().toLowerCase();
-				const sections = document.querySelectorAll(
-					"#sections-container section.card",
-				);
-				sections.forEach((sec) => {
-					const rows = sec.querySelectorAll(".list li");
-					let visibleCount = 0;
+				if (currentView === "folder") {
 					if (!query) {
-						rows.forEach((li) => (li.style.display = ""));
-						sec.style.display = "";
+						renderFolderView();
 						return;
 					}
-					rows.forEach((li) => {
-						const nameEl = li.querySelector(".name");
-						const name = nameEl ? nameEl.textContent.toLowerCase() : "";
-						const matches = name.includes(query);
-						if (matches) {
-							li.style.display = "";
-							visibleCount++;
-							let p = li.parentElement.closest(".folder");
-							while (p) {
-								p.classList.add("open");
-								p.style.display = "";
-								const btn = p.querySelector(":scope > .folder-btn");
-								if (btn) {
-									btn.setAttribute("aria-expanded", "true");
-									const ic = btn.querySelector(".folder-icon");
-									if (ic) ic.textContent = "folder_open";
-								}
-								p = p.parentElement.closest(".folder");
+					const allFiles = [];
+					function collectFiles(items, pathName) {
+						(items || []).forEach((item) => {
+							if (item.type === "file") {
+								allFiles.push({ ...item, pathName });
+							} else if (item.type === "dir") {
+								collectFiles(item.children || [], `${pathName} / ${item.name}`);
 							}
-						} else if (!li.classList.contains("folder")) {
-							li.style.display = "none";
-						}
+						});
+					}
+					SECTIONS.forEach((s) => {
+						collectFiles(main._data[s.id] || [], s.title);
 					});
-					sec.style.display = visibleCount > 0 ? "" : "none";
-				});
+					const matches = allFiles.filter((f) =>
+						f.name.toLowerCase().includes(query),
+					);
+					let html = `<div class="card fe-container">
+						<div class="fe-section-header">
+							<span class="icon">search</span>
+							<h4>Search Results (${matches.length})</h4>
+						</div>`;
+					if (!matches.length) {
+						html += `<div class="fe-empty">
+							${icon("search_off", "fe-empty-icon")}
+							<h3>No matches found</h3>
+							<p>No resources found matching "${esc(query)}"</p>
+						</div>`;
+					} else {
+						html += `<div class="fe-grid">`;
+						matches.forEach((f) => {
+							const ext = iconFor(f.name);
+							const extLabel = f.name.split(".").pop().toUpperCase();
+							html += `
+								<a class="fe-file-card" href="${esc(f.url)}" target="_blank" rel="noopener noreferrer" title="${esc(f.name)}">
+									<div class="fe-file-icon-wrap">
+										<span class="icon fe-file-icon ${ext}">${ext}</span>
+										<span class="fe-ext-badge ${ext}">${extLabel}</span>
+									</div>
+									<span class="fe-item-name">${esc(f.name)}</span>
+									<span class="fe-item-sub">${esc(f.pathName)}</span>
+									<div class="fe-file-footer">
+										<span class="fe-file-hint">Open file</span>
+										<span class="fe-download-btn">${icon("download")}</span>
+									</div>
+								</a>`;
+						});
+						html += `</div>`;
+					}
+					html += `</div>`;
+					sectionsContainer.innerHTML = html;
+				} else {
+					const sections = document.querySelectorAll(
+						"#sections-container section.card",
+					);
+					sections.forEach((sec) => {
+						const rows = sec.querySelectorAll(".list li");
+						let visibleCount = 0;
+						if (!query) {
+							rows.forEach((li) => (li.style.display = ""));
+							sec.style.display = "";
+							return;
+						}
+						rows.forEach((li) => {
+							const nameEl = li.querySelector(".name");
+							const name = nameEl ? nameEl.textContent.toLowerCase() : "";
+							const matches = name.includes(query);
+							if (matches) {
+								li.style.display = "";
+								visibleCount++;
+								let p = li.parentElement.closest(".folder");
+								while (p) {
+									p.classList.add("open");
+									p.style.display = "";
+									const btn = p.querySelector(":scope > .folder-btn");
+									if (btn) {
+										btn.setAttribute("aria-expanded", "true");
+										const ic = btn.querySelector(".folder-icon");
+										if (ic) ic.textContent = "folder_open";
+									}
+									p = p.parentElement.closest(".folder");
+								}
+							} else if (!li.classList.contains("folder")) {
+								li.style.display = "none";
+							}
+						});
+						sec.style.display = visibleCount > 0 ? "" : "none";
+					});
+				}
 			});
 
 			async function load(sem) {
@@ -474,6 +733,9 @@
 						return;
 					}
 					const data = await res.json();
+					main._data = data;
+					initExplorerPath(sem, data);
+
 					const totalFiles = SECTIONS.reduce(
 						(acc, s) => acc + flatten(data[s.id] || []).length,
 						0,
@@ -482,10 +744,12 @@
 					$("updated").textContent = data.metadata?.lastUpdated
 						? `Updated ${data.metadata.lastUpdated}`
 						: "";
-					sectionsContainer.innerHTML =
-						SECTIONS.map((s) => renderSection(s, data[s.id] || [])).join("") +
-						renderNoticeBanner(sem, totalFiles);
-					main._data = data;
+
+					if (currentView === "folder") {
+						renderFolderView();
+					} else {
+						renderTreeView(data);
+					}
 				} catch (e) {
 					console.error(e);
 					sectionsContainer.innerHTML = `<div class="card error">${icon("warning")}<h3>Error loading files</h3>
