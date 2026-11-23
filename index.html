@@ -21,7 +21,7 @@
 			href="./favicon_io/favicon-16x16.png" />
 		<link rel="manifest" href="favicon_io/site.webmanifest" />
 
-		<link rel="stylesheet" href="style.css?v=3.0" />
+		<link rel="stylesheet" href="style.css?v=3.1" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -183,7 +183,37 @@
 			class="container"
 			id="main-content"
 			role="tabpanel"
-			aria-live="polite"></main>
+			aria-live="polite">
+			<div class="explorer-bar">
+				<div class="explorer-search">
+					<span class="icon" aria-hidden="true">search</span>
+					<input
+						type="search"
+						id="file-search"
+						placeholder="Search notes, subjects, assignments..."
+						aria-label="Search resources" />
+				</div>
+				<div class="explorer-actions">
+					<button
+						id="toggle-all-folders"
+						class="btn btn-outlined btn-sm"
+						title="Expand all folders"
+						aria-label="Expand all folders">
+						<span class="icon" id="toggle-all-icon" aria-hidden="true">unfold_more</span>
+						<span class="btn-text hide-sm" id="toggle-all-text">Expand all</span>
+					</button>
+					<button
+						id="view-mode-toggle"
+						class="btn btn-outlined btn-sm"
+						title="Toggle between Tree List and Folder Grid view"
+						aria-label="Switch to Folder Grid View">
+						<span class="icon" id="view-mode-icon" aria-hidden="true">grid_view</span>
+						<span class="btn-text hide-sm" id="view-mode-text">Folder view</span>
+					</button>
+				</div>
+			</div>
+			<div id="sections-container"></div>
+		</main>
 
 		<footer>
 			<div class="container">
@@ -345,14 +375,101 @@
 				return "";
 			}
 
+			const sectionsContainer = $("sections-container");
+
+			/* ---------- View Mode & Explorer Controls ---------- */
+			let currentView = localStorage.getItem("view-mode") || "list";
+			function applyViewMode(mode) {
+				currentView = mode;
+				localStorage.setItem("view-mode", mode);
+				const isGrid = mode === "grid";
+				main.classList.toggle("view-grid", isGrid);
+				$("view-mode-icon").textContent = isGrid ? "view_list" : "grid_view";
+				$("view-mode-text").textContent = isGrid ? "List view" : "Folder view";
+				$("view-mode-toggle").setAttribute(
+					"title",
+					isGrid ? "Switch to List View" : "Switch to Folder Grid View",
+				);
+			}
+			applyViewMode(currentView);
+
+			$("view-mode-toggle").addEventListener("click", () => {
+				applyViewMode(currentView === "grid" ? "list" : "grid");
+			});
+
+			let allExpanded = false;
+			$("toggle-all-folders").addEventListener("click", () => {
+				allExpanded = !allExpanded;
+				document.querySelectorAll(".folder").forEach((f) => {
+					f.classList.toggle("open", allExpanded);
+					const btn = f.querySelector(":scope > .folder-btn");
+					if (btn) {
+						btn.setAttribute("aria-expanded", allExpanded);
+						const ic = btn.querySelector(".folder-icon");
+						if (ic) ic.textContent = allExpanded ? "folder_open" : "folder";
+					}
+				});
+				$("toggle-all-icon").textContent = allExpanded
+					? "unfold_less"
+					: "unfold_more";
+				$("toggle-all-text").textContent = allExpanded
+					? "Collapse all"
+					: "Expand all";
+			});
+
+			$("file-search").addEventListener("input", (e) => {
+				const query = e.target.value.trim().toLowerCase();
+				const sections = document.querySelectorAll(
+					"#sections-container section.card",
+				);
+				sections.forEach((sec) => {
+					const rows = sec.querySelectorAll(".list li");
+					let visibleCount = 0;
+					if (!query) {
+						rows.forEach((li) => (li.style.display = ""));
+						sec.style.display = "";
+						return;
+					}
+					rows.forEach((li) => {
+						const nameEl = li.querySelector(".name");
+						const name = nameEl ? nameEl.textContent.toLowerCase() : "";
+						const matches = name.includes(query);
+						if (matches) {
+							li.style.display = "";
+							visibleCount++;
+							let p = li.parentElement.closest(".folder");
+							while (p) {
+								p.classList.add("open");
+								p.style.display = "";
+								const btn = p.querySelector(":scope > .folder-btn");
+								if (btn) {
+									btn.setAttribute("aria-expanded", "true");
+									const ic = btn.querySelector(".folder-icon");
+									if (ic) ic.textContent = "folder_open";
+								}
+								p = p.parentElement.closest(".folder");
+							}
+						} else if (!li.classList.contains("folder")) {
+							li.style.display = "none";
+						}
+					});
+					sec.style.display = visibleCount > 0 ? "" : "none";
+				});
+			});
+
 			async function load(sem) {
-				main.innerHTML = SECTIONS.map(
+				sectionsContainer.innerHTML = SECTIONS.map(
 					() => `<div class="card skeleton"></div>`,
 				).join("");
+				$("file-search").value = "";
+				allExpanded = false;
+				$("toggle-all-icon").textContent = "unfold_more";
+				$("toggle-all-text").textContent = "Expand all";
+
 				try {
 					const res = await fetch(`${FILES[sem]}?t=${Date.now()}`);
 					if (!res.ok) {
-						main.innerHTML = renderNoticeBanner(sem, 0);
+						sectionsContainer.innerHTML = renderNoticeBanner(sem, 0);
 						$("updated").textContent = "";
 						return;
 					}
@@ -365,13 +482,13 @@
 					$("updated").textContent = data.metadata?.lastUpdated
 						? `Updated ${data.metadata.lastUpdated}`
 						: "";
-					main.innerHTML =
+					sectionsContainer.innerHTML =
 						SECTIONS.map((s) => renderSection(s, data[s.id] || [])).join("") +
 						renderNoticeBanner(sem, totalFiles);
 					main._data = data;
 				} catch (e) {
 					console.error(e);
-					main.innerHTML = `<div class="card error">${icon("warning")}<h3>Error loading files</h3>
+					sectionsContainer.innerHTML = `<div class="card error">${icon("warning")}<h3>Error loading files</h3>
 					<p>Make sure you ran <b>generate.py</b> before uploading.</p></div>`;
 				}
 			}
