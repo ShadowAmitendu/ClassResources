@@ -4,15 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Changelog - Class Resources</title>
-		<script>
-			document.documentElement.classList.add("app-loading");
-		</script>
 		<link
 			rel="icon"
 			type="image/png"
 			sizes="32x32"
 			href="favicon_io/favicon-32x32.png" />
-		<link rel="stylesheet" href="style.css" />
+		<link rel="stylesheet" href="style.css?v=2.0" />
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
@@ -180,18 +177,43 @@
 				themeIcon.textContent = dark ? "light_mode" : "dark_mode";
 			}
 
-			themeToggle.addEventListener("click", () => {
-				const next =
-					document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+			function setTheme(next) {
 				document.documentElement.dataset.theme = next;
 				localStorage.setItem("theme", next);
 				syncTheme();
-				Promise.resolve(
-					document.fonts ? document.fonts.ready : undefined,
-				).finally(() => {
-					document.documentElement.classList.remove("app-loading");
-					document.body.classList.add("app-ready");
-				});
+			}
+
+			themeToggle.addEventListener("click", () => {
+				const next =
+					document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+				const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+				if (!document.startViewTransition || reduce) return setTheme(next);
+
+				const r = themeToggle.getBoundingClientRect();
+				const x = r.left + r.width / 2,
+					y = r.top + r.height / 2;
+				const radius = Math.hypot(
+					Math.max(x, innerWidth - x),
+					Math.max(y, innerHeight - y),
+				);
+
+				document
+					.startViewTransition(() => setTheme(next))
+					.ready.then(() =>
+						document.documentElement.animate(
+							{
+								clipPath: [
+									`circle(0 at ${x}px ${y}px)`,
+									`circle(${radius}px at ${x}px ${y}px)`,
+								],
+							},
+							{
+								duration: 300,
+								easing: "cubic-bezier(.4, 0, .2, 1)",
+								pseudoElement: "::view-transition-new(root)",
+							},
+						),
+					);
 			});
 
 			syncTheme();
