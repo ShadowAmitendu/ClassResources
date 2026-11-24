@@ -1,9 +1,140 @@
 {
   "metadata": {
-    "lastUpdated": "November 23, 2026"
+    "lastUpdated": "November 24, 2026"
   },
-  "syllabus": [],
-  "notes": [],
+  "syllabus": [
+    {
+      "type": "file",
+      "name": "BCA First Semester Syllabus 2023 - 2024.pdf",
+      "path": "bca/semesters/1st/syllabus/BCA First Semester Syllabus 2023 - 2024.pdf",
+      "url": "bca/semesters/1st/syllabus/BCA First Semester Syllabus 2023 - 2024.pdf"
+    }
+  ],
+  "notes": [
+    {
+      "type": "dir",
+      "name": "1. Programming for Problem Solving using C Language",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/1st/notes/1. Programming for Problem Solving using C Language",
+      "children": [
+        {
+          "type": "file",
+          "name": "BCAC102_Module1_Notes.pdf",
+          "path": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module1_Notes.pdf",
+          "url": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module1_Notes.pdf"
+        },
+        {
+          "type": "file",
+          "name": "BCAC102_Module2_Notes.pdf",
+          "path": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module2_Notes.pdf",
+          "url": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module2_Notes.pdf"
+        },
+        {
+          "type": "file",
+          "name": "BCAC102_Module3_Notes.pdf",
+          "path": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module3_Notes.pdf",
+          "url": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module3_Notes.pdf"
+        },
+        {
+          "type": "file",
+          "name": "BCAC102_Module4_Notes.pdf",
+          "path": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module4_Notes.pdf",
+          "url": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module4_Notes.pdf"
+        },
+        {
+          "type": "file",
+          "name": "BCAC102_Module5_Notes.pdf",
+          "path": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module5_Notes.pdf",
+          "url": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module5_Notes.pdf"
+        },
+        {
+          "type": "file",
+          "name": "BCAC102_Module6_Notes.pdf",
+          "path": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module6_Notes.pdf",
+          "url": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module6_Notes.pdf"
+        },
+        {
+          "type": "file",
+          "name": "BCAC102_Module7_Notes.pdf",
+          "path": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module7_Notes.pdf",
+          "url": "bca/semesters/1st/notes/1. Programming for Problem Solving using C Language/BCAC102_Module7_Notes.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "2. Digital Electronics",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/1st/notes/2. Digital Electronics",
+      "children": [
+        {
+          "type": "file",
+          "name": "Digital_Electronics_BCAC101_Module1.pdf",
+          "path": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module1.pdf",
+          "url": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module1.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Digital_Electronics_BCAC101_Module2.pdf",
+          "path": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module2.pdf",
+          "url": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module2.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Digital_Electronics_BCAC101_Module3.pdf",
+          "path": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module3.pdf",
+          "url": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module3.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Digital_Electronics_BCAC101_Module4.pdf",
+          "path": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module4.pdf",
+          "url": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module4.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Digital_Electronics_BCAC101_Module5.pdf",
+          "path": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module5.pdf",
+          "url": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module5.pdf"
+        },
+        {
+          "type": "file",
+          "name": "Digital_Electronics_BCAC101_Module6.pdf",
+          "path": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module6.pdf",
+          "url": "bca/semesters/1st/notes/2. Digital Electronics/Digital_Electronics_BCAC101_Module6.pdf"
+        }
+      ]
+    },
+    {
+      "type": "dir",
+      "name": "3. English & Professional Communication",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/1st/notes/3. English & Professional Communication",
+      "children": [
+        {
+          "type": "file",
+          "name": "AECC101_Module1_Notes.pdf",
+          "path": "bca/semesters/1st/notes/3. English & Professional Communication/AECC101_Module1_Notes.pdf",
+          "url": "bca/semesters/1st/notes/3. English & Professional Communication/AECC101_Module1_Notes.pdf"
+        },
+        {
+          "type": "file",
+          "name": "AECC101_Module2_Notes.pdf",
+          "path": "bca/semesters/1st/notes/3. English & Professional Communication/AECC101_Module2_Notes.pdf",
+          "url": "bca/semesters/1st/notes/3. English & Professional Communication/AECC101_Module2_Notes.pdf"
+        },
+        {
+          "type": "file",
+          "name": "AECC101_Module3_Notes.pdf",
+          "path": "bca/semesters/1st/notes/3. English & Professional Communication/AECC101_Module3_Notes.pdf",
+          "url": "bca/semesters/1st/notes/3. English & Professional Communication/AECC101_Module3_Notes.pdf"
+        },
+        {
+          "type": "file",
+          "name": "AECC101_Module4_Notes.pdf",
+          "path": "bca/semesters/1st/notes/3. English & Professional Communication/AECC101_Module4_Notes.pdf",
+          "url": "bca/semesters/1st/notes/3. English & Professional Communication/AECC101_Module4_Notes.pdf"
+        }
+      ]
+    }
+  ],
   "assignments": [],
   "question-papers": []
 }

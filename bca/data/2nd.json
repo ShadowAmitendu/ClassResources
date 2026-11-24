@@ -1,9 +1,47 @@
 {
   "metadata": {
-    "lastUpdated": "November 23, 2026"
+    "lastUpdated": "November 24, 2026"
   },
-  "syllabus": [],
-  "notes": [],
+  "syllabus": [
+    {
+      "type": "file",
+      "name": "BCA Second Semester Syllabus 2023 - 2024.pdf",
+      "path": "bca/semesters/2nd/syllabus/BCA Second Semester Syllabus 2023 - 2024.pdf",
+      "url": "bca/semesters/2nd/syllabus/BCA Second Semester Syllabus 2023 - 2024.pdf"
+    }
+  ],
+  "notes": [
+    {
+      "type": "dir",
+      "name": "1. Basics of Web Design Using HTML5, CSS3, JavaScript",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/2nd/notes/1. Basics of Web Design Using HTML5, CSS3, JavaScript",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "2. Computer Architecture",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/2nd/notes/2. Computer Architecture",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "3. Basic Mathematics & Statistics",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/2nd/notes/3. Basic Mathematics & Statistics",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "4. Organizational Behaviour",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/2nd/notes/4. Organizational Behaviour",
+      "children": []
+    },
+    {
+      "type": "dir",
+      "name": "5. English & Professional Communication",
+      "path": "C:/Users/amite/Development/ClassResources/bca/semesters/2nd/notes/5. English & Professional Communication",
+      "children": []
+    }
+  ],
   "assignments": [],
   "question-papers": []
 }
